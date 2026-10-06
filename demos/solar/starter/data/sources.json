@@ -1,0 +1,47 @@
+{
+  "source": "NASA POWER",
+  "retrieved_at": "2026-10-06T23:24:20.052442+00:00",
+  "period": "2025-01-01/2025-12-31",
+  "time_standard": "LST",
+  "parameter": "ALLSKY_SFC_SW_DWN",
+  "cities": [
+    {
+      "name": "Lima",
+      "latitude": -12.0464,
+      "longitude": -77.0428,
+      "slug": "lima",
+      "file": "lima-2025.json",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-77.0428&latitude=-12.0464&start=20250101&end=20251231&format=JSON&time-standard=LST",
+      "sha256": "f33f698ce3314abeb576a2aefd4d6d43d6849cfe8c17f957d5b8e2e8311e912d",
+      "records": 365,
+      "units": "kW-hr/m^2/day",
+      "annual_irradiation_kwh_m2": 1820.921
+    },
+    {
+      "name": "Arequipa",
+      "latitude": -16.409,
+      "longitude": -71.5375,
+      "slug": "arequipa",
+      "file": "arequipa-2025.json",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-71.5375&latitude=-16.409&start=20250101&end=20251231&format=JSON&time-standard=LST",
+      "sha256": "8267be42c349769d3eb8d51cd7fc994a4facc893f49c553e0bf4b355f12ba11b",
+      "records": 365,
+      "units": "kW-hr/m^2/day",
+      "annual_irradiation_kwh_m2": 2375.098
+    },
+    {
+      "name": "Piura",
+      "latitude": -5.1945,
+      "longitude": -80.6328,
+      "slug": "piura",
+      "file": "piura-2025.json",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-80.6328&latitude=-5.1945&start=20250101&end=20251231&format=JSON&time-standard=LST",
+      "sha256": "49fc53a871e05838c81745a602f90c03c2060e0cb693444ccb274ea9c3e830a1",
+      "records": 365,
+      "units": "kW-hr/m^2/day",
+      "annual_irradiation_kwh_m2": 2047.554
+    }
+  ],
+  "documentation": "https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/",
+  "description": "Daily gridded all-sky solar irradiance on a horizontal surface. These are NASA POWER estimates, not local sensor measurements."
+}

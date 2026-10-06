@@ -1,0 +1,11 @@
+{
+  "source": "USGS",
+  "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
+  "retrieved_at": "2026-10-06T23:24:20.626767+00:00",
+  "generated_at_ms": 1791329009000,
+  "records": 517,
+  "sha256": "cb7e2bf449135f2b89c5d631f857debd1d8e766485f40d0d6d3602706fe34edd",
+  "documentation": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
+  "coordinates": "longitude, latitude, depth_km",
+  "event_time": "Unix milliseconds UTC"
+}
