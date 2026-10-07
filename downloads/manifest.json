@@ -1,0 +1,28 @@
+{
+  "packages": [
+    {
+      "demo": "solar",
+      "file": "solar-starter.zip",
+      "bytes": 10398,
+      "sha256": "932e58cf0e00e0e44782c1fa7a3c5ee18cfe7ba0b06d581668e2347269bc30c2",
+      "contents": [
+        "BRIEF.md",
+        "data/arequipa-2025.json",
+        "data/lima-2025.json",
+        "data/piura-2025.json",
+        "data/sources.json"
+      ]
+    },
+    {
+      "demo": "earthquakes",
+      "file": "earthquakes-starter.zip",
+      "bytes": 45880,
+      "sha256": "abc168a438139538b365e524f0d79fc6dd62c41a87bcb9ba014b49f63d01d188",
+      "contents": [
+        "BRIEF.md",
+        "data/sources.json",
+        "data/usgs-m45-month.geojson"
+      ]
+    }
+  ]
+}

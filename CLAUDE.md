@@ -13,3 +13,4 @@ Teaching repository owned by Deep Skill. Presentations and audience-facing mater
 - Session 1 has at most 30 minutes of slides; the rest is live tools and a working demo. Do not add a course roadmap slide.
 - Verify presentations and demos in a real browser, including keyboard navigation, smaller screens, links and meaningful computations.
 - Pricing snapshots need a date and official sources. Illustrative prices must say they are illustrative. Subscriptions are not unlimited and do not automatically include API usage.
+- The materials portal uses `materials/catalog.js` for its resource library and `tools/access-pricing.js` for dated Warp prices. Guides render their original Markdown through `materials/read.html`; edit the Markdown, not a duplicate HTML body. Regenerate student ZIPs with `python3 tools/package_starters.py` after changing a starter brief or data.

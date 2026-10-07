@@ -18,7 +18,7 @@ function show(index,updateHash=true){
 }
 function fromHash(){const match=location.hash.match(/^#s-(\d+)$/);show(match?Number(match[1])-1:0,false);}
 function notes(){const s=slides[current],elapsed=slides.slice(0,current).reduce((sum,s)=>sum+s.minutes,0);document.querySelector('#overlay-content').innerHTML='<h2>'+s.title+'</h2><p class="note-time">'+(s.appendix?'Apéndice opcional':s.minutes+' min, minuto '+elapsed+'–'+(elapsed+s.minutes))+'</p><p>'+s.notes+'</p>'+(s.sources.length?'<h3>Fuentes</h3><ul>'+s.sources.map(url=>'<li>'+link(url,url)+'</li>').join('')+'</ul>':'');overlay.showModal();}
-function outline(){document.querySelector('#overlay-content').innerHTML='<h2>Diapositivas</h2><p class="muted">15 principales, 27 minutos. 3 apéndices opcionales.</p>'+slides.map((s,i)=>'<button class="outline-item" data-slide="'+i+'"><span>'+String(i+1).padStart(2,'0')+'. '+s.title+'</span><small>'+(s.appendix?'Apéndice':s.minutes+' min')+'</small></button>').join('');overlay.showModal();}
+function outline(){document.querySelector('#overlay-content').innerHTML='<h2>Diapositivas</h2><p class="muted">16 principales, 30 minutos. 3 apéndices opcionales.</p>'+slides.map((s,i)=>'<button class="outline-item" data-slide="'+i+'"><span>'+String(i+1).padStart(2,'0')+'. '+s.title+'</span><small>'+(s.appendix?'Apéndice':s.minutes+' min')+'</small></button>').join('');overlay.showModal();}
 function fullscreen(){if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen().catch(()=>{});}
 document.querySelector('#prev').onclick=()=>show(current-1);document.querySelector('#next').onclick=()=>show(current+1);document.querySelector('#notes').onclick=notes;document.querySelector('#outline').onclick=outline;document.querySelector('#fullscreen').onclick=fullscreen;document.querySelector('#review').onclick=()=>setReview(!reviewing);document.querySelector('.review-close').onclick=()=>setReview(false);document.querySelector('#review-comments').addEventListener('input',event=>localStorage.setItem('course-feedback-'+slides[current].title,event.target.value));
 overlay.querySelector('.close').onclick=()=>overlay.close();overlay.addEventListener('click',event=>{const target=event.target.closest('[data-slide]');if(target){show(Number(target.dataset.slide));overlay.close();}});
@@ -32,4 +32,3 @@ addEventListener('keydown',event=>{
  else if(key==='p')notes();else if(key==='o')outline();else if(key==='f')fullscreen();else if(key==='r')setReview(!reviewing);
 });
 addEventListener('hashchange',fromHash);addEventListener('resize',fit);setReview(reviewing);fromHash();
-

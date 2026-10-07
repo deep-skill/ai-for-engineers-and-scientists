@@ -13,11 +13,24 @@ Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm depen
 - Slides: `cohorts/01/sessions/01/index.html`
 - Teaching plan: `cohorts/01/sessions/01/instructor-guide.md`
 - Demo options: `docs/demo-options.md`
+- Materials library, readable briefs and downloads: `index.html`
+- Read a guide: `materials/read.html?doc=solar`
 - Cost calculator: `tools/cost-calculator.html`
+- Dated Warp plan snapshot: `tools/access-pricing.js`
 
 Slides: arrows / Space navigate, Home / End jump, F fullscreen, P shows speaker notes, O opens the slide index, R opens **Revisión**. The review panel contains the idea, interaction and discussion points for each slide; comments persist in this browser's local storage. Sources are linked from the relevant slide notes. Press Escape to close overlays. L / En vivo toggles automatic reload on file changes, preserving the current slide and review mode. Disable it during a finished presentation.
 
 The deck includes interactive concept diagrams, workflow steps, service cases, an illustrative token sequence, a cost calculator and a NASA comparison. These controls run locally in JavaScript; they do not call an LLM. Product logos and public screenshots have provenance in `assets/external-sources.json`. Definitions, diagrams and charts are editable HTML/CSS/JavaScript rather than flattened slides.
+
+## Student materials
+
+The home page includes a three-reading route, a searchable library of primary sources and a Warp monthly/annual comparison. Guide links use a dependency-free Markdown reader; the Markdown files remain the source of truth. The download ZIPs contain only the brief, original public data and provenance. Rebuild them after changing a starter folder:
+
+```sh
+python3 tools/package_starters.py
+```
+
+Each archive has a SHA-256 and contents list in `downloads/manifest.json`. The generated teacher reference is local and git-ignored; build it with the instructions below when cloning the repository.
 
 ## Solar demo
 

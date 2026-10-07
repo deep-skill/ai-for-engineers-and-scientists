@@ -1,14 +1,14 @@
 'use strict';
 (() => {
  const button=document.querySelector('#live'),local=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
- const sources=['data.js','charts.js','content.js','slides.js','interactions.js','slides.css','live-reload.js','../../../../assets/brand.css'];
+ const sources=['data.js','charts.js','content.js','slides.js','interactions.js','slides.css','live-reload.js','../../../../assets/brand.css','../../../../tools/access-pricing.js'];
  let enabled=local&&sessionStorage.getItem('course-live')==='1',stream=null,timer=null,baseline=null;
  function paint(){button.setAttribute('aria-pressed',String(enabled));button.textContent=enabled?'● En vivo':'En vivo';button.title=local?'Actualizar al editar los archivos (L)':'Disponible en el servidor local';button.disabled=!local;}
  function stop(){stream?.close();stream=null;clearTimeout(timer);timer=null;baseline=null;}
  async function poll(){if(!enabled)return;try{const texts=await Promise.all(sources.map(async src=>{const r=await fetch(src,{cache:'no-store',signal:AbortSignal.timeout(4000)});if(!r.ok)throw Error('Missing file');return r.text();}));const version=JSON.stringify(texts);if(baseline!==null&&baseline!==version){location.reload();return;}baseline=version;button.textContent='● En vivo';}catch{button.textContent='↻ Reconectando';}if(enabled)timer=setTimeout(poll,2000);}
  async function start(){try{const r=await fetch('/__version',{cache:'no-store',signal:AbortSignal.timeout(2000)});if(!r.ok)throw Error('Static server');await r.json();if(!enabled)return;stream=new EventSource('/__events');stream.addEventListener('changed',()=>{if(enabled)location.reload();});stream.addEventListener('ready',()=>{button.textContent='● En vivo';});stream.onerror=()=>{button.textContent='↻ Reconectando';};}catch{if(enabled)poll();}}
  function toggle(){if(!local)return;enabled=!enabled;sessionStorage.setItem('course-live',enabled?'1':'0');stop();paint();if(enabled)start();}
+ document.querySelector('#live-help').onclick=()=>{document.querySelector('#overlay-content').innerHTML='<h2>Edición en vivo de la presentación</h2><p>Cuando cambian sus archivos, la presentación se recarga conservando la diapositiva actual y el modo Revisión. Los comentarios guardados permanecen en este navegador.</p><p>Los controles de los ejemplos vuelven a su estado inicial al recargar. El botón funciona con el servidor local; no ejecuta un LLM ni consume créditos de IA.</p><p>Usa L para activarlo o apagarlo. Apágalo cuando quieras presentar una versión estable.</p><a href="../../../../index.html#en-vivo" target="_blank" rel="noopener noreferrer">Ver controles y materiales ↗</a>';document.querySelector('#overlay').showModal();};
  button.onclick=toggle;addEventListener('keydown',event=>{if(event.key.toLowerCase()==='l'&&!event.metaKey&&!event.ctrlKey&&!event.altKey&&!document.querySelector('#overlay').open&&!event.target.matches('input,textarea,select'))toggle();});
  addEventListener('beforeunload',stop);paint();if(enabled)start();
 })();
-
