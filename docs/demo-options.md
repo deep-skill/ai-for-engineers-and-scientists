@@ -18,6 +18,14 @@ Tres respuestas NASA de 2025 archivadas permiten avanzar sin conexión. Son esti
 
 Para un público de geología/minería o mayor impacto geográfico. Selección, comparación y distancias aportan más que solo colorear puntos. USGS M4.5+ no equivale al catálogo completo del IGP.
 
+## Ensayo sismos (2026-10-06)
+
+Prototipos fuera del repo, en `/tmp` (no commiteados). `starter/data` intacto: 517 eventos, SHA original.
+
+- pandas/matplotlib: histograma de magnitudes, scatter profundidad vs magnitud, serie diaria. Mag 4.5–6.6 (media 4.83), prof 7–587.6 km. Verificado contra `us6000u0le`.
+- Web Leaflet 1.9.4 + D3 v7: mapa con tamaño por magnitud y color por profundidad, scatter mag vs prof, filtros de magnitud/profundidad y recorte andino (57/517). GeoJSON es `[lon,lat]`; Leaflet usa `[lat,lon]`.
+- Decisión: Leaflet para mapa (tiles/zoom), D3 para scatter liviano. El producto final del brief sigue pidiendo Plotly.
+
 ## Rutas para después
 
 Son útiles, pero las consultas y dependencias geográficas agregan variabilidad. Mejor después de familiarizarse con carpeta, terminal y librerías.
