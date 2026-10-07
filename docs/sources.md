@@ -16,7 +16,7 @@ Revisión documental: 2026-10-06. Rankings, tarifas y disponibilidad pueden camb
 | Terminales | [Ghostty](https://ghostty.org/docs) · [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/) | Alternativas |
 | Benchmarks | [Artificial Analysis](https://artificialanalysis.ai/) · [Metodología](https://artificialanalysis.ai/methodology) | Capacidad, velocidad, latencia, coste |
 | Catálogo | [Models.dev](https://models.dev/) | Modelos y proveedores |
-| Transformer | [Attention Is All You Need](https://arxiv.org/abs/1706.03762) | Introducción a atención |
+| Transformer | [Attention Is All You Need](https://arxiv.org/abs/1706.03762) · [How do Transformers work?](https://huggingface.co/learn/llm-course/chapter1/4) | Atención, arquitectura y entrenamiento |
 | Workflows | [n8n](https://docs.n8n.io/advanced-ai/examples/understand-tools) | Herramientas e integraciones |
 | Solar | [NASA POWER](https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/) | Parámetro y unidades |
 | Sismos | [USGS](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) | Formato y unidades |
@@ -42,3 +42,5 @@ Los logos de herramientas y las capturas públicas están registrados con URL y 
 - [Rethinking skills and prompts](https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra): lectura avanzada sobre cambios en las prácticas con modelos más capaces.
 
 El catálogo del portal está en `materials/catalog.js`. Las tarifas consultadas de Warp están en `tools/access-pricing.js`: Free 0, Build 20 y Max 200 USD/mes. Los equivalentes con pago anual son 18 y 180 USD/mes para Build y Max. Consulta del 6 oct. 2026, [fuente oficial](https://www.warp.dev/pricing). No representan consumo ilimitado.
+
+Los tamaños de contexto de la sesión (128K, 256K y 1M) son ejemplos interactivos, no una tabla de especificaciones de modelos. El presupuesto reserva 8K para salida de forma pedagógica; comprobar ventana y límite de salida en la documentación del modelo elegido.

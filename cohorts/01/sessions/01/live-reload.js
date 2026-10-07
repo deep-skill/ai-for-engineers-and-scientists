@@ -1,7 +1,7 @@
 'use strict';
 (() => {
  const button=document.querySelector('#live'),local=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
- const sources=['data.js','charts.js','content.js','slides.js','interactions.js','slides.css','live-reload.js','../../../../assets/brand.css','../../../../tools/access-pricing.js'];
+ const sources=['data.js','charts.js','content.js','slides.js','interactions.js','slides.css','concepts.css','live-reload.js','../../../../assets/brand.css','../../../../tools/access-pricing.js'];
  let enabled=local&&sessionStorage.getItem('course-live')==='1',stream=null,timer=null,baseline=null;
  function paint(){button.setAttribute('aria-pressed',String(enabled));button.textContent=enabled?'● En vivo':'En vivo';button.title=local?'Actualizar al editar los archivos (L)':'Disponible en el servidor local';button.disabled=!local;}
  function stop(){stream?.close();stream=null;clearTimeout(timer);timer=null;baseline=null;}

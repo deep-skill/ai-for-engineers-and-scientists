@@ -20,7 +20,7 @@ Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm depen
 
 Slides: arrows / Space navigate, Home / End jump, F fullscreen, P shows speaker notes, O opens the slide index, R opens **Revisión**. The review panel contains the idea, interaction and discussion points for each slide; comments persist in this browser's local storage. Sources are linked from the relevant slide notes. Press Escape to close overlays. L / En vivo toggles automatic reload on file changes, preserving the current slide and review mode. Disable it during a finished presentation.
 
-The deck includes interactive concept diagrams, workflow steps, service cases, an illustrative token sequence, a cost calculator and a NASA comparison. These controls run locally in JavaScript; they do not call an LLM. Product logos and public screenshots have provenance in `assets/external-sources.json`. Definitions, diagrams and charts are editable HTML/CSS/JavaScript rather than flattened slides.
+The deck introduces LLMs and Transformers, then opens OpenCode and Warp before explaining agent execution. It includes editable diagrams, a token/context budget, chat/workflow/agent comparisons, service cases, a cost calculator and a NASA comparison. These controls run locally in JavaScript; they do not call an LLM. Product logos and public screenshots have provenance in `assets/external-sources.json`. Definitions, diagrams and charts are editable HTML/CSS/JavaScript rather than flattened slides.
 
 ## Student materials
 

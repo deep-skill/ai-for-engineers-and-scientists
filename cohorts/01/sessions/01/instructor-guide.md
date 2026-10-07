@@ -4,14 +4,15 @@ Duración base: 90 minutos. Extensión: hasta 120. Diapositivas principales: 16,
 
 | Minutos | Actividad | Resultado |
 |---|---|---|
-| 0–5 | Portada, JP y Deep Skill mientras llegan | Trayectoria, talento y trabajo de la empresa |
-| 5–30 | LLMs, evolución del trabajo, definiciones y costes | Mapa de conceptos y formas de trabajo |
-| 30–40 | OpenCode Desktop y Warp en vivo | Abrir carpeta, identificar modelo, herramientas y ejecución |
-| 40–50 | Artificial Analysis y coste en vivo | Comparar capacidad, velocidad, coste y cuotas |
+| 0–5 | Portada, JP y DeepSkill mientras llegan | Curso, trayectoria, talento y trabajo de la empresa |
+| 5–13 | LLM, Transformer, generación y contexto | Comprender el modelo y qué trabajo podemos delegar |
+| 13–25 | OpenCode Desktop y Warp: diapositiva breve y app real | Abrir carpeta, identificar modelo y mostrar ejecución |
+| 25–37 | Agentes, arnés y herramientas alternando láminas y entorno | Relacionar cada concepto con el proyecto abierto |
+| 37–50 | Modelos, costes, acceso y brief NASA | Consultar Artificial Analysis y preparar la tarea |
 | 50–80 | Construcción de la calculadora solar | Herramienta con datos reales de NASA |
 | 80–90 | Comprobar, modificar y cerrar | Verificación manual y código reproducible |
 
-Extensión: 90–110 práctica guiada; 110–120 dudas y problemas de participantes. Si se alarga la presentación personal, reducir el catálogo de productos. Mantener una demo central.
+Extensión: 90–110 práctica guiada; 110–120 dudas y problemas de participantes. Las láminas suman 30 minutos; se intercalan con 20 minutos de herramientas y ejemplos en vivo antes de construir. Si se alarga la presentación personal, acortar comparaciones de productos. Mantener una demo central.
 
 ## Preparación
 
@@ -31,24 +32,32 @@ DeepSkill: empresa que construye software y opera con agentes. La diapositiva ag
 
 ## Recorrido de las diapositivas
 
-1. Portada: resultado visible desde el inicio con datos NASA.
+1. Portada: nombre del curso, tema anunciado del LLM y subtítulo de agentes; datos NASA como anticipo.
 2. JP: trabajo actual de consultoría y perfiles.
-3. DeepSkill: servicios, proyectos ejecutados y talento; elegir un servicio.
-4. LLMs y evolución del trabajo: comparar programación, asistencia y agente con el mismo problema.
-5. Modelo / chat / herramienta: mismo objetivo, tres piezas; cambiar selector.
-6. Workflow / agente: recorrer pasos y activar datos incompletos.
-7. Arnés: seleccionar terminal o navegador; explicar el ciclo y sus permisos.
-8. Producto / interfaz / entorno: reconocer modelos y arneses con sus logos.
-9. Herramientas: seleccionar API, pandas y visualización.
-10. Tokens: generar fragmentos ilustrativos; no son un tokenizador real.
-11. Modelos: elegir una métrica y abrir Artificial Analysis en vivo.
-12. Coste: duplicar llamadas y quitar caché; tarifas ficticias.
-13. Acceso: comparar API, suscripción, gratuito y local.
-14. OpenCode: abrir la carpeta starter en Desktop.
-15. Warp: pasar de la secuencia ilustrativa a la terminal real.
+3. DeepSkill: servicios, proyectos ejecutados y talento; elegir un caso.
+4. Qué es un LLM: entrenamiento, parámetros y recorrido por el Transformer; atención y otras capas.
+5. Tokens, generación y contexto: generar fragmentos y comparar presupuestos ilustrativos de 128K, 256K y 1M.
+6. Software y análisis con agentes: el mismo reporte, con responsabilidades que podemos delegar.
+7. OpenCode: salir de la lámina y abrir la carpeta starter en Desktop. Ver modelo y proveedor.
+8. Warp: mostrar la terminal real y relacionar terminal, shell y agentes.
+9. Chat, workflow y agente: comparar quién ejecuta y quién decide; mencionar n8n y Python.
+10. Agente y arnés: identificar el ciclo en OpenCode y las herramientas disponibles.
+11. Configura tu agente: modelo, arnés y entorno como decisiones concretas del participante.
+12. Herramientas: SO, aplicaciones y librerías; relacionarlas con el análisis NASA.
+13. Modelos: elegir una métrica y abrir Artificial Analysis en vivo.
+14. Coste: duplicar llamadas y quitar caché; tarifas ficticias.
+15. Acceso: comparar API, suscripción, gratuito y local.
 16. Solar: cambiar ciudad y potencia; empezar la construcción con el agente.
 
 Los apéndices ofrecen alternativas, comprobación manual y enlaces. No es necesario presentarlos completos. El panel R / Revisión muestra la intención y los puntos de discusión de cada diapositiva; sus comentarios permanecen en el navegador.
+
+## Cómo explicar el LLM
+
+Una red neuronal aprende parámetros durante el entrenamiento; en una llamada normal los usa para procesar el contexto y producir una continuación. El diagrama introduce una arquitectura generativa basada en Transformer: tokens, representaciones, atención y transformaciones neuronales. Atención relaciona elementos del contexto; no es una búsqueda en internet. La continuación se genera token a token. Fragmentos y candidatos en la lámina son ilustrativos.
+
+La ventana de contexto limita lo que el modelo puede procesar en la llamada. No equivale a todos los archivos del proyecto ni a una memoria ilimitada. El arnés selecciona instrucciones, historial, archivos y resultados de herramientas. Los tamaños 128K, 256K y 1M son ejemplos de presupuesto, no especificaciones de un producto. Comprobar también el límite de salida del modelo elegido. En la ilustración se reservan 8K para salida: con 72K de archivos, 2K de instrucciones, 18K de historial y 24K de resultados, el total planeado es 124K. Cabe en 128K con 4K libres. Subir archivos permite explicar selección y resumen; una ventana mayor no sustituye dar contexto pertinente.
+
+El cambio en software y análisis se muestra con una tarea: construir un reporte. La asistencia propone código que una persona lleva a ejecución; un agente conectado puede leer, editar, ejecutar, observar y corregir. Seguimos dando objetivos y criterios, y comprobando resultados. Estas formas coexisten y un chat también puede ofrecer un agente.
 
 ## Editar el curso en vivo — 3 minutos dentro del bloque de herramientas
 

@@ -1,0 +1,138 @@
+/* Diagrams for the LLM-to-agent explanation. All content remains editable. */
+.cover h1{font-size:69px;line-height:1.09;letter-spacing:-3.4px;margin-bottom:28px}
+.cover .course-name{font-size:19px;margin-bottom:17px}
+.cover-layout{grid-template-columns:1.12fr 1fr;gap:62px}
+.session-title{border-left:2px solid var(--blue);padding-left:20px;margin:22px 0 27px}
+.session-title .eyebrow{font-size:13px;margin-bottom:11px}
+.session-title h2{font-size:29px;letter-spacing:-.7px;line-height:1.3;margin:0 0 8px}
+.session-title p{font-size:23px;color:#a6b1cc;margin:0}
+.cover-result h2{font-size:29px;line-height:1.3}
+.cover .byline{font-size:17px;margin-top:25px}
+
+.training-strip{display:flex;gap:23px;align-items:center;padding:18px 23px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:4px 0 36px;font-size:19px;color:#a5aec7}
+.training-strip i{color:var(--blue);font-style:normal}
+.training-strip strong{color:var(--green);font-weight:500}
+.llm-machine{display:grid;grid-template-columns:1.12fr 52px 1.1fr 52px .85fr;gap:22px;align-items:center;min-height:300px}
+.machine-input .eyebrow,.machine-output .eyebrow{font-size:14px}
+.prompt-strip{font-size:21px;padding:18px;border-left:2px solid var(--blue);background:#1a53ff0c;line-height:1.4}
+.mini-token-row{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}
+.mini-token-row span{font:17px/1.5 ui-monospace,monospace;border:1px solid #4d7fff35;padding:6px 8px;border-radius:5px;color:#bbccf1}
+.machine-input small{font-size:16px;color:#8c97b3}
+.machine-arrow{font-size:35px;color:var(--blue);text-align:center}
+.transformer-box{padding:23px 25px;border:1px solid #4d7fff60;border-radius:16px;background:#151a2a}
+.transformer-box .eyebrow{font-size:13px;margin-bottom:13px}
+.transformer-box h2{font-size:31px;margin-bottom:21px}
+.transformer-box button{display:block;width:100%;text-align:left;background:none;color:white;border:1px solid #ffffff20;border-radius:7px;font-size:21px;padding:12px 14px}
+.transformer-box button[aria-pressed=true]{border-color:#99ff3270;background:#99ff3206}
+.transformer-box button span{display:block;font-size:15px;color:#929fbc;margin-top:7px}
+.inner-arrow{display:block;color:var(--blue);font-size:22px;text-align:center;margin:5px 0}
+.machine-output h3{font-size:25px}
+.possible-tokens{display:flex;gap:9px;margin:22px 0}
+.possible-tokens span{border-bottom:2px solid #99ff3250;font:22px/1.6 ui-monospace,monospace;padding:0 8px;color:#c6dfaa}
+.machine-output p{font-size:20px;color:#a4b0ce;line-height:1.55}
+.transformer-caption{font-size:21px;line-height:1.45;color:#b0bdda;margin-top:27px;max-width:1080px}
+.llm-machine-slide .footnote{margin-top:auto}
+
+.llm-budget{display:grid;grid-template-columns:.95fr 1.12fr;gap:68px;margin-top:12px}
+.llm-budget h2{font-size:28px;margin-bottom:15px}
+.llm-budget .eyebrow{font-size:14px;margin-bottom:13px}
+.generation-demo>p{font-size:20px;color:#a9b3ce;margin-bottom:20px}
+.generation-input{padding:15px 18px;background:#1a53ff0c;border-left:2px solid var(--blue);font-size:19px;color:#bbc8e6}
+.generation-demo .token-stream{display:flex;gap:8px;flex-wrap:wrap;align-content:flex-start;min-height:178px;margin:22px 0}
+.generation-demo .token{font-size:23px;padding:10px 12px}
+.generation-demo .token-placeholder{font-size:23px;color:#596a92;line-height:1.5}
+.generation-demo .action{font-size:17px;padding:12px 16px}
+.generation-demo .quiet{font-size:17px;padding:12px}
+.generation-demo .example-label{font-size:15px}
+.context-budget{border-left:1px solid #4d7fff40;padding-left:32px}
+.context-capacities{display:flex;gap:8px;margin:21px 0}
+.context-capacities button{padding:10px 24px;font-size:19px;background:#141927;border:1px solid var(--border);border-radius:7px;color:#a1adcb}
+.context-capacities button[aria-pressed=true]{color:var(--green);border-color:#99ff3260}
+.context-files-label{display:block;font-size:18px;color:#9aa7c5}
+.context-files-label strong{float:right;font-size:18px;color:white;font-weight:500}
+.context-files-label input{width:100%;accent-color:var(--green);display:block;margin:15px 0 22px;height:18px}
+.context-budget-chart{position:relative;height:57px;padding-top:4px;margin:0 0 14px}
+.budget-segments{display:flex;background:#ffffff09;height:23px;border-radius:4px;overflow:hidden}
+.budget-segments>span{height:100%}
+.instructions{background:#4d7fff}.history{background:#628daa}.files{background:#99ff32}.tools{background:#5170ab}
+.reserve{background:repeating-linear-gradient(135deg,#bba1e3 0 3px,#685589 3px 6px)}
+.budget-limit{position:absolute;top:0;height:32px;width:2px;background:#e7ebf5}
+.budget-scale{display:block;font-size:13px;color:#8d9bb9;margin-top:11px;text-align:right}
+.budget-legend{display:flex;flex-wrap:wrap;gap:10px 16px;font-size:14px;color:#8998bb;margin-bottom:19px}
+.budget-legend span{display:flex;align-items:center;gap:7px}.budget-legend i{width:8px;height:8px;border-radius:2px}
+#context-total{font-size:19px;color:#c7d4ef;margin:0 0 13px}
+#context-message{font-size:19px;color:var(--green);margin:0 0 17px;line-height:1.4}
+#context-message.over-budget{color:#efb68d}
+.context-budget>small{font-size:14px;color:#8492b1;line-height:1.5;display:block}
+.context-slide .footnote{margin-top:auto;font-size:17px}
+
+.evolution-task{display:flex;gap:26px;align-items:center;margin:7px 0 30px;padding:17px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.evolution-task>span{font-size:15px;color:#8090b5}.evolution-task strong{font-size:21px;font-weight:500;color:#d3dff6}
+.evolution-track{display:flex;gap:0;justify-content:space-between;margin-bottom:37px;border-bottom:1px solid #ffffff20}
+.evolution-track button{flex:1;background:none;border:0;border-bottom:2px solid transparent;padding:17px 18px;color:#8593b3;font-size:21px;text-align:left}
+.evolution-track button[aria-pressed=true]{color:var(--green);border-bottom-color:var(--green)}
+.delegation-track{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;min-height:151px}
+.delegation-node{position:relative;display:flex;flex-direction:column;justify-content:center;gap:15px;padding:20px 22px;border:1px solid #4d7fff40;border-radius:12px;background:#121725}
+.delegation-node:after{content:'→';position:absolute;right:-31px;color:var(--blue);font-size:25px}
+.delegation-node:last-child:after{display:none}.delegation-node.machine{border-color:#99ff3240}
+.delegation-role{font-size:16px;color:#86a3e4}.delegation-node.machine .delegation-role{color:var(--green)}
+.delegation-node strong{font-size:22px;font-weight:500;line-height:1.35}.delegation-node>small{font-size:13px;color:#66779c}
+.delegation-result{display:grid;grid-template-columns:1.15fr 1fr;gap:90px;align-items:center;margin-top:40px}
+.delegation-result .eyebrow{font-size:13px;margin-bottom:13px}.delegation-result h2{font-size:29px;margin-bottom:12px}
+.delegation-result p{font-size:21px;color:#9eaccb;line-height:1.45;margin:0}
+.result-artifacts{display:flex;gap:14px;flex-wrap:wrap}.result-artifacts>span{border:1px solid #ffffff20;border-radius:6px;padding:15px;font:17px/1.3 ui-monospace,monospace;color:#cad8f4}
+.result-artifacts small{display:block;width:100%;font-size:16px;color:#8493b4;margin-top:7px}
+.evolution-slide .footnote{margin-top:auto}
+
+.comparison-products{display:flex;gap:24px;align-items:center;margin-top:20px;height:32px}
+.comparison-products .brand-chip{font-size:17px}.comparison-products .tool-logo{height:26px;width:26px}
+.compare-slide .flow-stage{margin:28px 0;min-height:225px;grid-template-columns:630px 1fr;gap:55px}
+.compare-slide .flow-result h2{font-size:29px}.compare-slide .flow-result p{font-size:20px;line-height:1.45}
+.compare-slide .flow-node{font-size:19px}.compare-slide .footnote{margin-top:auto;font-size:17px}
+.compare-slide .interaction-bar .check{font-size:17px}
+.agent-objective{font-size:21px;color:#bfcee9;padding:16px 20px;background:#1a53ff0b;border-left:2px solid var(--blue);margin-bottom:20px}
+.agent-objective>span{font-size:14px;color:#7e92bd;margin-right:24px}
+.agent-slide .harness-layout{max-height:310px;flex:1;margin:7px 0}
+.agent-slide .harness-node{height:207px;width:220px;gap:14px}
+.agent-slide .harness-node small{font-size:15px}
+.agent-slide .harness-core{text-align:left;color:white;width:400px;padding:25px 28px}
+.agent-slide .harness-core[aria-pressed=true],.agent-slide .harness-node[aria-pressed=true]{border-color:var(--green)}
+.agent-slide .harness-core h2{font-size:31px;margin-bottom:20px}
+.agent-slide .harness-core p{font-size:17px}.agent-slide .harness-tools button{font-size:20px;padding:16px 19px}
+.agent-slide .harness-explainer{font-size:20px;padding:19px 0;line-height:1.5;min-height:75px}
+.agent-slide .footnote{margin-top:auto;font-size:17px}
+.agent-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;margin-top:19px}
+.agent-choices>button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:25px 27px;background:#121725;border:1px solid #ffffff20;border-radius:12px;color:white;min-height:338px}
+.agent-choices>button[aria-pressed=true]{border-color:#99ff3260}
+.choice-number{color:#7292cd;font-size:17px;margin-bottom:22px}.agent-choices h2{font-size:27px;margin-bottom:22px}
+.choice-brands{display:flex;flex-wrap:wrap;gap:12px 17px;min-height:86px}.choice-brands .brand-chip{font-size:17px;gap:9px}.choice-brands .tool-logo{width:27px;height:27px}
+.agent-choices p{font-size:20px;color:#95a5c7;line-height:1.45;margin:25px 0 0}
+.choice-environments{display:flex;flex-direction:column;gap:18px;min-height:86px;font-size:25px;color:var(--green)}
+.choice-environments strong{font-size:19px;font-weight:500;color:#d0def7;margin-left:8px}
+.setup-explainer{font-size:21px;color:#b1c1e1;border-top:1px solid var(--border);padding-top:24px;margin-top:28px;line-height:1.5}
+.setup-slide .footnote{margin-top:auto;font-size:17px}
+.tools-slide .workbench{grid-template-columns:350px 1fr;gap:55px;min-height:385px;margin-top:18px}
+.computer-layers{display:flex;flex-direction:column;gap:16px}
+.computer-layers button{display:flex;align-items:center;gap:19px;padding:22px 18px;text-align:left;background:#131725;border:1px solid #ffffff18;border-radius:10px;color:white;min-height:108px}
+.computer-layers button[aria-pressed=true]{border-color:#99ff3260}
+.computer-layers .tool-logo{width:37px;height:37px}.computer-layers .layer-icon{font-size:35px;color:var(--blue);width:37px;text-align:center}
+.computer-layers strong{display:block;font-size:21px;font-weight:550;margin-bottom:8px}.computer-layers small{font-size:15px;color:#8a9cbf}
+.tools-slide .tool-preview h2{font-size:29px}.tools-slide .tool-preview>p{font-size:20px;line-height:1.5}
+.tools-slide .code-sample{font-size:18px;padding:21px;margin:25px 0;line-height:1.65}
+.computer-functions{display:grid;grid-template-columns:repeat(3,1fr);gap:23px;margin:27px 0}
+.computer-functions strong{font-size:21px;color:#c6d6f6;display:block;margin-bottom:12px;font-weight:500}
+.computer-functions span{font-size:18px;color:#8d9fc4;line-height:1.5}
+.application-chain{display:flex;gap:25px;align-items:center;font-size:22px;margin:30px 0}.application-chain i{font-style:normal;color:var(--blue)}
+.library-chain{display:grid;grid-template-columns:1fr 35px 1fr 35px 1fr;align-items:center;gap:14px;margin:28px 0 25px}
+.library-chain>span{color:var(--blue);font-size:24px}.library-chain .brand-chip{font-size:18px}
+.library-chain>div>small{display:block;font-size:16px;color:#879bbe;margin-top:14px}.library-chain .tool-logo{width:64px;height:39px}.computer-layers .tool-logo[src$="pandas.svg"]{width:64px;height:37px}.compare-slide .flow-track{align-items:stretch}
+.tools-slide .footnote{margin-top:auto;font-size:17px}
+
+/* Reduce text density in the model and billing comparisons. */
+.benchmark-copy .big-copy{font-size:34px;line-height:1.4}
+.workspace-layout .big-copy{font-size:31px;line-height:1.5}.project-tree{font-size:20px}.project-prompt{font-size:20px}
+.cost-display output{font-size:76px;letter-spacing:-3px}
+.access-visual h2{font-size:32px;margin:20px 0}.access-info h2{font-size:28px}
+.access-info p{font-size:21px;line-height:1.5}.access-info .access-limit{font-size:19px}
+.access-arrow span{font-size:22px}.access-stage{gap:65px;min-height:315px}
+.slide:has(.reading-slide-layout) h1{font-size:50px}

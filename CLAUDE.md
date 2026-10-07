@@ -10,7 +10,7 @@ Teaching repository owned by Deep Skill. Presentations and audience-facing mater
 - Keep teacher reference implementations outside the folder students open with their agent. Never place the completed solution inside `starter/`.
 - Real public datasets must keep source URLs, retrieval timestamps, units, original responses and provenance. Do not label derived estimates as measurements.
 - Do not inflate instructor degrees, credentials, client references or a mentor's employment. Use confirmed source material.
-- Session 1 has at most 30 minutes of slides; the rest is live tools and a working demo. Do not add a course roadmap slide.
+- Session 1 has at most 30 minutes of slides; the rest is live tools and a working demo. Keep tokens/context beside the LLM explanation, then open OpenCode and Warp before teaching agent setup and tools. Use `concepts.css` for the conceptual diagrams. Do not add a course roadmap slide.
 - Verify presentations and demos in a real browser, including keyboard navigation, smaller screens, links and meaningful computations.
 - Pricing snapshots need a date and official sources. Illustrative prices must say they are illustrative. Subscriptions are not unlimited and do not automatically include API usage.
 - The materials portal uses `materials/catalog.js` for its resource library and `tools/access-pricing.js` for dated Warp prices. Guides render their original Markdown through `materials/read.html`; edit the Markdown, not a duplicate HTML body. Regenerate student ZIPs with `python3 tools/package_starters.py` after changing a starter brief or data.
