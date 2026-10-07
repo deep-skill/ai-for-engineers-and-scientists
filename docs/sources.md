@@ -27,3 +27,5 @@ Cada data/sources.json incluye URLs, timestamp, unidades y hashes. La calculador
 
 
 Tipografía Geist: [Google Fonts](https://fonts.google.com/specimen/Geist). Licencia SIL Open Font License incluida en assets/Geist-OFL.txt. Logo y retratos: material de Deep Skill, sin nueva licencia de distribución.
+
+Los logos de herramientas y las capturas públicas están registrados con URL y SHA-256 en `assets/external-sources.json`. Las tres capturas de Artificial Analysis corresponden a inteligencia, velocidad y coste por tarea; el selector de la diapositiva muestra la métrica elegida. Son capturas del 6 de octubre de 2026. Los datos actuales se consultan en la página durante la clase.

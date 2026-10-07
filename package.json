@@ -1,0 +1,12 @@
+{
+  "name": "deepskill-ai-for-engineers-and-scientists",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

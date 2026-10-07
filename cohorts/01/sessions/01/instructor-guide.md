@@ -15,7 +15,7 @@ Extensión: 90–110 práctica guiada; 110–120 dudas y problemas de participan
 
 ## Preparación
 
-1. Probar presentación, flechas y pantalla completa desde el servidor local.
+1. Ejecutar `npm run dev` (Node 22+, sin dependencias). Probar presentación, flechas, controles y pantalla completa desde el servidor local. Usar R / Revisión para preparar los ajustes por diapositiva; cerrarlo al presentar.
 2. Abrir SOLO demos/solar/starter en OpenCode Desktop.
 3. Ensayar con el modelo gratuito realmente disponible. La reconstrucción por un agente dentro de OpenCode Desktop aún no se ha probado: verificar antes de clase.
 4. Mantener la solución de referencia fuera de la carpeta del agente.
@@ -25,9 +25,29 @@ Extensión: 90–110 práctica guiada; 110–120 dudas y problemas de participan
 
 ## Presentación propia
 
-JP: coach ICPC, liderazgo de ingeniería, cofundador de Deep Pit Technology y fundador de Deep Skill. No afirmar título universitario; cargos de banca se presentan de forma general. Contar dos experiencias de resolución de problemas.
+JP: consultor que lidera transformaciones de arquitectura y equipos de ingeniería en diferentes empresas; fundador de DeepSkill y coach ICPC. Enlaces a GitHub (manduinca), LinkedIn y DeepSkill. Contar un caso de transformación y un problema técnico resuelto. Deep Pit queda como antecedente breve si surge en la conversación. No afirmar título universitario ni inventar nombres de clientes de consultoría.
 
-Deep Skill: software, IA aplicada y formación. Haul Sight se presenta como co-desarrollo con IMSS. Entrenamientos acreditables: Cerro Verde vía Tecsup y UNI. Los retratos son de mentores de la web oficial; no atribuirles proyectos que no ejecutaron.
+DeepSkill: empresa que construye software y opera con agentes. La diapositiva permite elegir entre arquitectura y consultoría (Astay Systems, Cloud Assessment), desarrollo de productos (ISC Platform, en producción), IA y automatización (Haul Sight, co-desarrollo con IMSS) y formación (Python para Ingenieros en Cerro Verde vía Tecsup; entrenamientos técnicos en UNI como actividad separada). Elegir uno o dos casos para sostener el mensaje comercial dentro de los cinco minutos de apertura. Los retratos son de mentores de la web oficial; no atribuirles proyectos que no ejecutaron.
+
+## Recorrido de las diapositivas
+
+1. Portada: resultado visible desde el inicio con datos NASA.
+2. JP: trabajo actual de consultoría y perfiles.
+3. DeepSkill: servicios, proyectos ejecutados y talento; elegir un servicio.
+4. Modelo / chat / herramienta: mismo objetivo, tres piezas; cambiar selector.
+5. Workflow / agente: recorrer pasos y activar datos incompletos.
+6. Arnés: seleccionar terminal o navegador; explicar el ciclo y sus permisos.
+7. Producto / interfaz / entorno: reconocer modelos y arneses con sus logos.
+8. Herramientas: seleccionar API, pandas y visualización.
+9. Tokens: generar fragmentos ilustrativos; no son un tokenizador real.
+10. Modelos: elegir una métrica y abrir Artificial Analysis en vivo.
+11. Coste: duplicar llamadas y quitar caché; tarifas ficticias.
+12. Acceso: comparar API, suscripción, gratuito y local.
+13. OpenCode: abrir la carpeta starter en Desktop.
+14. Warp: pasar de la secuencia ilustrativa a la terminal real.
+15. Solar: cambiar ciudad y potencia; empezar la construcción con el agente.
+
+Los apéndices ofrecen alternativas, comprobación manual y enlaces. No es necesario presentarlos completos. El panel R / Revisión muestra la intención y los puntos de discusión de cada diapositiva; sus comentarios permanecen en el navegador.
 
 ## Editar el curso en vivo — 3 minutos dentro del bloque de herramientas
 
@@ -63,4 +83,3 @@ Variar llamadas y contexto. Separar precio por token de coste por tarea y de rev
 ## Alternativa de sismos
 
 USGS: mapa, profundidad, magnitud y distancias a Lima. Hay datos y brief, aún sin solución terminada. No presentar conteos como peligro ni predicción sísmica.
-

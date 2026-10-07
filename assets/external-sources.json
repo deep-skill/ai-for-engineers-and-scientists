@@ -1,0 +1,139 @@
+{
+  "retrieved_at": "2026-10-06",
+  "assets": [
+    {
+      "file": "logos/opencode.png",
+      "url": "https://opencode.ai/favicon-96x96-v3.png",
+      "sha256": "aa34092540de60c889610edfa3c25316e215f12d88af29cfba530d09aee7265c",
+      "bytes": 536
+    },
+    {
+      "file": "logos/claude.png",
+      "url": "https://assets.claude.com/95a868946ac8a31e5ff832e2899f294aa368b836.png",
+      "sha256": "4004381309500f25e49a1ae639912ce307ea81da74cc383954a1ac8b9d343fe6",
+      "bytes": 1198
+    },
+    {
+      "file": "logos/warp.png",
+      "url": "https://www.warp.dev/apple-touch-icon-180x180.png",
+      "sha256": "ecc8232e177681aefc52c5df63ce41c89c9b30b62724150d619724fda9efe819",
+      "bytes": 2507
+    },
+    {
+      "file": "logos/openai.svg",
+      "url": "https://artificialanalysis.ai/img/logos/openai.svg",
+      "sha256": "f067fbdf1e3bf44575b53998d0b7e31765a02af3c37bfdc5c06c89975cca7cb7",
+      "bytes": 2503
+    },
+    {
+      "file": "logos/deepseek.svg",
+      "url": "https://artificialanalysis.ai/img/logos/deepseek.svg",
+      "sha256": "b4605874bbc5aef0b11be909f17ebfe1b6507dc6b4d725799563754a126d8505",
+      "bytes": 3557
+    },
+    {
+      "file": "logos/google.svg",
+      "url": "https://artificialanalysis.ai/img/logos/google.svg",
+      "sha256": "8b694251c4d88e7ac9f0725f502b3ef3fba57291c6e9408ca15d8df74e71a627",
+      "bytes": 728
+    },
+    {
+      "file": "logos/github.png",
+      "url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+      "sha256": "6d6ef7bede0416b6ebee2014be5852576dbce89235fe16ea5c44ed01bd522132",
+      "bytes": 7249
+    },
+    {
+      "file": "logos/plotly.svg",
+      "url": "https://plotly.com/all_static/images/logo-white.svg",
+      "sha256": "a6a704756ca5eaa37d24b8b0473d4eced2c73bcfb4af03a942721d93c701477f",
+      "bytes": 3700
+    },
+    {
+      "file": "logos/ghostty.png",
+      "url": "https://ghostty.org/favicon-32.png",
+      "sha256": "49ede020a3e431c4823092671ff45c223a7d252e60348bf2571dbc33d364fd2d",
+      "bytes": 7655
+    },
+    {
+      "file": "logos/models.svg",
+      "url": "https://models.dev/favicon-aq6crjze.svg",
+      "sha256": "765943e875f2daa5f54c3e44a6f21e5e34cc6f1c54d124708dd148a2023bba85",
+      "bytes": 1574
+    },
+    {
+      "file": "logos/artificialanalysis.ico",
+      "url": "https://artificialanalysis.ai/favicon.ico",
+      "sha256": "e6ebfbfaca0651bba5a0ad7d148f166f862b1d6a22f790e5e06fdfd7c45d2e60",
+      "bytes": 15406
+    },
+    {
+      "file": "screens/opencode.png",
+      "url": "https://opencode.ai/_build/assets/opencode-poster-CbUiDHgA.png",
+      "sha256": "425eaf713504ea9430137280048e13e089e5e89e0dae19b05ce6aec424e3ca5b",
+      "bytes": 13705
+    },
+    {
+      "file": "screens/warp.png",
+      "url": "https://www.warp.dev/img/photos/press-product.png",
+      "sha256": "1fbe44f0d465f376d81abcc8f86ab599ce35748954141ed8fa1d8b60a1757d98",
+      "bytes": 18114
+    },
+    {
+      "file": "logos/nasa.png",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/nasa-logo-web-rgb.png",
+      "sha256": "86318321c7752bf2d8b994f79830a471a6f0b21623771dac900115aa4440b892",
+      "bytes": 64674
+    },
+    {
+      "file": "logos/python.png",
+      "url": "https://www.python.org/static/img/python-logo.png",
+      "sha256": "9c121e619bfe02eaba582d7080eea46fd53ec0b50717e6794a948fada4ae8f3c",
+      "bytes": 15770
+    },
+    {
+      "file": "logos/pandas.svg",
+      "url": "https://pandas.pydata.org/static/img/pandas_white.svg",
+      "sha256": "caf3a951b589f68362d15bcab70f576d02beac4c2583781acf3cd4fcddb128ca",
+      "bytes": 2627
+    },
+    {
+      "file": "logos/n8n.svg",
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/n8n.svg",
+      "sha256": "f5a606188c78bf134fe7d85ae3d1310f6f4b7beafcd1d2fbdef2af02c92240a8",
+      "bytes": 1573
+    },
+    {
+      "file": "screens/artificial-analysis.png",
+      "url": "https://artificialanalysis.ai/",
+      "kind": "Public webpage screenshot",
+      "captured_at": "2026-10-06T23:58:36.371018+00:00",
+      "sha256": "8fbefef3e04087e042ee4684e0f2de57319bbd1a2a229c3d759c6a7785215d5e",
+      "bytes": 156482
+    },
+    {
+      "file": "screens/aa-intelligence.png",
+      "url": "https://artificialanalysis.ai/",
+      "kind": "Public webpage screenshot",
+      "captured_at": "2026-10-06T23:58:36.371535+00:00",
+      "sha256": "3b8a790950a448bcbf410ae88605b21b1ce03db0d447f8f7a2d0704947846ced",
+      "bytes": 38980
+    },
+    {
+      "file": "screens/aa-speed.png",
+      "url": "https://artificialanalysis.ai/",
+      "kind": "Public webpage screenshot",
+      "captured_at": "2026-10-06T23:58:36.371603+00:00",
+      "sha256": "bd9eb337a8e3a52acdcd695006dad367832228f881955dd5db279bd225e46d77",
+      "bytes": 30527
+    },
+    {
+      "file": "screens/aa-cost.png",
+      "url": "https://artificialanalysis.ai/",
+      "kind": "Public webpage screenshot",
+      "captured_at": "2026-10-06T23:58:36.371823+00:00",
+      "sha256": "dac1b0c6948b194977997e60dbeb2ac5df591a63285d7cc17de1887a60748e93",
+      "bytes": 41762
+    }
+  ]
+}

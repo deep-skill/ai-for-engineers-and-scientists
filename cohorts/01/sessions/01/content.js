@@ -1,198 +1,153 @@
-const ASSETS="../../../../assets/";
-const link=(url,label)=>'<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+label+'</a>';
+'use strict';
+const ASSETS='../../../../assets/';
+const LOGOS={opencode:'opencode.png',claude:'claude.png',codex:'openai.svg',gpt:'openai.svg',warp:'warp.png',github:'github.png',python:'python.png',pandas:'pandas.svg',plotly:'plotly.svg',n8n:'n8n.svg',nasa:'nasa.png',models:'models.svg',aa:'artificialanalysis.ico',ghostty:'ghostty.png',deepseek:'deepseek.svg',gemini:'google.svg'};
+const logo=(name,label,cls='')=>'<img class="tool-logo '+cls+'" src="'+ASSETS+'logos/'+LOGOS[name]+'" alt="'+(label||name)+'">';
+const chip=(name,label)=>'<span class="brand-chip">'+logo(name,label)+'<span>'+label+'</span></span>';
+const link=(url,label,cls='text-link')=>'<a class="'+cls+'" href="'+url+'" target="_blank" rel="noopener noreferrer">'+label+' ↗</a>';
+const tabs=(kind,items)=>'<div class="tabs" role="group">'+items.map((item,i)=>'<button data-'+kind+'="'+i+'" aria-pressed="'+(i===0)+'">'+item+'</button>').join('')+'</div>';
+const make=(title,minutes,html,notes,sources,review,className='')=>({title,minutes,html,notes,sources,review,className});
 const slides=[
-  {
-    "title": "LLMs, agentes y herramientas",
-    "minutes": 1,
-    "className": "hero",
-    "html": "<img class=\"hero-mark\" src=\"../../../../assets/deepskill.png\" alt=\"\"><p class=\"course\">AI for Engineers and Scientists · Cohorte 01</p><h1>LLMs, agentes<br>y <span class=\"gradient\">herramientas</span></h1><p class=\"lead\">Construir una herramienta de trabajo<br>con datos reales y un agente.</p><p class=\"byline\">Jean Pierre Mandujano · 6 de octubre de 2026</p>",
-    "notes": "Dejar la portada mientras se conectan. La apertura completa dura cinco minutos. Mostrar la promesa: una calculadora solar que podremos abrir y revisar. No recorrer las ocho sesiones del curso.",
-    "sources": []
-  },
-  {
-    "title": "Jean Pierre Mandujano",
-    "minutes": 2,
-    "html": "<div class=\"split profile\"><img class=\"portrait\" src=\"../../../../assets/JeanPierre.webp\" alt=\"Jean Pierre Mandujano\"><div><p class=\"kicker\">Founder · CTO & Tech Lead · Coach ICPC</p><h1>Jean Pierre<br>Mandujano</h1><p class=\"lead\">Programación competitiva y entrenamiento técnico.</p><p class=\"lead\">Liderazgo de ingeniería y construcción de software para la industria.</p><p class=\"lead\">Cofundador de Deep Pit Technology, adquirida por STRACON Technologies en 2022.</p></div></div>",
-    "notes": "Contar dos experiencias, no leer un CV: resolver problemas con rigor en programación competitiva y llevar software a operación. Presentar el liderazgo de forma general. No afirmar título universitario. Conectar con cómo dirigir y verificar a un agente.",
-    "sources": [
-      "https://www.deepskill.space/"
-    ]
-  },
-  {
-    "title": "DeepSkill: software, IA y talento",
-    "minutes": 2,
-    "html": "<h1>DeepSkill</h1><p class=\"statement\">Ingeniería de software, IA aplicada<br>y formación técnica.</p><div class=\"cols\"><article class=\"flat\"><h3>Software para la industria</h3><p>Haul Sight: co-desarrollo con IMSS para operaciones mineras.</p></article><article class=\"flat\"><h3>IA aplicada</h3><p>Agentes y automatización en procesos de trabajo.</p></article><article class=\"flat\"><h3>Formación técnica</h3><p>Entrenamientos en Cerro Verde, vía Tecsup y UNI.</p></article></div><div class=\"talent\"><article><img src=\"../../../../assets/ElvisCapia.webp\" alt=\"Elvis Capia\"><div><h3>Elvis Capia</h3><p>Mentor · Algoritmos<br>Coach ICPC</p></div></article><article><img src=\"../../../../assets/RacsoGalvan.webp\" alt=\"Racsó Galvan\"><div><h3>Racsó Galvan</h3><p>Mentor · Programación<br>Finalista mundial ICPC</p></div></article><article><img src=\"../../../../assets/EmanuelSoto.png\" alt=\"Emanuel Soto\"><div><h3>Emanuel Soto</h3><p>Mentor · Computer Science<br>Finalista mundial ICPC</p></div></article></div>",
-    "notes": "Explicar las dos líneas de Deep Skill: software e IA para organizaciones y formación de talento. Se puede mencionar Haul Sight como co-desarrollo con IMSS y entrenamientos Cerro Verde vía Tecsup / UNI. No convertir cotizaciones en proyectos ejecutados. Retratos y nombres proceden de la web oficial.",
-    "sources": [
-      "https://www.deepskill.space/",
-      "https://www.deepskill.space/enterprise"
-    ]
-  },
-  {
-    "title": "Modelo, chat y herramienta",
-    "minutes": 3,
-    "html": "<h1>Modelo, chat y herramienta</h1><div class=\"definitions\"><div class=\"definition\"><strong class=\"blue\">Modelo</strong><p>Procesa contexto y genera respuestas.<br><span class=\"muted\">Ejemplos: modelos de las familias GPT y Claude.</span></p></div><div class=\"definition\"><strong>Chat</strong><p>Una interfaz de conversación.<br><span class=\"muted\">Puede conversar y también dar acceso a un agente.</span></p></div><div class=\"definition\"><strong class=\"accent\">Herramienta</strong><p>Una operación que el sistema puede ejecutar.<br><span class=\"muted\">Leer archivos, ejecutar Python, consultar una API.</span></p></div></div>",
-    "notes": "Usar un mismo ejemplo: pedir una explicación de energía solar, leer NASA, ejecutar un cálculo. Chat no determina autonomía. Separar modelo, producto e interfaz.",
-    "sources": [
-      "https://www.anthropic.com/engineering/building-effective-agents",
-      "https://artificialanalysis.ai/methodology"
-    ]
-  },
-  {
-    "title": "Workflow y agente",
-    "minutes": 2,
-    "html": "<h1>Workflow y agente</h1><h3>Workflow · el recorrido está definido</h3><div class=\"steps\"><span>Leer datos</span><i>→</i><span>Validar</span><i>→</i><span>Calcular</span><i>→</i><span>Graficar</span></div><h3 class=\"accent\">Agente · decide el siguiente paso</h3><div class=\"steps loop\"><span>Objetivo</span><i>→</i><span>Decisión</span><i>→</i><span>Herramienta</span><i>→</i><span>Resultado</span><i>↺</i></div><p class=\"lead\">El agente puede construir y utilizar workflows.</p><p class=\"muted\">Los pasos conocidos pueden ejecutarse como programas reproducibles.</p>",
-    "notes": "El agente adapta el recorrido a lo que encuentra. El workflow predefine orden y condiciones. En la demo el agente crea un programa; después el programa calcula sin llamar al LLM al mover cada control.",
-    "sources": [
-      "https://www.anthropic.com/engineering/building-effective-agents"
-    ]
-  },
-  {
-    "title": "El arnés del agente",
-    "minutes": 2,
-    "html": "<h1>El arnés del agente</h1><p class=\"lead\">El software que coordina el modelo y la ejecución.</p><div class=\"harness\"><div><h3 class=\"blue\">Modelo</h3><p>Recibe contexto.<br>Propone respuestas<br>y acciones.</p></div><div class=\"hub\"><h2>Arnés</h2><p>Contexto · ciclo de trabajo<br>herramientas · permisos<br>resultados · sesión</p></div><div class=\"tool-list\"><p>Archivos y carpetas</p><p>Terminal y Python</p><p>Servicios y conectores</p><p>Navegador e interfaces</p></div></div><p class=\"arrow-label\">Decidir → ejecutar → observar → continuar</p><p class=\"closing\">El acceso depende del entorno, las herramientas conectadas y los permisos.</p>",
-    "notes": "Harness se traduce como arnés. El modelo propone una llamada; el software ejecuta la herramienta y devuelve el resultado. Capacidades gráficas requieren la extensión adecuada: no afirmar que OpenCode trae todas las herramientas activadas.",
-    "sources": [
-      "https://opencode.ai/docs/tools/",
-      "https://learn.chatgpt.com/docs/codex/cli"
-    ]
-  },
-  {
-    "title": "Producto, interfaz y entorno",
-    "minutes": 2,
-    "html": "<h1>Producto, interfaz y entorno</h1><table class=\"matrix\"><thead><tr><th>Capa</th><th>Ejemplos</th><th>Qué elegimos</th></tr></thead><tbody><tr><td>Modelo</td><td>GPT · Claude · modelos abiertos</td><td>Capacidad, velocidad y coste</td></tr><tr><td>Producto / arnés</td><td>OpenCode · Claude Code · Codex</td><td>Cómo organiza y ejecuta el trabajo</td></tr><tr><td>Interfaz</td><td>Desktop · terminal · editor · web</td><td>Desde dónde lo dirigimos</td></tr><tr><td>Entorno</td><td>Tu computador · servidor · cloud</td><td>Dónde están archivos y programas</td></tr></tbody></table><p class=\"closing\">La interfaz no determina la autonomía. Un agente local puede usar un modelo alojado en cloud.</p>",
-    "notes": "Distinguir dónde corre el arnés y las herramientas de dónde se ejecuta la inferencia. Cloud es un entorno; no una familia de modelos. GPT es una familia; ChatGPT es un producto. Claude nombra tanto la aplicación como una familia.",
-    "sources": [
-      "https://opencode.ai/docs/",
-      "https://code.claude.com/docs/en/overview",
-      "https://learn.chatgpt.com/docs/cloud"
-    ]
-  },
-  {
-    "title": "Herramientas que amplían el trabajo",
-    "minutes": 2,
-    "html": "<h1>Herramientas que amplían el trabajo</h1><div class=\"tool-grid\"><article><h3>Archivos</h3><p>Leer datos, crear código, escribir reportes.</p></article><article><h3>Terminal y programas</h3><p>Instalar librerías, ejecutar y comprobar.</p></article><article><h3>Python y librerías</h3><p>pandas para datos · Plotly para gráficos.</p></article><article><h3>Servicios y APIs</h3><p>NASA, USGS y aplicaciones conectadas.</p></article><article><h3>Navegador e interfaces gráficas</h3><p>Inspeccionar e interactuar con aplicaciones.</p></article><article><h3>Workflows y productos específicos</h3><p>n8n y aplicaciones para pasos ya resueltos.</p></article></div><p class=\"closing\">Conocer informática permite dar mejores instrucciones y verificar resultados.</p>",
-    "notes": "Con agentes y herramientas generales podemos construir muchas soluciones. Un producto puede ahorrar pasos o integraciones. No prometer reemplazar servicios externos, datos con licencia o infraestructura solo con un agente. Mostrar documentación de una librería.",
-    "sources": [
-      "https://opencode.ai/docs/tools/",
-      "https://docs.n8n.io/advanced-ai/examples/understand-tools",
-      "https://pandas.pydata.org/docs/",
-      "https://plotly.com/python/"
-    ]
-  },
-  {
-    "title": "LLMs: tokens, contexto y generación",
-    "minutes": 2,
-    "html": "<h1>Tokens, contexto y generación</h1><p class=\"lead\">El texto se convierte en tokens. El modelo genera una continuación paso a paso.</p><div class=\"token-line\" aria-label=\"Fragmentos conceptuales, no tokenización real\"><span>Analiza</span><span> estos</span><span> datos</span><span> → …</span></div><div class=\"cols\"><article class=\"flat\"><h3>Contexto</h3><p>Instrucciones, documentos y resultados de herramientas.</p></article><article class=\"flat\"><h3>Transformer</h3><p>La atención relaciona elementos del contexto.</p></article><article class=\"flat\"><h3>Verificación</h3><p>Una respuesta convincente puede contener errores.</p></article></div><p class=\"closing\">Entrenamiento: aprender parámetros. Inferencia: usar el modelo con un contexto concreto.</p>",
-    "notes": "Mantenerlo intuitivo. El dibujo es conceptual; no es un tokenizer real. Un token puede ser parte de una palabra. No desarrollar matemáticas de atención. Verificar cálculos con el programa y la fuente.",
-    "sources": [
-      "https://arxiv.org/abs/1706.03762",
-      "https://artificialanalysis.ai/methodology"
-    ]
-  },
-  {
-    "title": "Elegir modelo según la tarea",
-    "minutes": 2,
-    "html": "<h1>Elegir modelo según la tarea</h1><p class=\"statement\">Capacidad · velocidad · coste · herramientas</p><div class=\"cols\"><article class=\"flat\"><h3>Modelos de frontera</h3><p>Evaluar tareas difíciles y variantes de razonamiento.</p></article><article class=\"flat\"><h3>Modelos pequeños o rápidos</h3><p>Evaluar tareas acotadas y frecuentes.</p></article><article class=\"flat\"><h3>Modelos con pesos abiertos</h3><p>Comparar proveedores, licencias y opciones locales.</p></article></div><div class=\"links\"><a class=\"button primary\" href=\"https://artificialanalysis.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Artificial Analysis ↗</a><a class=\"button\" href=\"https://models.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">Models.dev ↗</a></div><p class=\"closing\">El benchmark orienta. La decisión se comprueba con nuestra tarea y nuestro arnés.</p>",
-    "notes": "Pasar a Artificial Analysis: inteligencia, velocidad, latencia y coste por tarea. Distinguir tarifa por token de coste de completar una tarea. No congelar ranking. Evaluar capacidad para llamar herramientas. Pesos abiertos no equivale a licencia open source.",
-    "sources": [
-      "https://artificialanalysis.ai/",
-      "https://artificialanalysis.ai/methodology",
-      "https://models.dev/"
-    ]
-  },
-  {
-    "title": "Qué cuesta una tarea con agentes",
-    "minutes": 2,
-    "html": "<h1>Qué cuesta una tarea con agentes</h1><p class=\"cost-formula\">Tokens de entrada + tokens de salida<br>+ herramientas y cómputo</p><div class=\"cost-list\"><p><strong>Contexto acumulado</strong><br><span class=\"muted\">Archivos, historial y resultados.</span></p><p><strong>Iteraciones</strong><br><span class=\"muted\">Muchas llamadas para una tarea.</span></p><p><strong>Modelo y razonamiento</strong><br><span class=\"muted\">Tarifas y uso por variante.</span></p><p><strong>Caché y ejecución</strong><br><span class=\"muted\">Dependen del proveedor y el entorno.</span></p></div><div class=\"links\"><a class=\"button primary\" href=\"../../../../tools/cost-calculator.html\" target=\"_blank\" rel=\"noopener noreferrer\">Calculadora de coste ↗</a></div><p class=\"closing\">La herramienta terminada puede calcular sin llamar otra vez al LLM.</p>",
-    "notes": "Una tarea puede llamar varias veces al modelo, reenviando contexto. Entrada y salida tienen tarifas distintas; caché y razonamiento varían. Usar precios ficticios claramente etiquetados en la calculadora y reemplazarlos por tarifas oficiales. Separar gasto de modelo de cómputo, herramientas y revisión humana.",
-    "sources": [
-      "https://artificialanalysis.ai/methodology",
-      "https://opencode.ai/docs/zen/"
-    ]
-  },
-  {
-    "title": "API, suscripción y modelo local",
-    "minutes": 2,
-    "html": "<h1>API, suscripción y modelo local</h1><table class=\"matrix\"><thead><tr><th>Forma de acceso</th><th>Cómo se paga</th><th>Qué revisar</th></tr></thead><tbody><tr><td>API</td><td>Tokens / operaciones</td><td>Proveedor, saldo y límites</td></tr><tr><td>Suscripción</td><td>Cuota con uso incluido</td><td>Cuotas, modelos y arnés compatible</td></tr><tr><td>Oferta gratuita</td><td>Sin coste bajo condiciones</td><td>Disponibilidad y duración</td></tr><tr><td>Modelo local</td><td>Hardware, memoria y energía</td><td>Capacidad del equipo</td></tr></tbody></table><p class=\"small muted\" style=\"margin-top:25px\">Referencia al 6 oct. 2026: OpenCode Go USD 10/mes · Warp Free USD 0/mes para la terminal. El uso de IA tiene condiciones y límites.</p><p class=\"closing\">Una suscripción no equivale automáticamente a crédito de API ni a uso ilimitado.</p>",
-    "notes": "Abrir precios oficiales en vivo. Warp gratis como terminal no equivale a inferencia ilimitada gratis. Las suscripciones de proveedores no habilitan cualquier arnés. Software open source, pesos abiertos y servicio de inferencia gratuito son conceptos diferentes.",
-    "sources": [
-      "https://opencode.ai/go/",
-      "https://opencode.ai/docs/zen/",
-      "https://www.warp.dev/pricing",
-      "https://learn.chatgpt.com/pricing/",
-      "https://claude.com/pricing"
-    ]
-  },
-  {
-    "title": "OpenCode Desktop: un proyecto de trabajo",
-    "minutes": 1,
-    "html": "<h1>OpenCode Desktop</h1><div class=\"split\"><div><p class=\"lead\">Una carpeta de proyecto.<br>Un modelo disponible.<br>Un objetivo verificable.</p><p class=\"muted\">Primero inspeccionar y proponer.<br>Después ejecutar y revisar.</p><div class=\"links\"><a class=\"button\" href=\"https://opencode.ai/download\" target=\"_blank\" rel=\"noopener noreferrer\">Descarga oficial ↗</a></div></div><pre class=\"workspace\">solar/starter/\n├── BRIEF.md\n├── data/\n│   ├── lima-2025.json\n│   ├── arequipa-2025.json\n│   ├── piura-2025.json\n│   └── sources.json\n└── … lo construimos hoy</pre></div><p class=\"closing\">Desktop es la interfaz; el modelo puede venir de un proveedor remoto.</p>",
-    "notes": "Abrir SOLO demos/solar/starter en OpenCode Desktop. Elegir un modelo gratuito disponible en el selector tras probarlo. Identificar carpeta, proveedor y modelo. La referencia está fuera de starter.",
-    "sources": [
-      "https://opencode.ai/download",
-      "https://opencode.ai/docs/models/",
-      "https://opencode.ai/docs/zen/"
-    ]
-  },
-  {
-    "title": "Warp, shell y agentes de terminal",
-    "minutes": 1,
-    "html": "<h1>Warp, shell y agentes</h1><div class=\"cols\"><article class=\"flat\"><h3>Terminal</h3><p>Warp</p><p class=\"small muted\">Alternativas: Ghostty<br>y Windows Terminal.</p></article><article class=\"flat\"><h3>Shell</h3><p>zsh · bash · PowerShell</p><p class=\"small muted\">Interpreta los comandos<br>y organiza su ejecución.</p></article><article class=\"flat\"><h3>Agentes</h3><p>OpenCode<br>Claude Code · Codex</p><p class=\"small muted\">Pueden trabajar desde<br>una terminal compatible.</p></article></div><div class=\"steps\" style=\"margin-top:40px\"><span>Carpeta</span><i>→</i><span>Entorno virtual</span><i>→</i><span>Librerías</span><i>→</i><span>Programa</span></div><p class=\"closing\">Warp es nuestra terminal de trabajo. Sus funciones de IA son una opción adicional.</p>",
-    "notes": "Mostrar Warp unos minutos: pwd / ls, python --version y ejecutar el programa. Mencionar claude y codex como dos agentes de terminal además de OpenCode. No dar una clase de shell completa. Shell, terminal y modelo son distintos.",
-    "sources": [
-      "https://docs.warp.dev/",
-      "https://ghostty.org/docs",
-      "https://learn.microsoft.com/en-us/windows/terminal/",
-      "https://code.claude.com/docs/en/overview",
-      "https://learn.chatgpt.com/docs/codex/cli"
-    ]
-  },
-  {
-    "title": "Calculadora solar con NASA",
-    "minutes": 1,
-    "html": "<h1>Calculadora solar con NASA</h1><div class=\"split\"><div><h2 class=\"demo-title\">¿Cómo cambia la producción entre Lima, Arequipa y Piura?</h2><p>365 días de 2025 por ciudad.<br>Una demanda elegida por nosotros.<br>Potencia y pérdidas como supuestos.</p><p class=\"small muted\">NASA POWER · superficie horizontal<br>kWh/m²/día</p></div><div class=\"demo-result\"><h3 class=\"accent\">Construimos una herramienta</h3><ul><li>Lectura de datos públicos</li><li>Análisis con pandas</li><li>Gráficos con Plotly</li><li>Comparación y cálculo reproducible</li></ul></div></div><div class=\"links\"><a class=\"button primary\" href=\"../../../../demos/solar/reference/output/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">Ver resultado de referencia ↗</a><a class=\"button\" href=\"../../../../demos/solar/starter/BRIEF.md\" target=\"_blank\" rel=\"noopener noreferrer\">Brief y datos ↗</a></div>",
-    "notes": "Pedir inspección, verificación de unidades y plan antes de ejecutar. Modelo educativo: kWp por horas solares equivalentes por performance ratio. Diferenciar los datos de NASA de nuestros supuestos. No incluye inclinación, sombras, baterías ni diseño eléctrico. Datos archivados para independencia de la API durante clase.",
-    "sources": [
-      "https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/"
-    ]
-  },
-  {
-    "title": "Alternativas de demo",
-    "appendix": true,
-    "minutes": 0,
-    "html": "<h1>Alternativas de demo</h1><table class=\"matrix\"><thead><tr><th>Problema</th><th>Datos y librerías</th><th>Resultado</th></tr></thead><tbody><tr><td><strong>Energía solar</strong></td><td>NASA POWER<br>pandas · Plotly</td><td>Comparar ciudades,<br>demanda y potencia</td></tr><tr><td>Sismos y distancia</td><td>USGS<br>pandas · Plotly · pyproj</td><td>Mapa, filtros y eventos<br>próximos a un punto</td></tr><tr><td>Planificar una ruta</td><td>OpenStreetMap<br>OSMnx · NetworkX</td><td>Ruta y distancias<br>sobre una red real</td></tr></tbody></table><p class=\"closing\">Solar y sismos tienen datos archivados. La ruta requiere más preparación.</p>",
-    "notes": "Apéndice opcional. Solar es la base provisional. Sismos tiene datos reales y brief, aún sin herramienta completa. OpenStreetMap añade variabilidad de consultas y dependencias. Una sola demo central en la sesión.",
-    "sources": [
-      "https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/",
-      "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
-      "https://osmnx.readthedocs.io/"
-    ]
-  },
-  {
-    "title": "Revisar el trabajo del agente",
-    "appendix": true,
-    "minutes": 0,
-    "html": "<h1>Revisar el trabajo del agente</h1><div class=\"definitions\"><div class=\"definition\"><strong>Fuente</strong><p>¿Qué datos utilizó? ¿De cuándo son? ¿Qué unidades tienen?</p></div><div class=\"definition\"><strong class=\"blue\">Cálculo</strong><p>Comprobar un día y un mes. Separar datos de supuestos.</p></div><div class=\"definition\"><strong class=\"accent\">Resultado</strong><p>Abrir la herramienta. Cambiar un control. Revisar su comportamiento.</p></div></div><p class=\"closing\">En este modelo lineal, duplicar la potencia debe duplicar la producción.</p>",
-    "notes": "Comparar 1 de enero con la fuente y la tabla. Enero tiene 31 días: un promedio mensual no es un total. Pedir una modificación y revisar de nuevo. Guardar código permite reproducir y continuar.",
-    "sources": []
-  },
-  {
-    "title": "Páginas para tener a mano",
-    "appendix": true,
-    "minutes": 0,
-    "html": "<h1>Páginas para tener a mano</h1><div class=\"tool-grid\"><article><h3><a href=\"https://artificialanalysis.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Artificial Analysis ↗</a></h3><p>Capacidad, velocidad, latencia y coste.</p></article><article><h3><a href=\"https://models.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">Models.dev ↗</a></h3><p>Modelos y proveedores.</p></article><article><h3><a href=\"https://opencode.ai/docs/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenCode Docs ↗</a></h3><p>Modelos, herramientas y permisos.</p></article><article><h3><a href=\"https://www.warp.dev/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">Precios oficiales ↗</a></h3><p>Límites, cuota y consumo adicional.</p></article><article><h3><a href=\"https://pandas.pydata.org/docs/\" target=\"_blank\" rel=\"noopener noreferrer\">pandas ↗</a> · <a href=\"https://plotly.com/python/\" target=\"_blank\" rel=\"noopener noreferrer\">Plotly ↗</a></h3><p>Análisis y visualización.</p></article><article><h3><a href=\"https://power.larc.nasa.gov/\" target=\"_blank\" rel=\"noopener noreferrer\">NASA POWER ↗</a> · <a href=\"https://earthquake.usgs.gov/\" target=\"_blank\" rel=\"noopener noreferrer\">USGS ↗</a></h3><p>Datos públicos y documentación.</p></article></div>",
-    "notes": "Recursos para compartir. Lista completa en docs/sources.md. Consultar precios y rankings en vivo.",
-    "sources": [
-      "https://artificialanalysis.ai/",
-      "https://models.dev/",
-      "https://opencode.ai/docs/",
-      "https://www.warp.dev/pricing",
-      "https://pandas.pydata.org/docs/",
-      "https://plotly.com/python/",
-      "https://power.larc.nasa.gov/",
-      "https://earthquake.usgs.gov/"
-    ]
-  }
+make('Trabajar con agentes',1,`
+ <div class="cover-layout"><div><p class="course-name">AI for Engineers and Scientists</p><h1>Trabajar<br>con <span class="gradient">agentes.</span></h1><p class="cover-lead">Una idea, datos reales<br>y una herramienta que funciona.</p><div class="brand-row">${chip('opencode','OpenCode')}${chip('claude','Claude Code')}${chip('codex','Codex')}</div><p class="byline">Jean Pierre Mandujano <span>Cohorte 01</span></p></div>
+ <div class="cover-result"><div class="result-head">${logo('nasa','NASA POWER')}<span>El resultado de hoy</span><i class="status-dot"></i></div><h2>Tres ciudades.<br>Una decisión de ingeniería.</h2><div data-chart="cover"></div><div class="mini-stats"><span><strong>1.095</strong>datos diarios</span><span><strong>3</strong>ciudades</span><span><strong>2025</strong>año completo</span></div></div></div>`,
+ 'Dejar la portada mientras llegan. Apertura completa: cinco minutos. El gráfico usa los promedios reales de NASA POWER. Mostrar la promesa: construir y verificar una herramienta con un agente, sin recorrer el curso.',
+ ['https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/'],
+ {idea:'Mostrar desde el inicio qué vamos a construir.',interaction:'Las curvas anticipan la demo con datos reales.',focus:'Apertura breve. El protagonismo lo tiene el resultado.'},'cover'),
+
+make('Jean Pierre Mandujano',2,`
+ <div class="profile-layout"><div class="profile-visual"><img class="portrait" src="${ASSETS}JeanPierre.webp" alt="Jean Pierre Mandujano"><span class="portrait-caption">Founder de DeepSkill</span></div><div class="profile-copy"><p class="eyebrow">Consultoría, arquitectura y dirección técnica</p><h1>Jean Pierre<br>Mandujano</h1><p class="profile-main">Lidero transformaciones de arquitectura y equipos de ingeniería en diferentes empresas.</p><div class="profile-lines"><p><span>Hoy</span>DeepSkill: proyectos y operación con agentes.</p><p><span>Formación</span>Coach ICPC y entrenamiento técnico.</p></div><div class="profile-links">${link('https://github.com/manduinca','GitHub / manduinca','profile-link')}${link('https://www.linkedin.com/in/jean-pierre-mandujano','LinkedIn','profile-link')}${link('https://www.deepskill.space/','DeepSkill','profile-link')}</div></div></div>`,
+ 'Presentar el trabajo actual como consultor de arquitectura y líder técnico, declarado por JP. Contar un problema de transformación y cómo lo resolvió. Foco en DeepSkill. Deep Pit queda como antecedente si surge en la conversación. No atribuir título universitario ni inventar nombres de clientes de consultoría.',
+ ['https://www.deepskill.space/','https://github.com/manduinca','https://www.linkedin.com/in/jean-pierre-mandujano'],
+ {idea:'Posicionar tu experiencia actual, con acceso a tus perfiles.',interaction:'Los enlaces abren GitHub, LinkedIn y la empresa.',focus:'Podemos precisar sectores o casos de consultoría que quieras contar.'},'profile-slide'),
+
+make('DeepSkill: una empresa que trabaja con agentes',2,`
+ <div class="company-title"><h1>DeepSkill</h1><p>Construimos software.<br><span class="gradient">Trabajamos con agentes.</span></p>${link('https://www.deepskill.space/','deepskill.space')}</div>
+ <div class="company-layout"><div class="service-menu"><button data-service="0" aria-pressed="true"><span>01</span>Arquitectura y consultoría</button><button data-service="1" aria-pressed="false"><span>02</span>Desarrollo de productos</button><button data-service="2" aria-pressed="false"><span>03</span>IA y automatización</button><button data-service="3" aria-pressed="false"><span>04</span>Formación de talento</button></div><div class="service-detail" id="service-detail"></div></div>
+ <div class="talent-strip"><span class="talent-label">Talento de<br><strong>DeepSkill</strong></span><figure><img src="${ASSETS}ElvisCapia.webp" alt="Elvis Capia"><figcaption>Elvis Capia<small>Coach ICPC</small></figcaption></figure><figure><img src="${ASSETS}RacsoGalvan.webp" alt="Racsó Galvan"><figcaption>Racsó Galvan<small>Finalista mundial ICPC</small></figcaption></figure><figure><img src="${ASSETS}EmanuelSoto.png" alt="Emanuel Soto"><figcaption>Emanuel Soto<small>Finalista mundial ICPC</small></figcaption></figure></div>`,
+ 'DeepSkill opera con agentes según JP. Los servicios incluyen arquitectura, desarrollo, IA y formación. Casos: Astay Systems (Cloud Assessment), ISC Platform, Haul Sight co-desarrollado con IMSS, Python para Ingenieros en Cerro Verde vía Tecsup y entrenamientos en UNI. No convertir propuestas en proyectos ejecutados. Seleccionar uno o dos servicios, sin consumir toda la clase.',
+ ['https://www.deepskill.space/','https://www.deepskill.space/enterprise'],
+ {idea:'Una presentación comercial concreta: servicios, casos y equipo.',interaction:'Seleccionar un servicio cambia el ejemplo y el proyecto de referencia.',focus:'Los casos ejecutados están separados de propuestas y de referencias de terceros.'},'company-slide'),
+
+make('Modelo, chat y herramienta',3,`
+ <h1>Modelo, chat y herramienta</h1><p class="slide-lead">El mismo pedido. Tres piezas diferentes.</p>
+ <div class="concept-layout"><div class="concept-selector"><button data-concept="0" aria-pressed="true"><span class="concept-num">01</span><strong>Modelo</strong><small>Procesa el contexto y genera.</small></button><button data-concept="1" aria-pressed="false"><span class="concept-num">02</span><strong>Chat</strong><small>La interfaz de conversación.</small></button><button data-concept="2" aria-pressed="false"><span class="concept-num">03</span><strong>Herramienta</strong><small>Una operación que se ejecuta.</small></button></div><div class="concept-stage" id="concept-stage"></div></div>
+ <p class="footnote">Una interfaz de chat también puede dar acceso a un agente.</p>`,
+ 'Usar el mismo objetivo para las tres definiciones. El chat es interfaz, no una medida de autonomía. El modelo no ejecuta directamente el programa: el arnés procesa las llamadas a herramientas. Los ejemplos son esquemas, no llamadas reales a un modelo.',
+ ['https://www.anthropic.com/engineering/building-effective-agents'],
+ {idea:'Separar capacidad, interfaz y ejecución.',interaction:'Clic en Modelo, Chat o Herramienta con el mismo problema solar.',focus:'Una sola frase por concepto, apoyada por un ejemplo visual.'}),
+
+make('Workflow y agente',2,`
+ <h1>Workflow y agente</h1><p class="slide-lead">¿Quién decide el siguiente paso?</p>${tabs('flow-mode',['Workflow','Agente'])}
+ <div class="flow-stage"><div class="flow-track" id="flow-track"></div><div class="flow-result"><span class="live-label">Ejemplo conceptual</span><h2 id="flow-title"></h2><p id="flow-description"></p><div class="flow-log" id="flow-log" aria-live="polite"></div></div></div>
+ <div class="interaction-bar"><button class="action" id="flow-step">Ver siguiente paso</button><button class="quiet" id="flow-reset">Reiniciar</button><label class="check"><input id="flow-missing" type="checkbox">La fuente devuelve datos incompletos</label></div>
+ <p class="footnote">El agente puede construir un workflow. El programa terminado puede ejecutarse sin LLM.</p>`,
+ 'Recorrer dos pasos, luego activar el caso de datos incompletos. El workflow usa reglas previamente definidas; el agente decide cómo responder a lo que encuentra. La ilustración no ejecuta un LLM y no mide capacidad de un producto.',
+ ['https://www.anthropic.com/engineering/building-effective-agents'],
+ {idea:'Mostrar la diferencia entre recorrido definido y decisiones adaptativas.',interaction:'Cambiar modo, avanzar pasos y activar datos incompletos.',focus:'Evitar la idea de que toda automatización necesita un agente.'}),
+
+make('El arnés del agente',2,`
+ <h1>El arnés del agente</h1><p class="slide-lead">El software que convierte decisiones en acciones.</p>
+ <div class="harness-layout"><button class="harness-node" data-harness="model">${logo('gpt','Modelo GPT')}<strong>Modelo</strong><small>Contexto y decisiones</small></button><div class="connector-line"><span>contexto / decisión</span></div><div class="harness-core"><span class="eyebrow">Arnés</span><h2>Coordina<br>el trabajo.</h2><div class="harness-chip-row">${chip('opencode','OpenCode')}${chip('codex','Codex')}</div><p>Sesión, contexto y resultados.</p></div><div class="connector-line"><span>acción / resultado</span></div><div class="harness-tools"><button data-harness="files">Archivos</button><button data-harness="terminal">Terminal y librerías</button><button data-harness="browser">Navegador e interfaces</button><button data-harness="permissions">Permisos y entorno</button></div></div>
+ <div class="harness-explainer" id="harness-explainer" aria-live="polite"></div>`,
+ 'Clic en terminal y navegador. Las capacidades dependen de las herramientas conectadas y del entorno. No afirmar que todos los arneses incluyen control gráfico por defecto. El arnés aporta el ciclo de ejecución, la sesión y los permisos.',
+ ['https://opencode.ai/docs/tools/','https://learn.chatgpt.com/docs/codex/cli'],
+ {idea:'Hacer visible la pieza que rodea al modelo.',interaction:'Cada componente explica qué aporta y qué necesita.',focus:'El modelo remoto y las herramientas locales pueden trabajar juntos.'}),
+
+make('Producto, interfaz y entorno',2,`
+ <h1>Producto, interfaz y entorno</h1><p class="slide-lead">Un mapa para elegir dónde trabajar.</p>
+ <div class="product-map"><div class="map-level"><span class="level-label">Modelos</span><div class="brand-row">${chip('gpt','GPT')}${chip('claude','Claude')}${chip('gemini','Gemini')}${chip('deepseek','DeepSeek')}</div><p>La inferencia puede ejecutarse en un proveedor remoto o en tu equipo.</p></div><div class="map-level"><span class="level-label">Arneses</span><div class="product-row"><article>${logo('opencode','OpenCode')}<strong>OpenCode</strong><small>Terminal, desktop, editor</small></article><article>${logo('claude','Claude Code')}<strong>Claude Code</strong><small>Terminal y otras interfaces</small></article><article>${logo('codex','Codex')}<strong>Codex</strong><small>Terminal, app, cloud</small></article></div></div><div class="environment-strip"><div><span class="env-symbol">⌘</span><strong>Tu computador</strong><p>Carpetas, programas, herramientas.</p></div><div><span class="env-symbol">☁</span><strong>Servidor / cloud</strong><p>Un entorno remoto de ejecución.</p></div></div></div>`,
+ 'GPT es familia de modelos; ChatGPT es un producto. Claude nombra la aplicación y la familia. Cloud es entorno. Mostrar OpenCode como arnés independiente del proveedor. Este mapa no es una lista exhaustiva de productos.',
+ ['https://opencode.ai/docs/','https://code.claude.com/docs/en/overview','https://learn.chatgpt.com/docs/cloud'],
+ {idea:'Ordenar los nombres que suelen mezclarse.',interaction:'Los logos permiten reconocer modelos y arneses.',focus:'La interfaz no determina por sí sola la autonomía.'}),
+
+make('Las herramientas del computador',2,`
+ <h1>Las herramientas del computador</h1><p class="slide-lead">Conocerlas amplía lo que puedes pedir y comprobar.</p>
+ <div class="workbench"><div class="toolbelt"><button data-tool="0" aria-pressed="true">${logo('nasa','NASA')}<strong>APIs y datos</strong></button><button data-tool="1" aria-pressed="false">${logo('python','Python')}<strong>Python</strong></button><button data-tool="2" aria-pressed="false">${logo('pandas','pandas')}<strong>pandas</strong></button><button data-tool="3" aria-pressed="false">${logo('plotly','Plotly')}<strong>Plotly</strong></button><button data-tool="4" aria-pressed="false">${logo('n8n','n8n')}<strong>Workflows</strong></button><button data-tool="5" aria-pressed="false">${logo('warp','Warp')}<strong>Terminal / GUI</strong></button></div><div class="tool-preview" id="tool-preview"></div></div>
+ <p class="footnote">Un producto especializado puede ahorrar integración, configuración y mantenimiento.</p>`,
+ 'Seleccionar API, pandas y Plotly. Explicar que el modelo dirige herramientas reales y programas. Productos como n8n pueden ahorrar pasos. La computadora gráfica requiere una herramienta de control conectada al arnés.',
+ ['https://opencode.ai/docs/tools/','https://pandas.pydata.org/docs/','https://plotly.com/python/','https://docs.n8n.io/advanced-ai/examples/understand-tools'],
+ {idea:'Mostrar funciones y resultados, no una lista de nombres.',interaction:'Cada herramienta cambia el ejemplo de código o gráfico.',focus:'El programa y sus librerías siguen funcionando cuando termina el agente.'}),
+
+make('Tokens, contexto y generación',2,`
+ <h1>Tokens, contexto y generación</h1><p class="slide-lead">El modelo recibe contexto y genera una continuación.</p>
+ <div class="token-layout"><div class="context-sheet"><span class="eyebrow">Contexto</span><div class="context-item"><span>Instrucción</span>Compara el recurso solar.</div><div class="context-item"><span>Datos</span>NASA POWER, año 2025.</div><div class="context-item"><span>Herramienta</span>Promedios calculados con pandas.</div><p>Token: unidad de texto que procesa el modelo.<br>Atención: relaciona elementos del contexto.</p></div><div class="generation-stage"><span class="eyebrow">Generación paso a paso</span><div class="token-stream" id="token-stream"></div><button class="action" id="token-next">Generar siguiente fragmento</button><button class="quiet" id="token-reset">Reiniciar</button><p class="example-label">Fragmentos ilustrativos, sin tokenizador ni modelo en ejecución.</p></div></div>
+ <p class="footnote">Entrenamiento: aprender parámetros. Inferencia: usar esos parámetros con un contexto.</p>`,
+ 'Avanzar tres fragmentos. Aclarar que los fragmentos dibujados no corresponden al tokenizer real. Un token puede representar parte de una palabra. La atención es una introducción intuitiva, sin entrar en matemáticas.',
+ ['https://arxiv.org/abs/1706.03762'],
+ {idea:'Una explicación breve y visual de cómo se genera texto.',interaction:'Mostrar fragmentos de una continuación uno a uno.',focus:'No confundir la ilustración con una llamada real al modelo.'}),
+
+make('Elegir modelo según la tarea',2,`
+ <h1>Elegir modelo según la tarea</h1><div class="benchmark-layout"><div class="benchmark-copy">${chip('aa','Artificial Analysis')}<p class="big-copy">Capacidad,<br>velocidad<br>y <span class="accent">coste por tarea.</span></p><div class="metric-selector">${tabs('metric',['Capacidad','Velocidad','Coste'])}<p id="metric-explanation"></p></div>${link('https://artificialanalysis.ai/','Explorar los modelos','action-link')}${link('https://models.dev/','Models.dev')}</div><div class="browser-frame"><div class="browser-top"><i></i><i></i><i></i><span>artificialanalysis.ai</span></div><img id="benchmark-screen" src="${ASSETS}screens/aa-intelligence.png" alt="Gráfico real de inteligencia de Artificial Analysis"><div class="screen-caption">Captura del 6 oct. 2026. Abrimos los datos actuales en vivo.</div></div></div>
+ <p class="footnote">El benchmark orienta. La elección se comprueba con nuestra tarea y nuestro arnés.</p>`,
+ 'Seleccionar dos métricas y abrir Artificial Analysis. Su captura es real, fechada, y no sustituye consultar los datos actuales. Diferenciar precio por token de coste de completar una tarea. Modelos de frontera, rápidos y con pesos abiertos se comparan por tarea y herramientas.',
+ ['https://artificialanalysis.ai/','https://artificialanalysis.ai/methodology','https://models.dev/'],
+ {idea:'Mostrar dónde comparar con un gráfico real del mercado.',interaction:'Cambiar la métrica explicada y abrir el análisis actual.',focus:'No congelar un ranking como recomendación universal.'}),
+
+make('Qué cuesta una tarea con agentes',2,`
+ <h1>Qué cuesta una tarea con agentes</h1><p class="slide-lead">Contexto y vueltas de trabajo se acumulan.</p>
+ <div class="cost-layout"><div class="cost-controls"><label>Llamadas al modelo <strong id="cost-calls-label">10</strong><input id="cost-calls" type="range" min="1" max="30" value="10"></label><label>Entrada por llamada <strong id="cost-context-label">12.000 tokens</strong><input id="cost-context" type="range" min="1000" max="50000" step="1000" value="12000"></label><label class="check"><input id="cost-cache" type="checkbox" checked>50% de entrada leída de caché</label><p class="example-label">Tarifas ficticias por 1M tokens:<br>entrada $1, caché $0.20, salida $5.<br>1.200 tokens de salida por llamada.</p></div><div class="cost-display"><span class="eyebrow">Coste de esta tarea</span><output id="slide-cost-total">$0.132</output><div id="slide-cost-chart"></div></div></div>
+ <div class="bottom-row"><p class="footnote">Tamaño constante por llamada. La calculadora completa permite cambiar las tarifas.</p>${link('../../../../tools/cost-calculator.html','Calculadora completa','action-link')}</div>`,
+ 'Mover llamadas de 10 a 20 y observar el doble de coste. Cambiar el contexto y desactivar caché. Las tarifas son ficticias. Este modelo no incluye crecimiento de historial ni escritura de caché, impuestos o herramientas. La salida incluye los tokens de razonamiento facturados por el proveedor.',
+ ['https://artificialanalysis.ai/methodology','https://opencode.ai/docs/zen/'],
+ {idea:'Hacer tangible el coste acumulado de una tarea.',interaction:'Sliders de llamadas y contexto, más caché.',focus:'Todos los importes de este ejemplo son ilustrativos.'}),
+
+make('API, suscripción y modelo local',2,`
+ <h1>API, suscripción y modelo local</h1><p class="slide-lead">El software, el modelo y el consumo se pagan de formas distintas.</p>
+ <div class="access-selector">${tabs('access',['API','Suscripción','Oferta gratuita','Modelo local'])}</div><div class="access-stage" id="access-stage"></div>
+ <p class="footnote">Las cuotas y compatibilidades se revisan en el proveedor y en el arnés elegido.</p>`,
+ 'Elegir API y suscripción para explicar la diferencia. Luego mostrar gratis y local. API y suscripción son contratos de acceso distintos. Las ofertas gratuitas cambian. Un modelo local requiere hardware y energía. Revisar tarifas oficiales en clase.',
+ ['https://opencode.ai/docs/zen/','https://opencode.ai/go/','https://www.warp.dev/pricing','https://learn.chatgpt.com/pricing/','https://claude.com/pricing'],
+ {idea:'Ordenar cómo se contrata y consume el modelo.',interaction:'Cuatro formas de acceso, cada una con su flujo y límites.',focus:'Una suscripción no es automáticamente crédito de API.'}),
+
+make('OpenCode: nuestro proyecto de trabajo',1,`
+ <h1>${logo('opencode','OpenCode','heading-logo')}OpenCode</h1><div class="workspace-layout"><div><p class="big-copy">Abrimos una carpeta.<br>Elegimos un modelo.<br><span class="accent">Construimos y verificamos.</span></p><div class="workspace-options"><span>Desktop</span><span>Terminal</span><span>Editor</span></div>${link('https://opencode.ai/download','Descarga oficial','action-link')}<p class="example-label">Software gratuito. El coste de inferencia depende del modelo y del acceso elegido.</p></div><div class="project-window"><div class="browser-top"><i></i><i></i><i></i><span>Tu proyecto</span></div><div class="project-tree"><span class="folder">solar / starter</span><span>├── BRIEF.md</span><span>└── data /</span><span>　 ├── lima-2025.json</span><span>　 ├── arequipa-2025.json</span><span>　 ├── piura-2025.json</span><span>　 └── sources.json</span></div><div class="project-prompt"><span>Objetivo del agente</span>Inspecciona los datos, verifica las unidades y propón cómo construir la calculadora.</div></div></div>
+ <p class="footnote">El agente recibe el problema y los datos. Nosotros revisamos las decisiones y el resultado.</p>`,
+ 'Pasar a OpenCode Desktop real. La ventana de la diapositiva representa el proyecto y el brief, no una captura de OpenCode. Abrir solo starter. Identificar proveedor y modelo disponible. La referencia está fuera de la carpeta. Falta ensayar la reconstrucción con el modelo gratuito elegido.',
+ ['https://opencode.ai/download','https://opencode.ai/docs/models/','https://opencode.ai/docs/zen/'],
+ {idea:'Dar una forma concreta de comenzar a trabajar.',interaction:'El brief y los archivos son los mismos de la demo.',focus:'La interfaz del proyecto es esquemática. La ejecución real se muestra en la app.'}),
+
+make('Warp, shell y agentes de terminal',1,`
+ <h1>${logo('warp','Warp','heading-logo')}Warp, shell y agentes</h1>
+ <div class="terminal-layout"><div class="terminal-shell"><div class="terminal-title">${chip('warp','Warp')}<span>Secuencia ilustrativa de trabajo</span></div><pre id="terminal-output"></pre><button class="action" id="terminal-step">Ver siguiente comando</button><button class="quiet" id="terminal-reset">Reiniciar</button></div><div class="terminal-copy"><div class="terminal-layer"><span>Terminal</span><h2>Warp</h2><p>La superficie de trabajo.</p></div><div class="terminal-layer"><span>Shell</span><h2>zsh, bash, PowerShell</h2><p>Interpreta los comandos.</p></div><div class="terminal-layer"><span>Agentes</span><div class="brand-row">${chip('claude','Claude Code')}${chip('codex','Codex')}</div><p>También trabajan en terminal.</p></div><p class="example-label">Alternativas de terminal: Ghostty y Windows Terminal.</p></div></div>`,
+ 'Mostrar la secuencia ilustrativa, luego ejecutarla en Warp real. La diapositiva no ejecuta comandos. Terminal, shell y agente son capas distintas. Warp también ofrece funciones de IA, que son una opción adicional. Mencionar claude y codex como dos agentes CLI.',
+ ['https://docs.warp.dev/','https://ghostty.org/docs','https://learn.microsoft.com/en-us/windows/terminal/','https://code.claude.com/docs/en/overview','https://learn.chatgpt.com/docs/codex/cli'],
+ {idea:'Mostrar una terminal como herramienta cotidiana.',interaction:'Recorrer comandos de un entorno virtual y ejecución.',focus:'El terminal dibujado es una secuencia educativa, no una sesión real.'}),
+
+make('Calculadora solar con NASA',1,`
+ <div class="solar-heading"><h1>Una demanda.<br><span class="gradient">Tres recursos solares.</span></h1>${logo('nasa','NASA POWER')}</div>
+ <div class="solar-layout"><div class="solar-control">${tabs('solar-city',['Lima','Arequipa','Piura'])}<label>Potencia nominal <strong id="solar-power-label">1.0 kWp</strong><input id="solar-power" type="range" min=".2" max="4" step=".1" value="1"></label><div class="solar-stat"><span>Producción anual estimada</span><strong id="solar-annual"></strong><small>kWh, con performance ratio 0.80</small></div>${link('../../../../demos/solar/reference/output/index.html','Abrir la herramienta completa','action-link')}</div><div class="solar-plot"><div class="plot-header"><h3>Producción media diaria por mes</h3><span>kWh/día</span></div><div data-chart="solar"></div><p class="example-label">La línea discontinua representa una demanda elegida de 3 kWh/día.</p></div></div>
+ <p class="footnote">NASA POWER, 2025. Irradiación horizontal estimada. Potencia y rendimiento son supuestos.</p>`,
+ 'Cambiar ciudad o potencia durante treinta segundos y pasar a construir en el agente. Fuente real: 365 días por ciudad de 2025. Performance ratio 0.80 y demanda 3 son supuestos. No incluye inclinación, sombras ni almacenamiento. El gráfico calcula localmente sin llamar al modelo.',
+ ['https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/'],
+ {idea:'Cerrar los conceptos con una herramienta real e interactiva.',interaction:'Cambiar ciudad y potencia con datos NASA archivados.',focus:'Los controles son el resultado de software que vamos a construir.'}),
+
+make('Alternativas de demo',0,`
+ <h1>Alternativas de demo</h1><p class="slide-lead">Una fuente pública y un problema concreto.</p>
+ <div class="demo-options"><article>${logo('nasa','NASA')}<span class="option-number">01</span><h2>Recurso solar</h2><div class="demo-spark" data-chart="option-solar"></div><p>Ciudades, potencia y demanda.</p><small>NASA POWER, pandas, Plotly</small><span class="ready">Datos y referencia listos</span></article><article><span class="option-number">02</span><h2>Sismos y distancia</h2><div class="quake-chart" id="quake-preview"></div><p>Magnitud, profundidad y ubicación.</p><small>USGS, pandas, Plotly</small><span class="ready">Datos y brief listos</span></article><article><span class="option-number">03</span><h2>Rutas y redes</h2><div class="route-concept"><span>Origen</span><span class="route-line"></span><span>Destino</span></div><p>Rutas sobre una red vial.</p><small>OpenStreetMap, OSMnx, NetworkX</small><span class="pending">Pendiente de ensayo</span></article></div>`,
+ 'Apéndice opcional. Solar es la demo base. USGS tiene snapshot real de M4.5+ y brief, todavía sin herramienta terminada. La vista muestra la distribución real de magnitudes del snapshot. La ruta es un esquema de propuesta, no un cálculo ejecutado.',
+ ['https://power.larc.nasa.gov/','https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php','https://osmnx.readthedocs.io/'],
+ {idea:'Comparar opciones sin abrir tres demos durante la clase.',interaction:'Curvas solares y magnitudes reales del snapshot USGS.',focus:'Mantener una sola demo central.'}),
+
+make('Revisar el trabajo del agente',0,`
+ <h1>Revisar el trabajo del agente</h1><p class="slide-lead">Volvemos a la fuente y comprobamos un número.</p>
+ <div class="verify-layout"><div class="source-record"><span class="eyebrow">NASA POWER, Lima</span><h2>1 de enero de 2025</h2><code id="verify-source"></code><small>Dato original: kWh/m²/día</small>${link('../../../../demos/solar/starter/data/lima-2025.json','Abrir la fuente')}</div><div class="verification-calc"><span class="eyebrow">Modelo educativo</span><p class="example-label">Horas solares equivalentes = irradiación / (1 kW/m²)</p><div class="calc-equation" id="verify-equation"></div><button class="action" id="verify-double">Duplicar potencia</button><div class="verify-check" id="verify-check"></div></div></div>
+ <p class="footnote">La fuente aporta irradiación. Nosotros elegimos la potencia y el rendimiento.</p>`,
+ 'Comprobar el registro del 1 de enero y el cálculo con PR 0.80. Duplicar la potencia debe duplicar la producción en este modelo. Separar promedio mensual de total mensual, y cálculo anual de autonomía.',
+ ['https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/'],
+ {idea:'Verificación mínima con una fuente y una relación matemática.',interaction:'Duplicar potencia y comprobar la proporcionalidad.',focus:'Una respuesta convincente no sustituye revisar unidades y cálculos.'}),
+
+make('Páginas para tener a mano',0,`
+ <h1>Páginas para tener a mano</h1><div class="resource-grid">
+ <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener noreferrer">${logo('aa','Artificial Analysis')}<div><h3>Artificial Analysis</h3><p>Capacidad, velocidad y coste.</p></div><span>↗</span></a>
+ <a href="https://models.dev/" target="_blank" rel="noopener noreferrer">${logo('models','Models.dev')}<div><h3>Models.dev</h3><p>Modelos y proveedores.</p></div><span>↗</span></a>
+ <a href="https://opencode.ai/docs/" target="_blank" rel="noopener noreferrer">${logo('opencode','OpenCode')}<div><h3>OpenCode Docs</h3><p>Herramientas, modelos y permisos.</p></div><span>↗</span></a>
+ <a href="https://www.warp.dev/pricing" target="_blank" rel="noopener noreferrer">${logo('warp','Warp')}<div><h3>Precios y cuotas</h3><p>Consultar las condiciones actuales.</p></div><span>↗</span></a>
+ <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer">${logo('pandas','pandas')}<div><h3>pandas Docs</h3><p>Análisis y visualización.</p></div><span>↗</span></a>
+ <a href="https://power.larc.nasa.gov/" target="_blank" rel="noopener noreferrer">${logo('nasa','NASA')}<div><h3>NASA POWER</h3><p>Fuentes públicas y documentación.</p></div><span>↗</span></a></div>
+ <div class="company-cta"><div><strong>DeepSkill</strong><span>Arquitectura, software, IA y formación.</span></div>${link('https://www.deepskill.space/enterprise','Conversemos sobre tu equipo','action-link')}</div>`,
+ 'Compartir fuentes y enlaces. El enlace de pandas abre sus docs; Plotly está también en las fuentes. NASA y USGS están en el registro completo. La empresa queda visible con su oferta. Revisar tarifas y rankings en vivo.',
+ ['https://artificialanalysis.ai/','https://models.dev/','https://opencode.ai/docs/','https://www.warp.dev/pricing','https://pandas.pydata.org/docs/','https://plotly.com/python/','https://power.larc.nasa.gov/','https://earthquake.usgs.gov/'],
+ {idea:'Dejar un mapa de recursos y acceso a DeepSkill.',interaction:'Cada recurso abre su página oficial.',focus:'Los enlaces sirven para continuar y discutir proyectos.'})
 ];
+slides.forEach((slide,i)=>{slide.appendix=i>=15;slide.chapter=i<3?'DeepSkill':i<9?'Conceptos':i<14?'Herramientas y consumo':i===14?'Demo':'Recursos';});
 

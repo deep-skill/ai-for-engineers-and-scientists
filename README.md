@@ -5,17 +5,19 @@ Deep Skill's practical course on working with LLMs and agents. Cohort 01 materia
 ## Preview
 
 ```sh
-python3 -m http.server 8765 --bind 127.0.0.1
+npm run dev
 ```
 
-Open `http://localhost:8765/`.
+Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm dependencies to install. The server uses Node's built-in HTTP and filesystem modules, binds to localhost and reloads the presentation on file changes when **En vivo** is enabled.
 
 - Slides: `cohorts/01/sessions/01/index.html`
 - Teaching plan: `cohorts/01/sessions/01/instructor-guide.md`
 - Demo options: `docs/demo-options.md`
 - Cost calculator: `tools/cost-calculator.html`
 
-Slides: arrows / Space navigate, Home / End jump, F fullscreen, P shows speaker notes, O opens the slide index. Sources are linked from the relevant slide notes. Press Escape to close overlays. On the local server, L / En vivo toggles automatic reload when the slide source or styles change. Reload preserves the current slide. Disable it during a finished presentation.
+Slides: arrows / Space navigate, Home / End jump, F fullscreen, P shows speaker notes, O opens the slide index, R opens **Revisión**. The review panel contains the idea, interaction and discussion points for each slide; comments persist in this browser's local storage. Sources are linked from the relevant slide notes. Press Escape to close overlays. L / En vivo toggles automatic reload on file changes, preserving the current slide and review mode. Disable it during a finished presentation.
+
+The deck includes interactive concept diagrams, workflow steps, service cases, an illustrative token sequence, a cost calculator and a NASA comparison. These controls run locally in JavaScript; they do not call an LLM. Product logos and public screenshots have provenance in `assets/external-sources.json`. Definitions, diagrams and charts are editable HTML/CSS/JavaScript rather than flattened slides.
 
 ## Solar demo
 
@@ -56,4 +58,3 @@ tools/                          cost calculator and public-data refresh
 ```
 
 All API-model prices in the calculator are editable examples, not an actual provider tariff. The small subscription comparison is dated and links to official prices. No API keys or model subscriptions are needed to preview these teaching materials.
-
