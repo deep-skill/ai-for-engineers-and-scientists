@@ -1,6 +1,12 @@
 # AI for Engineers and Scientists
 
-Deep Skill's practical course on working with LLMs and agents. Cohort 01 materials, prepared on October 6, 2026. Slides and teaching notes are in Spanish.
+Deep Skill's practical course on working with LLMs and agents. Materials for cohort 01, October 2026. Slides and teaching notes are in Spanish.
+
+## Course planning
+
+The [course plan](docs/course-plan.md) is the source of truth for the agreed eight-session curriculum, October 2026 schedule and teaching status. Course ideation in `cofounder-agents` closed on October 8, 2026; all further class preparation and content management happen here.
+
+Original curriculum sources are preserved in [planning sources](docs/planning-sources/README.md), with source paths, repository revisions and SHA-256 hashes. The first class was delivered on October 6. Session 2, **Del chat al agente: contexto, RAG, tools y agentes**, now has an eight-slide presentation and practice guide; the dedicated Git lesson remains session 4.
 
 ## Preview
 
@@ -10,7 +16,11 @@ npm run dev
 
 Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm dependencies to install. The server uses Node's built-in HTTP and filesystem modules, binds to localhost and reloads the presentation on file changes when **En vivo** is enabled.
 
-- Slides: `cohorts/01/sessions/01/index.html`
+- Session 1 slides: `cohorts/01/sessions/01/index.html`
+- Session 2 slides: `cohorts/01/sessions/02/index.html`
+- Session 2 teaching guide: `cohorts/01/sessions/02/instructor-guide.md`
+- Session 2 practice: `materials/read.html?doc=session02-practice`
+- Course curriculum and schedule: `docs/course-plan.md`
 - Teaching plan: `cohorts/01/sessions/01/instructor-guide.md`
 - Demo options: `docs/demo-options.md`
 - Materials library, readable briefs and downloads: `index.html`
@@ -21,6 +31,8 @@ Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm depen
 Slides: arrows / Space navigate, Home / End jump, F fullscreen, P shows speaker notes, O opens the slide index, R opens **Revisión**. The review panel contains the idea, interaction and discussion points for each slide; comments persist in this browser's local storage. Sources are linked from the relevant slide notes. Press Escape to close overlays. L / En vivo toggles automatic reload on file changes, preserving the current slide and review mode. Disable it during a finished presentation.
 
 The deck introduces LLMs and Transformers, then opens OpenCode and Warp before explaining agent execution. It includes editable diagrams, a token/context budget, chat/workflow/agent comparisons, service cases, a cost calculator and a NASA comparison. These controls run locally in JavaScript; they do not call an LLM. Product logos and public screenshots have provenance in `assets/external-sources.json`. Definitions, diagrams and charts are editable HTML/CSS/JavaScript rather than flattened slides.
+
+Session 2 uses the archived USGS data from session 1. Its diagrams and controls explain context, the agent loop, local tools, HTTP APIs, API keys and remote MCP. The five-nearest-events reference runs Haversine locally in JavaScript on the original snapshot, outside the student starter. The practice asks students to generate a CSV, open it in Excel or Numbers and verify it; a fresh API capture is kept separate. DeepWiki, Microsoft Learn and the OAuth reference server are documented live-demo options, not connections executed by the page. RAG remains conceptual in the final half hour. The home page and both decks include class navigation. Session 2 reflows on smaller screens.
 
 ## Student materials
 
@@ -62,7 +74,8 @@ python3 tools/prepare_data.py
 
 ```text
 assets/                         official website logo, mentor photos, fonts
-cohorts/01/sessions/01/          HTML presentation and teacher notes
+cohorts/01/sessions/01/          session 1 HTML presentation and teacher notes
+cohorts/01/sessions/02/          session 2 HTML presentation, practice and notes
 demos/solar/starter/             student workspace: brief + public data
 demos/solar/reference/           teacher solution, separate from starter
 demos/earthquakes/starter/       geographic alternative

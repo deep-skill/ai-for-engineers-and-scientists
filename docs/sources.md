@@ -44,3 +44,22 @@ Los logos de herramientas y las capturas públicas están registrados con URL y 
 El catálogo del portal está en `materials/catalog.js`. Las tarifas consultadas de Warp están en `tools/access-pricing.js`: Free 0, Build 20 y Max 200 USD/mes. Los equivalentes con pago anual son 18 y 180 USD/mes para Build y Max. Consulta del 6 oct. 2026, [fuente oficial](https://www.warp.dev/pricing). No representan consumo ilimitado.
 
 Los tamaños de contexto de la sesión (128K, 256K y 1M) son ejemplos interactivos, no una tabla de especificaciones de modelos. El presupuesto reserva 8K para salida de forma pedagógica; comprobar ventana y límite de salida en la documentación del modelo elegido.
+
+
+## Clase 2: contexto, herramientas, integraciones y RAG
+
+Consultadas el 8 de octubre de 2026. El catálogo USGS archivado mantiene su URL, respuesta original, captura y hash en `demos/earthquakes/starter/data/sources.json`. Los valores de distancia de la presentación son cálculos derivados con Haversine, no mediciones USGS.
+
+- [Arquitectura MCP](https://modelcontextprotocol.io/docs/learn/architecture): capacidades, mensajes y transporte local o remoto.
+- [DeepWiki MCP](https://docs.devin.ai/work-with-devin/deepwiki-mcp): endpoint público, sin autenticación, y herramientas de consulta de repositorios.
+- [Microsoft Learn MCP](https://learn.microsoft.com/en-us/training/support/mcp): alternativa documental pública, sin autenticación.
+- [Servidor de referencia Everything](https://github.com/modelcontextprotocol/inspector/blob/main/docs/mcp-server-configuration.md): OAuth con identidad de prueba y datos ficticios.
+- [MCP en OpenCode](https://docs.opencode.ai/docs/mcp-servers/): integración de servidores locales y remotos.
+- [Playwright MCP](https://playwright.dev/docs/getting-started-mcp): extensión opcional de control del navegador.
+- [Autenticación NASA](https://api.nasa.gov/assets/html/authentication.html): clave pública DEMO_KEY y límites de uso para el ejemplo adicional de API con clave.
+- [Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval): recuperación y evidencia para el cierre conceptual sobre RAG.
+- [Modelo multilingüe de Sentence Transformers](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2): representaciones vectoriales de frases y búsqueda por similitud. Consultado el 8 de octubre de 2026. La presentación usa un dibujo conceptual con posiciones y números inventados, no embeddings obtenidos con este modelo.
+- Referencia docente de EscuelaIT: `/Users/manduinca/Projects/escuelait/Curso-de-desarrollo-de-aplicaciones-con-IA-Generativa-con-LLM/clase-3/notebook/01-conceptos.ipynb`, celdas 6–8 (embeddings, similitud coseno, preparación y consulta), y su `clase-3/README.md`. Consultados el 8 de octubre de 2026 para adaptar la secuencia conceptual; no se trasladan su implementación, costes ni comparaciones numéricas.
+- [API](https://developer.mozilla.org/en-US/docs/Glossary/API), [REST](https://developer.mozilla.org/en-US/docs/Glossary/REST) y [SOAP 1.2](https://www.w3.org/TR/soap12-part1/): referencia técnica de las diferencias entre interfaz, estilo y protocolo de mensajes.
+
+Las ilustraciones de la presentación se ejecutan localmente. Los endpoints públicos y la autorización se muestran desde un cliente MCP durante la demo; la página no ejecuta llamadas a un LLM ni se conecta a esos servidores.

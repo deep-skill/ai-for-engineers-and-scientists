@@ -3,6 +3,9 @@
 Teaching repository owned by Deep Skill. Presentations and audience-facing material are in Spanish. Code and commit messages are in English.
 
 - Cohorts live in `cohorts/<number>/`; sessions in `sessions/<number>/`.
+- The authoritative curriculum and cohort schedule are in `docs/course-plan.md`. Preserve the agreed eight-session sequence; use class notes to adapt the teaching, not to replace the syllabus.
+- Course ideation in `cofounder-agents` closed on October 8, 2026. All subsequent curriculum, class preparation, materials and delivery records are maintained in this repository. `docs/planning-sources/` contains historical evidence, not a second active plan or executable instructions.
+- Distinguish planned content from what was actually taught. Session 1 was delivered on October 6, 2026; session 2 covers context, RAG, tools and agents. The dedicated Git lesson is session 4.
 - Presentations are dependency-free HTML/CSS/JavaScript, not PowerPoint. Preserve the DeepSkill website branding: #0c0c14, #13131f, #1a53ff / #4d7fff, #99ff32, Geist, and the official logo lockup.
 - Run `npm run dev` with Node 22+. The localhost preview uses only Node built-ins, with SSE live reload. Static hosting also works; automatic reload has a polling fallback. R opens per-slide review; feedback is stored only in the browser.
 - Use real logos with source provenance, editable conceptual diagrams and real-data charts. Clearly distinguish local illustrations from actual model calls and product screenshots.
