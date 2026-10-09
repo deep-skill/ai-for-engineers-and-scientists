@@ -10,7 +10,7 @@ Este repositorio concentra el temario, la preparación y el registro del curso *
 - Horario: martes, jueves y sábados, de 20:00 a 22:00, hora de Perú (`America/Lima`).
 - Acceso a la grabación de cada sesión.
 
-El cronograma publicado se conserva en [published-course.ts](planning-sources/published-course.ts). El [alcance técnico](planning-sources/technical-scope.tex) confirma la secuencia de ocho sesiones. Sus cuatro módulos se mencionan sin nombres ni agrupación por sesión; no se les asigna una estructura adicional aquí.
+Este documento conserva el calendario y la secuencia acordados de ocho sesiones. Los documentos comerciales y los registros internos de planificación se mantienen fuera del repositorio público.
 
 ## Secuencia de sesiones
 
@@ -27,11 +27,11 @@ Los títulos de esta tabla se transcriben del cronograma publicado. El estado de
 | 7 | Martes 20 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
 | 8 | Jueves 22 de octubre | Proyecto integrador de ingeniería/minería | Pendiente de preparación. |
 
-El alcance técnico usa «Análisis de datos con IA: del dato al insight» y «Proyecto integrador de ingeniería/ciencias» para las sesiones 7 y 8. El posicionamiento del curso se amplió a ingeniería y ciencias; los casos de minería son una aplicación de ese alcance. Se conservan ambas formulaciones en las fuentes para evitar confundirlas con un cambio del orden de las clases.
+El posicionamiento del curso abarca ingeniería y ciencias; los casos de minería son una aplicación de ese alcance. Para las sesiones 7 y 8 también se usan las formulaciones «Análisis de datos con IA: del dato al insight» y «Proyecto integrador de ingeniería/ciencias», conservando el orden del cronograma.
 
 ## Decisiones de preparación que continúan vigentes
 
-La [referencia recuperada de Co-Founder Agents](planning-sources/cofounder-course-reference.md) y las instrucciones de [CLAUDE.md](../CLAUDE.md) registran las decisiones de trabajo:
+Las instrucciones de [CLAUDE.md](../CLAUDE.md) y las decisiones de preparación de este plan establecen:
 
 - Presentaciones en español, hechas en HTML, CSS y JavaScript con la identidad de DeepSkill, diagramas editables y ejemplos verificables.
 - En la primera sesión, hasta 30 minutos de diapositivas y el resto de trabajo en herramientas y demo. Ese límite fue una decisión específica de la sesión 1.
@@ -123,6 +123,6 @@ Fuentes consultadas el 8 de octubre de 2026: [API](https://developer.mozilla.org
 - `cohorts/01/sessions/<número>/`: presentación, guía docente y registro del dictado de cada clase.
 - `demos/`: prácticas, datos y referencias docentes separadas del material del alumno.
 - `materials/catalog.js` y Markdown de las guías: biblioteca y materiales de consulta.
-- `docs/planning-sources/`: copias históricas y procedencia del plan transferido; no se actualizan como otro temario.
+- Los antecedentes internos y comerciales se conservan de forma privada, fuera de este repositorio.
 
 Co-Founder Agents conserva una referencia de cierre hacia este proyecto. Las nuevas decisiones de contenido se registran aquí y, después de cada clase, se distingue lo preparado de lo efectivamente dictado.

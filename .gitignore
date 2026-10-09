@@ -13,3 +13,6 @@ demos/*/starter/output/
 demos/*/starter/.venv/
 *.log
 
+
+# Keep internal planning snapshots outside the public course repository.
+docs/planning-sources/

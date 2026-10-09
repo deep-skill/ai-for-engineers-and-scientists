@@ -6,7 +6,7 @@ Deep Skill's practical course on working with LLMs and agents. Materials for coh
 
 The [course plan](docs/course-plan.md) is the source of truth for the agreed eight-session curriculum, October 2026 schedule and teaching status. Course ideation in `cofounder-agents` closed on October 8, 2026; all further class preparation and content management happen here.
 
-Original curriculum sources are preserved in [planning sources](docs/planning-sources/README.md), with source paths, repository revisions and SHA-256 hashes. The first class was delivered on October 6. Session 2, **Del chat al agente: contexto, RAG, tools y agentes**, now has an eight-slide presentation and practice guide; the dedicated Git lesson remains session 4.
+Internal planning records are maintained privately; this repository contains the public curriculum and teaching materials. The first class was delivered on October 6. Session 2, **Del chat al agente: contexto, RAG, tools y agentes**, now has an eight-slide presentation and practice guide; the dedicated Git lesson remains session 4.
 
 ## Preview
 
