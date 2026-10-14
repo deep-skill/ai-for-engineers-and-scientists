@@ -1,0 +1,13 @@
+{
+  "source_url": "https://www.anthropic.com/engineering/redesigning-source-control",
+  "published_at": "2026-10-13",
+  "retrieved_at": "2026-10-13T22:18:54Z",
+  "unit": "code changes merged per day",
+  "scope": "Anthropic monorepo",
+  "original_excerpt": "In May 2026, Anthropic averaged around 2,500 code changes merged per day; as of September, we merged over 30,000 per day.",
+  "observations": [
+    {"period": "2026-05", "value": 2500, "qualifier": "approximately"},
+    {"period": "2026-09", "value": 30000, "qualifier": "strict lower bound"}
+  ],
+  "chart_note": "September bar is drawn to the reported lower bound of 30000. The reported value is greater, not exactly 30000. These are source-reported figures, not independently measured course data."
+}

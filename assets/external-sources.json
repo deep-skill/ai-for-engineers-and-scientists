@@ -134,6 +134,17 @@
       "captured_at": "2026-10-06T23:58:36.371823+00:00",
       "sha256": "dac1b0c6948b194977997e60dbeb2ac5df591a63285d7cc17de1887a60748e93",
       "bytes": 41762
+    },
+    {
+      "file": "logos/git.svg",
+      "url": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg",
+      "retrieved_at": "2026-10-13T22:18:54Z",
+      "sha256": "1080a5430edb6278dc03e4b04efc16c8bed5b943408d648ad721a28836814220",
+      "bytes": 858,
+      "creator": "Jason Long",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "source_page": "https://git-scm.com/community/logos"
     }
   ]
 }

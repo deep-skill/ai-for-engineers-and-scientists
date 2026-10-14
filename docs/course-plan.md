@@ -16,12 +16,12 @@ Este documento conserva el calendario y la secuencia acordados de ocho sesiones.
 
 Los títulos de esta tabla se transcriben del cronograma publicado. El estado del dictado se actualiza con confirmación del docente, no a partir de que exista una presentación.
 
-| Sesión | Fecha de 2026 | Tema acordado | Estado al 8 de octubre |
+| Sesión | Fecha de 2026 | Tema acordado | Estado registrado |
 |---|---|---|---|
 | 1 | Martes 6 de octubre | ¿Qué es realmente un LLM? | Dictada, confirmado por JP. [Materiales](../cohorts/01/sessions/01/index.html) y [guía preparada](../cohorts/01/sessions/01/instructor-guide.md). |
 | 2 | Jueves 8 de octubre | Del chat al agente: contexto, RAG, tools y agentes | Presentación y guías preparadas. Dictado por confirmar. [Materiales](../cohorts/01/sessions/02/index.html). |
-| 3 | Sábado 10 de octubre | Cultura de cómputo: sistema operativo, archivos y terminal | Pendiente de preparación. |
-| 4 | Martes 13 de octubre | Git y tu primer agente en un proyecto real | Pendiente de preparación. |
+| 3 | Sábado 10 de octubre | Cultura de cómputo: sistema operativo, archivos y terminal | Dictada, confirmado por JP el 11 de octubre. Usó la presentación y ejemplos existentes. [Materiales](../cohorts/01/sessions/03/index.html). |
+| 4 | Martes 13 de octubre | Git y tu primer agente en un proyecto real | Presentación y guía preparadas. Sesión adaptada a 90 minutos por decisión de JP. Dictado por confirmar. [Materiales](../cohorts/01/sessions/04/index.html). |
 | 5 | Jueves 15 de octubre | Programación dirigida por IA: fundamentos con rigor | Pendiente de preparación. |
 | 6 | Sábado 17 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Pendiente de preparación. |
 | 7 | Martes 20 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
@@ -116,6 +116,28 @@ La sesión 2 preparada prioriza archivos USGS, exportación CSV y apertura manua
 Para la sesión 2, la práctica del grupo puede centrarse en archivos y API pública; autenticación y MCP pueden mostrarse como demostraciones del docente con la configuración lista. Las referencias docentes y los servidores preparados se mantienen fuera de `starter/`. Las claves se proporcionan mediante el entorno y se excluyen de Git, de las URLs de ejemplo y de las capturas de pantalla.
 
 Fuentes consultadas el 8 de octubre de 2026: [API](https://developer.mozilla.org/en-US/docs/Glossary/API) y [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview) de MDN; [arquitectura MCP](https://modelcontextprotocol.io/docs/learn/architecture); [MCP en OpenCode](https://opencode.ai/docs/mcp-servers/); [API del catálogo USGS](https://earthquake.usgs.gov/fdsnws/event/1/).
+
+## Preparación de la sesión 3
+
+**Tema del plan:** Cultura de cómputo: sistema operativo, archivos y terminal. Preparación del 10 de octubre de 2026. JP confirmó el 11 de octubre que la sesión 3 se dictó con la presentación y ejemplos existentes; el desarrollo siguiente conserva la preparación previa, no un registro exhaustivo del dictado.
+
+La [presentación](../cohorts/01/sessions/03/index.html) contiene ocho láminas y propone hasta 30 minutos de explicación, intercalados con trabajo sobre el mismo proyecto USGS. La [guía docente](../cohorts/01/sessions/03/instructor-guide.md) conserva la distribución propuesta de 120 minutos; la [práctica](../cohorts/01/sessions/03/practice.md) permite inspeccionar, ejecutar y verificar los programas y resultados existentes.
+
+El recorrido preparado cubre programa frente a proceso, recursos del sistema operativo, rutas y carpeta actual, terminal y shell, argumentos, runtime y dependencias. Después conecta navegador, frontend, servidor/backend y persistencia, retomando los ejemplos HTTP anteriores. API, MCP y permisos se ubican dentro de esa arquitectura con una explicación introductoria.
+
+El material se centra en reutilizar el proyecto, sin exigir otra demo HTTP ni construir una web nueva. El grupo conserva las entradas y su procedencia, identifica el entorno de ejecución y revisa los resultados disponibles. Las animaciones y ejemplos de rutas de las láminas son ilustraciones locales; los conteos finales usan datos reales archivados. El registro confirmado del dictado se limita al uso de la presentación y ejemplos existentes; no confirma la duración ni cada actividad de la guía. Git conserva su clase dedicada en la sesión 4.
+
+## Preparación de la sesión 4
+
+**Tema del plan:** Git y tu primer agente en un proyecto real. Preparación del 13 de octubre de 2026. JP pidió una clase de 90 minutos, centrada en explicación teórica con demostraciones realizadas por el docente en el repositorio existente.
+
+La [presentación](../cohorts/01/sessions/04/index.html) tiene nueve láminas y 28 minutos de explicación. La [guía docente](../cohorts/01/sessions/04/instructor-guide.md) distribuye el tiempo y conserva las indicaciones de demostración fuera de las láminas. No se añade una aplicación ni una práctica independiente.
+
+El orden acordado es historia de Git y antecedentes; repositorio y commit; DAG del historial; ramas e integración; Git, GitHub y colaboración; directorio de trabajo, índice, comandos; y `.gitignore`. El mismo grafo conceptual avanza entre cadena, divergencia e integración. Los controles son ilustrativos y no operan sobre el repositorio real.
+
+Los últimos diez minutos de contenido incluyen dos láminas de bonus sobre Scion, apoyadas en el artículo de Anthropic publicado el 13 de octubre. Los cinco minutos finales se reservan para preguntas. Las cifras del gráfico tienen procedencia y calificadores en `scion-data.json`. Esta preparación no confirma el dictado de la sesión 4 ni modifica la secuencia de ocho clases.
+
+La presentación se verificó en un navegador con vista de escritorio y pantalla pequeña: navegación por teclado, índice, notas, revisión por lámina, enlaces, grafos y recorrido del índice de Git. El portal permite acceder a las cuatro clases preparadas y a sus guías.
 
 ## Dónde se mantiene el trabajo
 

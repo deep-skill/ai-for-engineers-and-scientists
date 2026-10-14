@@ -63,3 +63,31 @@ Consultadas el 8 de octubre de 2026. El catálogo USGS archivado mantiene su URL
 - [API](https://developer.mozilla.org/en-US/docs/Glossary/API), [REST](https://developer.mozilla.org/en-US/docs/Glossary/REST) y [SOAP 1.2](https://www.w3.org/TR/soap12-part1/): referencia técnica de las diferencias entre interfaz, estilo y protocolo de mensajes.
 
 Las ilustraciones de la presentación se ejecutan localmente. Los endpoints públicos y la autorización se muestran desde un cliente MCP durante la demo; la página no ejecuta llamadas a un LLM ni se conecta a esos servidores.
+
+## Clase 3: cultura de cómputo
+
+Consultadas el 10 de octubre de 2026. El snapshot USGS conserva su respuesta original, fuente, unidades, timestamp y hash. Los conteos por magnitud son cálculos derivados sobre el catálogo archivado, no un catálogo nuevo ni una estimación de riesgo.
+
+- [Procesos en Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/procthread/about-processes-and-threads): programa en ejecución, recursos y memoria.
+- [Archivos y rutas en MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Dealing_with_files): organización y rutas de un proyecto.
+- [Línea de comandos en MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line) y [PowerShell en Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/learn/shell/using-aliases): terminal, shell y nombres de comandos según el entorno.
+- [Entornos virtuales y paquetes de Python](https://docs.python.org/3/tutorial/venv.html): dependencias por proyecto e intérprete seleccionado.
+- [Funcionamiento de la web en MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works): cliente, servidor y peticiones HTTP.
+- [HTTP en Node.js](https://nodejs.org/api/http.html): servidor local con módulos incorporados, peticiones y respuestas.
+- [OAuth 2.0, RFC 6749](https://www.rfc-editor.org/rfc/rfc6749): autorización para acceso limitado a un servicio. Solo se introduce el concepto, sin implementar flujos en la sesión.
+- [Arquitectura MCP](https://modelcontextprotocol.io/docs/learn/architecture): cliente y servidor como parte de la integración, reutilizando la referencia conceptual de la clase 2.
+
+Los diagramas, rutas y errores de la presentación son ejemplos editables locales. La clase retoma el proyecto y los ejemplos HTTP existentes. Las láminas no ejecutan programas del sistema, llaman a modelos ni conectan servidores MCP; su gráfico calcula conteos sobre el catálogo original archivado.
+
+
+## Clase 4: Git e historial
+
+Consultadas el 13 de octubre de 2026. Los grafos y las tres zonas son diagramas editables conceptuales, con letras ilustrativas en lugar de hashes reales. Los controles no ejecutan Git. El docente usa el repositorio existente para sus demostraciones.
+
+- [Historia de Git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git) y [control de versiones](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
+- [Modelo de Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F), [objetos](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects), [glosario](https://git-scm.com/docs/gitglossary), [ramas](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) y [merges](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+- [DAG y orden topológico](https://docs.python.org/3/library/graphlib.html).
+- [GitHub y Git](https://docs.github.com/en/get-started/start-your-journey/what-is-github), [remotos](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes) y [git pull](https://git-scm.com/docs/git-pull).
+- [Registro de cambios](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) y [gitignore](https://git-scm.com/docs/gitignore).
+- [Redesigning source control at Anthropic](https://www.anthropic.com/engineering/redesigning-source-control), publicado el 13 de octubre de 2026. La procedencia del gráfico se conserva en `cohorts/01/sessions/04/scion-data.json`.
+- [Logo oficial de Git](https://git-scm.com/community/logos): Jason Long, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). El archivo original y su hash están registrados en `assets/external-sources.json`; el logo de GitHub conserva su procedencia previa.
