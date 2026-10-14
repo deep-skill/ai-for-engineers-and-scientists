@@ -6,9 +6,11 @@ Este repositorio concentra el temario, la preparación y el registro del curso *
 
 - Cohorte: 01, octubre de 2026.
 - Ocho sesiones virtuales en vivo de dos horas: 16 horas programadas.
-- Fechas: 6, 8, 10, 13, 15, 17, 20 y 22 de octubre de 2026.
+- Fechas vigentes: 6, 8, 10, 13, 20, 22, 24 y 27 de octubre de 2026.
 - Horario: martes, jueves y sábados, de 20:00 a 22:00, hora de Perú (`America/Lima`).
 - Acceso a la grabación de cada sesión.
+
+Actualización del 14 de octubre: no habrá clases en vivo el jueves 15 ni el sábado 17. Esta pausa permite practicar y repasar lo aprendido; la sesión 5 se retoma el martes 20 y las siguientes continúan el jueves 22, sábado 24 y martes 27, en el mismo horario y con el mismo acceso.
 
 Este documento conserva el calendario y la secuencia acordados de ocho sesiones. Los documentos comerciales y los registros internos de planificación se mantienen fuera del repositorio público.
 
@@ -22,10 +24,10 @@ Los títulos de esta tabla se transcriben del cronograma publicado. El estado de
 | 2 | Jueves 8 de octubre | Del chat al agente: contexto, RAG, tools y agentes | Presentación y guías preparadas. Dictado por confirmar. [Materiales](../cohorts/01/sessions/02/index.html). |
 | 3 | Sábado 10 de octubre | Cultura de cómputo: sistema operativo, archivos y terminal | Dictada, confirmado por JP el 11 de octubre. Usó la presentación y ejemplos existentes. [Materiales](../cohorts/01/sessions/03/index.html). |
 | 4 | Martes 13 de octubre | Git y tu primer agente en un proyecto real | Presentación y guía preparadas. Sesión adaptada a 90 minutos por decisión de JP. Dictado por confirmar. [Materiales](../cohorts/01/sessions/04/index.html). |
-| 5 | Jueves 15 de octubre | Programación dirigida por IA: fundamentos con rigor | Pendiente de preparación. |
-| 6 | Sábado 17 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Pendiente de preparación. |
-| 7 | Martes 20 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
-| 8 | Jueves 22 de octubre | Proyecto integrador de ingeniería/minería | Pendiente de preparación. |
+| 5 | Martes 20 de octubre | Programación dirigida por IA: fundamentos con rigor | Pendiente de preparación. |
+| 6 | Jueves 22 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Pendiente de preparación. |
+| 7 | Sábado 24 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
+| 8 | Martes 27 de octubre | Proyecto integrador de ingeniería/minería | Pendiente de preparación. |
 
 El posicionamiento del curso abarca ingeniería y ciencias; los casos de minería son una aplicación de ese alcance. Para las sesiones 7 y 8 también se usan las formulaciones «Análisis de datos con IA: del dato al insight» y «Proyecto integrador de ingeniería/ciencias», conservando el orden del cronograma.
 
