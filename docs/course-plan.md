@@ -24,7 +24,7 @@ Los títulos de esta tabla se transcriben del cronograma publicado. El estado de
 | 2 | Jueves 8 de octubre | Del chat al agente: contexto, RAG, tools y agentes | Presentación y guías preparadas. Dictado por confirmar. [Materiales](../cohorts/01/sessions/02/index.html). |
 | 3 | Sábado 10 de octubre | Cultura de cómputo: sistema operativo, archivos y terminal | Dictada, confirmado por JP el 11 de octubre. Usó la presentación y ejemplos existentes. [Materiales](../cohorts/01/sessions/03/index.html). |
 | 4 | Martes 13 de octubre | Git y tu primer agente en un proyecto real | Presentación y guía preparadas. Sesión adaptada a 90 minutos por decisión de JP. Dictado por confirmar. [Materiales](../cohorts/01/sessions/04/index.html). |
-| 5 | Martes 20 de octubre | Programación dirigida por IA: fundamentos con rigor | Pendiente de preparación. |
+| 5 | Martes 20 de octubre | Programación dirigida por IA: fundamentos con rigor | Borrador de presentación y guía preparado para validar. Dictado por confirmar. [Materiales](../cohorts/01/sessions/05/index.html). |
 | 6 | Jueves 22 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Pendiente de preparación. |
 | 7 | Sábado 24 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
 | 8 | Martes 27 de octubre | Proyecto integrador de ingeniería/minería | Pendiente de preparación. |
@@ -140,6 +140,18 @@ El orden acordado es historia de Git y antecedentes; repositorio y commit; DAG d
 Los últimos diez minutos de contenido incluyen dos láminas de bonus sobre Scion, apoyadas en el artículo de Anthropic publicado el 13 de octubre. Los cinco minutos finales se reservan para preguntas. Las cifras del gráfico tienen procedencia y calificadores en `scion-data.json`. Esta preparación no confirma el dictado de la sesión 4 ni modifica la secuencia de ocho clases.
 
 La presentación se verificó en un navegador con vista de escritorio y pantalla pequeña: navegación por teclado, índice, notas, revisión por lámina, enlaces, grafos y recorrido del índice de Git. El portal permite acceder a las cuatro clases preparadas y a sus guías.
+
+## Preparación de la sesión 5
+
+**Tema del plan:** Programación dirigida por IA: fundamentos con rigor. Borrador preparado el 20 de octubre de 2026 para validación del docente. El ciclo de vida del software organiza los fundamentos dentro de la secuencia acordada de ocho sesiones.
+
+La [presentación](../cohorts/01/sessions/05/index.html) tiene ocho láminas y 28 minutos de explicación dentro de una sesión prevista de 120 minutos. Recorre requisitos, análisis y diseño, programación, pruebas, entrega, operación y mantenimiento; termina situando skills públicos dentro del ciclo. El mapa inicial muestra las cinco etapas de desarrollo y representa la operación y el mantenimiento como el retorno que vuelve a abrir requisitos; no prescribe un desarrollo en cascada. La [guía docente](../cohorts/01/sessions/05/instructor-guide.md) distribuye el tiempo y amplía conceptos y fuentes.
+
+La clase es agnóstica de modelo, agente y lenguaje. Las láminas son conceptuales; la práctica sobre un proyecto concreto se realiza fuera de ellas y queda a cargo del docente, sin que las láminas dependan de un caso específico. Los controles de Análisis, Diseño y Plan y los de entrega continua son conceptuales: no ejecutan cálculos, pruebas ni despliegues.
+
+El [anexo de skills](../cohorts/01/sessions/05/skills.md) enlaza originales de Superpowers y Sentry y el kit de especificación de GitHub, con referencias complementarias de Anthropic y Vercel. Se conservan commits, URLs y hashes en `references.json`; no se instalan ni ejecutan esos skills desde las láminas. La selección atiende a autoría, propósito y adecuación; las estrellas son solo una señal adicional. Este borrador no confirma el dictado. La sesión 6 conserva su trabajo dedicado al flujo agéntico de planificación, depuración y verificación.
+
+El 21 de octubre se documentó esta versión para conservarla en Git junto con la integración en el portal, el selector de clases y el lector de guías. La validación del contenido por el docente y la confirmación del dictado siguen pendientes. No se modifican los datos, las carpetas de práctica del alumno ni los ZIP de descarga.
 
 ## Dónde se mantiene el trabajo
 

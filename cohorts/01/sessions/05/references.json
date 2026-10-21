@@ -1,0 +1,101 @@
+{
+  "reviewed_on": "2026-10-20",
+  "retrieved_at_utc": "2026-10-20T17:14:36.361358+00:00",
+  "scope": "Public reference selection for session 05. Source skills are linked at immutable commits; not installed or executed by the presentation.",
+  "repositories": [
+    {
+      "repository": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "skills/brainstorming/SKILL.md",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/brainstorming/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/brainstorming/SKILL.md",
+          "sha256": "6ee10d1481b8a2580d5336ff66c5c08acc9d4b251b13bbc3bfd31be99c261d43"
+        },
+        {
+          "path": "skills/writing-plans/SKILL.md",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/writing-plans/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/writing-plans/SKILL.md",
+          "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a"
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development/SKILL.md",
+          "sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d"
+        },
+        {
+          "path": "skills/verification-before-completion/SKILL.md",
+          "url": "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion/SKILL.md",
+          "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+        }
+      ]
+    },
+    {
+      "repository": "getsentry/skills",
+      "url": "https://github.com/getsentry/skills",
+      "commit": "f57ada2d0b640406ea7e25b11d636c530e77c58b",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "skills/code-review/SKILL.md",
+          "url": "https://github.com/getsentry/skills/blob/f57ada2d0b640406ea7e25b11d636c530e77c58b/skills/code-review/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/getsentry/skills/f57ada2d0b640406ea7e25b11d636c530e77c58b/skills/code-review/SKILL.md",
+          "sha256": "ec5fc8855cb4648b4f2c79b608f8c8824a2da6a683330524c4d6283e4a3954c4"
+        },
+        {
+          "path": "skills/find-bugs/SKILL.md",
+          "url": "https://github.com/getsentry/skills/blob/f57ada2d0b640406ea7e25b11d636c530e77c58b/skills/find-bugs/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/getsentry/skills/f57ada2d0b640406ea7e25b11d636c530e77c58b/skills/find-bugs/SKILL.md",
+          "sha256": "08664c3698f89116a4b04d12f699f95cff1aadb725da353b7f24f8ad73b02003"
+        }
+      ]
+    },
+    {
+      "repository": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "license": null,
+      "files": [
+        {
+          "path": "skills/webapp-testing/SKILL.md",
+          "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing/SKILL.md",
+          "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+        }
+      ]
+    },
+    {
+      "repository": "github/spec-kit",
+      "url": "https://github.com/github/spec-kit",
+      "commit": "6ad208241af0b94b2dc22b5c0534a9a82465bf0a",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/github/spec-kit/blob/6ad208241af0b94b2dc22b5c0534a9a82465bf0a/README.md",
+          "raw_url": "https://raw.githubusercontent.com/github/spec-kit/6ad208241af0b94b2dc22b5c0534a9a82465bf0a/README.md",
+          "sha256": "3791fed409fa037ad80a4941b77c3c12d6f4f44367fc6e73b970734e0bb3fc2a"
+        }
+      ]
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "url": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "license": null,
+      "files": [
+        {
+          "path": "skills/web-design-guidelines/SKILL.md",
+          "url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/web-design-guidelines/SKILL.md",
+          "raw_url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/063bee94c3f4df8453406c830b0a7df0f2860278/skills/web-design-guidelines/SKILL.md",
+          "sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f"
+        }
+      ]
+    }
+  ]
+}

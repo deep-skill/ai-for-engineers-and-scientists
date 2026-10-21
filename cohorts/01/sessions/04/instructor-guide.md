@@ -65,6 +65,6 @@ Consultadas el 13 de octubre de 2026:
 
 ## Estado y verificación
 
-La presentación y esta guía describen la preparación de la sesión 4, programada para el 13 de octubre. El dictado sigue pendiente de confirmación del docente en el plan del curso. La siguiente sesión del calendario es la 5, **Programación dirigida por IA: fundamentos con rigor**, el martes 20 de octubre, según la reprogramación aprobada el 14 de octubre; sus materiales están pendientes de preparación.
+La presentación y esta guía describen la preparación de la sesión 4, programada para el 13 de octubre. El dictado sigue pendiente de confirmación del docente en el plan del curso. La siguiente sesión del calendario es la 5, **Programación dirigida por IA: fundamentos con rigor**, el martes 20 de octubre, según la reprogramación aprobada el 14 de octubre; sus materiales cuentan con un borrador preparado para revisión.
 
 Se verificaron la navegación por teclado, el índice, las notas, los enlaces a guías y la vista en pantalla pequeña. Los controles del DAG, las ramas y las tres zonas se comprobaron contra las relaciones y estados descritos en esta guía. El logo de Git y los datos del bonus conservan sus fuentes y procedencia.

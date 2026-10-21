@@ -25,6 +25,9 @@ Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm depen
 - Session 3 practice: `materials/read.html?doc=session03-practice`
 - Session 4 slides: `cohorts/01/sessions/04/index.html`
 - Session 4 teaching guide: `materials/read.html?doc=session04-instructor`
+- Session 5 slides: `cohorts/01/sessions/05/index.html`
+- Session 5 teaching guide: `materials/read.html?doc=session05-instructor`
+- Session 5 public skill references: `materials/read.html?doc=session05-skills`
 - Course curriculum and schedule: `docs/course-plan.md`
 - Teaching plan: `cohorts/01/sessions/01/instructor-guide.md`
 - Demo options: `docs/demo-options.md`
@@ -43,11 +46,11 @@ Session 2 uses the archived USGS data from session 1. Its diagrams and controls 
 
 Session 3 continues the USGS project with processes, files and paths, terminal commands, runtimes and dependencies, and web architecture. Its eight slides were planned for up to 30 minutes of explanation within a two-hour session. The instructor confirmed delivery on October 11 using the presentation and existing examples. The guides reuse that project and its HTTP examples; they do not require an additional web demo. Editable diagrams and error examples are labeled as illustrations; the final chart counts the original archived data.
 
-Session 4 contains nine theory slides and a 90-minute teaching guide, with 28 minutes of slides. It covers Git history, snapshots and commits, DAGs, branches, collaboration, the index and basic commands, and ignore rules. Demonstrations stay in the existing project and are described in teacher notes. The final two slides introduce the dated Scion case. Conceptual controls perform no Git operations. Class navigation includes four sessions.
+Session 4 contains nine theory slides and a 90-minute teaching guide, with 28 minutes of slides. It covers Git history, snapshots and commits, DAGs, branches, collaboration, the index and basic commands, and ignore rules. Demonstrations stay in the existing project and are described in teacher notes. The final two slides introduce the dated Scion case. Conceptual controls perform no Git operations. Class navigation includes five prepared sessions.
 
 Session 4 was prepared on October 13; delivery is not yet recorded. Its presentation was checked in a browser on desktop and smaller screens, including navigation, speaker notes, conceptual controls and the guide links.
 
-The next scheduled class is session 5, **Programación dirigida por IA: fundamentos con rigor**, on October 15. Its materials remain pending preparation in the course plan.
+Session 5, **Programación dirigida por IA: fundamentos con rigor**, has an eight-slide draft for instructor review on October 20. Its 28 minutes of slides cover the software lifecycle, requirements, analysis and design, programming, testing, delivery and operations as software-engineering concepts. The class is model-, agent- and language-agnostic; practice on a concrete project happens outside the slides. Public skill references point to immutable upstream commits, with hashes and retrieval metadata in `cohorts/01/sessions/05/references.json`. Conceptual controls make no model calls, calculations or deployments. Delivery is not yet recorded. The next scheduled session is 6 on October 22.
 
 The home page includes a three-reading route, a searchable library of primary sources and a Warp monthly/annual comparison. Guide links use a dependency-free Markdown reader; the Markdown files remain the source of truth. The download ZIPs contain only the brief, original public data and provenance. Rebuild them after changing a starter folder:
 
@@ -91,6 +94,7 @@ cohorts/01/sessions/01/          session 1 HTML presentation and teacher notes
 cohorts/01/sessions/02/          session 2 HTML presentation, practice and notes
 cohorts/01/sessions/03/          session 3 HTML presentation, practice and notes
 cohorts/01/sessions/04/          session 4 theory presentation and teaching guide
+cohorts/01/sessions/05/          session 5 lifecycle presentation and public skill references
 demos/solar/starter/             student workspace: brief + public data
 demos/solar/reference/           teacher solution, separate from starter
 demos/earthquakes/starter/       geographic alternative

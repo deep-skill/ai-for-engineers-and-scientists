@@ -91,3 +91,20 @@ Consultadas el 13 de octubre de 2026. Los grafos y las tres zonas son diagramas 
 - [Registro de cambios](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) y [gitignore](https://git-scm.com/docs/gitignore).
 - [Redesigning source control at Anthropic](https://www.anthropic.com/engineering/redesigning-source-control), publicado el 13 de octubre de 2026. La procedencia del gráfico se conserva en `cohorts/01/sessions/04/scion-data.json`.
 - [Logo oficial de Git](https://git-scm.com/community/logos): Jason Long, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). El archivo original y su hash están registrados en `assets/external-sources.json`; el logo de GitHub conserva su procedencia previa.
+
+## Clase 5: ciclo de vida del software
+
+Consultadas el 20 de octubre de 2026. Los diagramas son editables y conceptuales. Las láminas no usan un caso de datos ni ejecutan cálculos: explican requisitos, diseño, programación, pruebas, entrega y operación con conceptos de ingeniería de software. La práctica sobre un proyecto concreto se realiza fuera de la presentación.
+
+- [Ciclo de vida del software, AWS](https://aws.amazon.com/what-is/sdlc/): etapas y modelos de desarrollo.
+- [ISO/IEC/IEEE 29148](https://standards.ieee.org/ieee/29148/10449/): ingeniería de requisitos y especificación.
+- [ISO/IEC 25010](https://www.iso.org/standard/78176.html): modelo de calidad del producto.
+- [C4, Simon Brown](https://c4model.com/) y [Architecture Decision Records](https://adr.github.io/): niveles de arquitectura y registro de decisiones; el flujo de la lámina 3 no es un diagrama C4 formal.
+- [The Practical Test Pyramid, Martin Fowler](https://martinfowler.com/articles/practical-test-pyramid.html): niveles y propósito de las pruebas.
+- [Software Engineering at Google](https://abseil.io/resources/swe-book) y [Google Engineering Practices](https://google.github.io/eng-practices/review/): código, revisión y mantenimiento.
+- [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions): una herramienta de CI/CD.
+- [Continuous Delivery, Martin Fowler](https://martinfowler.com/bliki/ContinuousDelivery.html): entrega continua y su diferencia respecto del despliegue continuo.
+- [Monitoring Distributed Systems, Google SRE](https://sre.google/sre-book/monitoring-distributed-systems/): observación y operación.
+- [Agent Skills](https://agentskills.io/home) y [OpenCode](https://opencode.ai/docs/skills/): formato abierto y descubrimiento de instrucciones.
+
+Las referencias de skills y kits se seleccionan desde los repositorios de sus autores: `obra/superpowers`, `getsentry/skills`, `github/spec-kit`, `anthropics/skills` y `vercel-labs/agent-skills`. El anexo de la clase enlaza los archivos originales a commits inmutables; `cohorts/01/sessions/05/references.json` registra URLs, fecha de recuperación y hashes. Se enlazan como material de consulta, sin instalar ni ejecutar paquetes desde la presentación.
