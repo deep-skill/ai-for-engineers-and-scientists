@@ -28,6 +28,7 @@ Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm depen
 - Session 5 slides: `cohorts/01/sessions/05/index.html`
 - Session 5 teaching guide: `materials/read.html?doc=session05-instructor`
 - Session 5 public skill references: `materials/read.html?doc=session05-skills`
+- Digital Mine project: `demos/digital-mine/README.md`
 - Course curriculum and schedule: `docs/course-plan.md`
 - Teaching plan: `cohorts/01/sessions/01/instructor-guide.md`
 - Demo options: `docs/demo-options.md`
@@ -86,6 +87,10 @@ python3 tools/prepare_data.py
 
 `demos/earthquakes/starter/` includes a real USGS earthquake snapshot, task brief and provenance. Use this alternative for a geographic analysis with magnitude, depth and date filters. Counts in this catalog depend on monitoring coverage and magnitude; do not equate event counts to hazard or predictions.
 
+## Digital Mine
+
+[Digital Mine](demos/digital-mine/README.md) was confirmed on October 21 as the mining project for the following classes, maintained inside this repository. It has an MVP scope, proposed architecture and backlog and follows an open-pit operation from shift planning through primary crushing and reconciliation. Implementation is pending: the documentation describes intended behavior and a proposed stack, not a running application or an available dataset. The planned simulator uses synthetic data. Its three documents are available in the materials portal; activities will be defined during class preparation and the agreed eight-session sequence remains unchanged.
+
 ## Repository structure
 
 ```text
@@ -98,6 +103,7 @@ cohorts/01/sessions/05/          session 5 lifecycle presentation and public ski
 demos/solar/starter/             student workspace: brief + public data
 demos/solar/reference/           teacher solution, separate from starter
 demos/earthquakes/starter/       geographic alternative
+demos/digital-mine/              mining project scope, proposed architecture and backlog
 docs/                           demo comparison and source registry
 tools/                          cost calculator and public-data refresh
 ```

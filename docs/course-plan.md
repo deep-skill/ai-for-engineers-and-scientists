@@ -153,6 +153,14 @@ El [anexo de skills](../cohorts/01/sessions/05/skills.md) enlaza originales de S
 
 El 21 de octubre se documentó esta versión para conservarla en Git junto con la integración en el portal, el selector de clases y el lector de guías. La validación del contenido por el docente y la confirmación del dictado siguen pendientes. No se modifican los datos, las carpetas de práctica del alumno ni los ZIP de descarga.
 
+## Proyecto minero para las siguientes clases: Digital Mine
+
+El 21 de octubre de 2026, JP confirmó incorporar **[Digital Mine](../demos/digital-mine/README.md)** como proyecto de minería dentro de este repositorio y trabajarlo en las siguientes clases. Se mantiene en `demos/digital-mine/`, con su alcance, arquitectura propuesta y backlog, sin un repositorio Git anidado.
+
+El caso recorre planificación, perforación, voladura, carguío, acarreo, descarga, chancado primario y reconciliación de una mina a cielo abierto. Permite aplicar los temas pendientes del curso sobre un proyecto común; las actividades concretas se definirán al preparar cada clase, conservando la secuencia acordada de ocho sesiones.
+
+La incorporación del proyecto está confirmada; su implementación sigue pendiente. El stack y los supuestos son propuestas para revisar antes de desarrollar. Los datos de simulación previstos son sintéticos y deben distinguirse de mediciones reales. El alcance, la arquitectura y el backlog se consultan desde el portal de materiales. Las implementaciones de referencia del docente se mantendrán separadas del trabajo que abra el alumno con su agente.
+
 ## Dónde se mantiene el trabajo
 
 - Este documento: temario, calendario, decisiones comunes y estado general de la cohorte.
