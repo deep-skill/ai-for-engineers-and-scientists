@@ -1,0 +1,15 @@
+{
+  "reviewed_on": "2026-10-22",
+  "scope": "Conceptual teaching diagrams and historical background for session 06. No model calls, operational measurements or project execution.",
+  "sources": [
+    {"title":"Circling Back","authors":"Ronald D. Moen and Clifford L. Norman","published":"2010-11","url":"https://deming.org/wp-content/uploads/2020/06/circling-back.pdf","supports":"Shewhart's 1939 cycle and the distinct evolution of Deming's improvement cycles."},
+    {"title":"PDSA Cycle","publisher":"The W. Edwards Deming Institute","url":"https://deming.org/explore/pdsa/","supports":"Plan, Do, Study, Act and learning from results."},
+    {"title":"History: The Agile Manifesto","url":"https://agilemanifesto.org/history.html","supports":"February 2001 meeting in Snowbird and its 17 participants."},
+    {"title":"Principles behind the Agile Manifesto","url":"https://agilemanifesto.org/principles.html","supports":"Frequent delivery, working software, technical excellence and reflection."},
+    {"title":"ReAct: Synergizing Reasoning and Acting in Language Models","authors":"Shunyu Yao et al.","first_submitted":"2022-10-06","url":"https://arxiv.org/abs/2210.03629","supports":"Interleaving reasoning and actions, using observations to update plans; ICLR version in 2023."},
+    {"title":"Best practices for Claude Code","publisher":"Anthropic","url":"https://code.claude.com/docs/en/best-practices","supports":"Documented exploration, planning and verification practices, including internal team experience."},
+    {"title":"Agents","publisher":"OpenCode","url":"https://opencode.ai/docs/agents/","supports":"Plan and Build agents; actual permissions depend on configuration."},
+    {"title":"What to look for in a code review","publisher":"Google Engineering Practices","url":"https://google.github.io/eng-practices/review/reviewer/looking-for.html","supports":"Reviewing design, functionality, tests, documentation and other aspects of changes."}
+  ],
+  "interpretation": "The course's plan-execute-verify loop is a teaching synthesis. The timeline does not claim a single author, a formal unified standard or a direct causal lineage among the cited approaches."
+}

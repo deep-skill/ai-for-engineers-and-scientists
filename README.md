@@ -28,6 +28,8 @@ Open `http://127.0.0.1:8765/`. Requires Node 22 or newer; there are no npm depen
 - Session 5 slides: `cohorts/01/sessions/05/index.html`
 - Session 5 teaching guide: `materials/read.html?doc=session05-instructor`
 - Session 5 public skill references: `materials/read.html?doc=session05-skills`
+- Session 6 slides: `cohorts/01/sessions/06/index.html`
+- Session 6 teaching guide: `materials/read.html?doc=session06-instructor`
 - Digital Mine project: `demos/digital-mine/README.md`
 - Course curriculum and schedule: `docs/course-plan.md`
 - Teaching plan: `cohorts/01/sessions/01/instructor-guide.md`
@@ -47,11 +49,13 @@ Session 2 uses the archived USGS data from session 1. Its diagrams and controls 
 
 Session 3 continues the USGS project with processes, files and paths, terminal commands, runtimes and dependencies, and web architecture. Its eight slides were planned for up to 30 minutes of explanation within a two-hour session. The instructor confirmed delivery on October 11 using the presentation and existing examples. The guides reuse that project and its HTTP examples; they do not require an additional web demo. Editable diagrams and error examples are labeled as illustrations; the final chart counts the original archived data.
 
-Session 4 contains nine theory slides and a 90-minute teaching guide, with 28 minutes of slides. It covers Git history, snapshots and commits, DAGs, branches, collaboration, the index and basic commands, and ignore rules. Demonstrations stay in the existing project and are described in teacher notes. The final two slides introduce the dated Scion case. Conceptual controls perform no Git operations. Class navigation includes five prepared sessions.
+Session 4 contains nine theory slides and a 90-minute teaching guide, with 28 minutes of slides. It covers Git history, snapshots and commits, DAGs, branches, collaboration, the index and basic commands, and ignore rules. Demonstrations stay in the existing project and are described in teacher notes. The final two slides introduce the dated Scion case. Conceptual controls perform no Git operations. Class navigation includes six prepared sessions.
 
 Session 4 was prepared on October 13; delivery is not yet recorded. Its presentation was checked in a browser on desktop and smaller screens, including navigation, speaker notes, conceptual controls and the guide links.
 
-Session 5, **Programación dirigida por IA: fundamentos con rigor**, has an eight-slide draft for instructor review on October 20. Its 28 minutes of slides cover the software lifecycle, requirements, analysis and design, programming, testing, delivery and operations as software-engineering concepts. The class is model-, agent- and language-agnostic; practice on a concrete project happens outside the slides. Public skill references point to immutable upstream commits, with hashes and retrieval metadata in `cohorts/01/sessions/05/references.json`. Conceptual controls make no model calls, calculations or deployments. Delivery is not yet recorded. The next scheduled session is 6 on October 22.
+Session 5, **Programación dirigida por IA: fundamentos con rigor**, has an eight-slide draft for instructor review on October 20. Its 28 minutes of slides cover the software lifecycle, requirements, analysis and design, programming, testing, delivery and operations as software-engineering concepts. The class is model-, agent- and language-agnostic; practice on a concrete project happens outside the slides. Public skill references point to immutable upstream commits, with hashes and retrieval metadata in `cohorts/01/sessions/05/references.json`. Conceptual controls make no model calls, calculations or deployments. On October 22, the instructor confirmed that session 5 was delivered and focused mainly on requirements and specifications; the prepared slides cover a broader scope.
+
+Session 6, **Flujo de trabajo agéntico: planear, depurar y verificar**, has a five-slide draft with 12 minutes of explanation for October 22. It connects the software lifecycle to a plan–execute–verify loop, with evidence-based debugging when a check fails. Historical references and current practices appear in speaker notes. The instructor continues the existing project from its specifications; the slides do not execute project code or call a model. Its teaching guide and sources are linked from the portal. Delivery is not yet confirmed.
 
 The home page includes a three-reading route, a searchable library of primary sources and a Warp monthly/annual comparison. Guide links use a dependency-free Markdown reader; the Markdown files remain the source of truth. The download ZIPs contain only the brief, original public data and provenance. Rebuild them after changing a starter folder:
 
@@ -89,7 +93,7 @@ python3 tools/prepare_data.py
 
 ## Digital Mine
 
-[Digital Mine](demos/digital-mine/README.md) was confirmed on October 21 as the mining project for the following classes, maintained inside this repository. It has an MVP scope, proposed architecture and backlog and follows an open-pit operation from shift planning through primary crushing and reconciliation. Implementation is pending: the documentation describes intended behavior and a proposed stack, not a running application or an available dataset. The planned simulator uses synthetic data. Its three documents are available in the materials portal; activities will be defined during class preparation and the agreed eight-session sequence remains unchanged.
+[Digital Mine](demos/digital-mine/README.md) was confirmed on October 21 as the mining project for the following classes, maintained inside this repository. It has an MVP scope, proposed architecture and backlog and follows an open-pit operation from shift planning through primary crushing and reconciliation. Implementation is pending: the documentation describes intended behavior and a proposed stack, not a running application or an available dataset. The planned simulator uses synthetic data. Its project documents — scope, architecture, backlog, SRS, VSM, DDD-lite, ADR and C4 — are available in the materials portal; activities will be defined during class preparation and the agreed eight-session sequence remains unchanged.
 
 ## Repository structure
 
@@ -100,10 +104,11 @@ cohorts/01/sessions/02/          session 2 HTML presentation, practice and notes
 cohorts/01/sessions/03/          session 3 HTML presentation, practice and notes
 cohorts/01/sessions/04/          session 4 theory presentation and teaching guide
 cohorts/01/sessions/05/          session 5 lifecycle presentation and public skill references
+cohorts/01/sessions/06/          session 6 workflow presentation and teaching guide
 demos/solar/starter/             student workspace: brief + public data
 demos/solar/reference/           teacher solution, separate from starter
 demos/earthquakes/starter/       geographic alternative
-demos/digital-mine/              mining project scope, proposed architecture and backlog
+demos/digital-mine/              mining project documentation: scope, SRS, VSM, DDD, ADR, C4
 docs/                           demo comparison and source registry
 tools/                          cost calculator and public-data refresh
 ```

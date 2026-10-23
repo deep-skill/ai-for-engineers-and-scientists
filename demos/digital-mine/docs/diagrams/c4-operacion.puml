@@ -1,0 +1,85 @@
+@startuml
+' Digital Mine - vista de componentes: operacion
+' Fuente del modelo: workspace.dsl (vista "operacion")
+' Render: plantuml -tsvg -o out c4-operacion.puml
+' Nota: los .puml se mantienen a mano para la leyenda local/cloud y el layout.
+' convencion: solo componentes; cloud es futuro/opcional y no esta implementado.
+
+!include <C4/C4_Component>
+
+skinparam defaultFontName "DejaVu Sans"
+skinparam legendFontSize 12
+skinparam legendFontColor #13131F
+skinparam legendBackgroundColor #FFFFFF
+skinparam legendBorderColor #5A5F68
+
+LAYOUT_LEFT_RIGHT()
+
+AddComponentTag("local", "#F7F8FA", "#13131F", "#5A5F68", "", "", "", "", "componente local (MVP)", "", "solid", "1.0")
+AddComponentTag("cloud", "#E6EEFF", "#0B2E6F", "#1A53FF", "", "", "", "", "cloud candidato (futuro)", "", "dashed", "1.5")
+AddComponentTag("external", "#EDEDED", "#333333", "#8A8A8A", "", "", "", "", "sistema externo (futuro)", "", "solid", "1.0")
+AddRelTag("future", "#1A53FF", "#1A53FF", "dashed", "", "", "relación futura / no implementada")
+
+UpdateBoundaryStyle("local", $bgColor="transparent", $fontColor="#13131F", $borderColor="#5A5F68", $borderStyle=SolidLine())
+UpdateBoundaryStyle("cloud", $bgColor="#F4F8FF", $fontColor="#0B2E6F", $borderColor="#1A53FF", $borderStyle=DashedLine())
+
+title Operación - vista de componentes\n<size:12>MVP local con datos sintéticos; cloud es futuro y no está implementado</size>
+
+Person(despachador, "Despachador", "Sigue la flota, las colas y las alertas")
+Person(operadorChancado, "Operador de chancado", "Monitorea alimentación, tolva, throughput y paradas")
+Person(supervisor, "Supervisor de turno", "Revisa KPIs, alertas y plan vs real")
+
+Boundary(mvp, "Digital Mine - MVP local", "local", "local") {
+  Component(web, "Web", "Next.js, MapLibre, React Flow", "Mapa 2D/2.5D, tableros de flota y chancado, plan, alertas y replay", "", "local")
+  Component(api, "API REST", "Fastify, Zod", "Estado, histórico, plan, KPIs y salud; publica el plan", "", "local")
+  Component(twin, "Gemelo", "TypeScript, packages/domain", "Estado, ciclos, KPIs en vivo y alertas", "", "local")
+  Component(ws, "WebSocket", "Fastify @fastify/websocket", "Snapshot inicial y deltas en vivo", "", "local")
+  Component(ingest, "Ingesta", "Fastify, MQTT.js, Zod", "Validación, deduplicación por eventId, orden y persistencia", "", "local")
+  ComponentDb(db, "Base de datos", "PostgreSQL + TimescaleDB + PostGIS", "Log de eventos, telemetría, proyecciones y snapshots", "", "local")
+  Component(broker, "Broker MQTT", "Eclipse Mosquitto", "Telemetría, eventos, plan publicado y salud; QoS 1", "", "local")
+  Component(sim, "Simulador", "TypeScript, MQTT.js", "Turno sintético reproducible; sustituye a FMS/GPS/SCADA", "", "local")
+}
+
+Boundary(cloudCandidates, "Recursos cloud candidatos", "cloud", "cloud", "", "futuro / opcional / no implementado") {
+  ComponentDb(managedDb, "☁ Base de datos gestionada", "Servicio gestionado (TBD)", "Alternativa futura a PostgreSQL local", "", "cloud")
+}
+
+Rel(despachador, web, "Sigue flota, colas y alertas", "HTTPS")
+Rel(operadorChancado, web, "Monitorea chancado", "HTTPS")
+Rel(supervisor, web, "Revisa KPIs y plan vs real", "HTTPS")
+Rel(web, api, "Consulta estado, histórico y plan", "REST/JSON")
+Rel(web, ws, "")
+Rel(api, twin, "Lee estado, KPIs y alertas")
+Rel(api, db, "Lee y escribe plan y turnos", "SQL")
+Rel(api, broker, "Publica plan.published", "MQTT QoS 1")
+Rel(api, sim, "Inicia, pausa o aborta la corrida", "Comando local")
+Rel(ingest, broker, "Se suscribe a telemetría y eventos", "MQTT QoS 1")
+Rel(ingest, twin, "Entrega eventos validados y ordenados")
+Rel(ingest, db, "Persiste log y telemetría", "SQL")
+Rel(twin, db, "Reconstruye estado y proyecciones", "SQL")
+Rel(twin, ws, "Publica deltas de estado y alertas")
+Rel(sim, broker, "Publica telemetría y eventos; consume plan.published", "MQTT QoS 1")
+Rel(db, managedDb, "Sustitución futura; no implementada", "Servicio gestionado (TBD)", "", "", "future")
+
+note right of sim
+  **Datos sintéticos.** El simulador genera el turno y
+  reemplaza a FMS, GPS y SCADA en el MVP (ADR-004).
+  Los eventos llevan simulated=true.
+end note
+
+note bottom of cloudCandidates
+  **Cloud = futuro.** Ningún recurso cloud está implementado ni desplegado.
+  NFR-PORT-01 exige que el MVP arranque sin dependencia de servicios cloud.
+end note
+
+legend right
+  **Convención de la vista**
+  <color:#5A5F68>■</color> <<local>> componente del MVP, borde continuo
+  <color:#1A53FF>■</color> <<cloud>> candidato futuro, borde discontinuo
+  <color:#8A8A8A>■</color> <<external>> sistema externo futuro, no integrado
+  **Cloud = futuro / opcional. No implementado.**
+endlegend
+
+footer Digital Mine - C4 componentes - 22 oct 2026 - fuente: workspace.dsl
+
+@enduml

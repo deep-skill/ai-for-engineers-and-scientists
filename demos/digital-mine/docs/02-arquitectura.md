@@ -2,6 +2,8 @@
 
 > Proyecto en preparación. Este documento describe el MVP propuesto; la implementación está pendiente.
 
+> **Nota de vigencia (22 de octubre de 2026).** Este documento conserva la propuesta original. Las ADR-008 a ADR-014 y el SRS v0.2 proponen refinamientos sobre reloj y tiempo, identidad y orden de eventos, fuente de verdad, ciclo de turno, versionado del plan, clasificación ore/waste y reglas de dominio. Cuando una ADR se acepte, las secciones correspondientes deben actualizarse; mientras tanto, la propuesta posterior no se considera aprobada.
+
 ## 1. Principios
 
 - **Monolito modular antes que microservicios.** El MVP tiene un servidor con módulos de ingesta, gemelo, API y WebSocket. El simulador es un proceso aparte.

@@ -1,0 +1,84 @@
+/* Editable conceptual diagrams. They never operate on the teaching project. */
+.flow-arrow { color:var(--blue); font-size:34px; flex:none; align-self:center; }
+.step-flow { display:flex; align-items:stretch; gap:32px; }
+.step { flex:1; min-width:0; border-top:2px solid var(--blue); padding:23px 0 18px; }
+.step:last-child { border-color:var(--green); }
+.step-number { color:#7889b0; font-size:16px; display:block; margin-bottom:23px; }
+.step strong { display:block; font-size:43px; font-weight:550; letter-spacing:-1.2px; margin-bottom:18px; }
+.step p { color:#becde7; font-size:23px; line-height:1.4; margin:0; }
+.step small { display:block; font-size:18px; line-height:1.4; color:var(--muted); margin-top:24px; }
+.strategy-tactic { flex:1; display:flex; flex-direction:column; justify-content:center; margin:4px 0 25px; }
+.strategy-level { border-top:1px solid var(--border); padding-top:19px; }
+.lifecycle-strip { display:flex; gap:22px; align-items:center; }
+.lifecycle-strip>span { flex:1; min-width:0; font-size:23px; color:#c5cde1; }
+.lifecycle-strip>b { font-size:23px; font-weight:400; color:#5e74a4; }
+.zoom-bridge { display:flex; align-items:center; gap:20px; margin:18px 0; }
+.zoom-bridge>span { font-size:34px; color:var(--green); }
+.zoom-bridge p { font-size:18px; color:var(--muted); margin:0; }
+.compact-flow .step { padding:18px 0 10px; }
+.compact-flow .step-number { margin-bottom:13px; }
+.compact-flow .step strong { font-size:39px; margin-bottom:12px; }
+.compact-flow .step p { font-size:22px; }
+.simple-return { display:flex; gap:15px; align-items:center; font-size:18px; color:var(--muted); margin-top:10px; }
+.simple-return>span { font-size:27px; color:var(--green); }
+.iteration-main { margin:20px 0 18px; }
+.iteration-main .step { padding:16px 0 10px; }
+.iteration-main .step-number { margin-bottom:14px; }
+.iteration-main .step strong { margin-bottom:12px; }
+.iteration-main .step small { margin-top:12px; }
+.iteration-outcomes { display:grid; grid-template-columns:1fr 1fr; gap:50px; border-top:1px solid var(--border); padding-top:20px; }
+.outcome-label { display:block; color:var(--green); font-size:18px; margin-bottom:12px; }
+.outcome-label.investigate { color:#ffbc86; }
+.iteration-outcomes strong { display:block; font-size:29px; font-weight:550; }
+.iteration-outcomes a { font-size:17px; display:inline-block; margin-top:12px; text-decoration:none; }
+.loop-back { display:flex; align-items:center; gap:20px; margin:14px 0 18px; }
+.loop-back>span { color:var(--green); font-size:40px; }
+.loop-back p { color:var(--muted); font-size:20px; margin:0; }
+.debug-comparison { display:flex; align-items:center; gap:40px; margin:25px 0 35px; }
+.debug-comparison>div { flex:1; border-top:1px solid var(--border); padding-top:16px; }
+.debug-comparison>div>span { display:block; font-size:17px; color:var(--muted); margin-bottom:12px; }
+.debug-comparison strong { display:block; font-size:29px; font-weight:550; }
+.debug-comparison>span { color:#ffbc86; font-size:42px; }
+.debug-path .step-flow { gap:22px; }
+.four-steps .step strong { font-size:32px; }
+.four-steps .step p { font-size:21px; }
+.debug-return { display:flex; align-items:center; gap:20px; border-top:1px solid var(--border); margin:30px 0 25px; padding-top:20px; }
+.debug-return>span:first-child { color:var(--green); font-size:36px; }
+.debug-return a { color:var(--green); font-size:24px; text-decoration:none; }
+.debug-return>span:last-child { color:var(--muted); font-size:18px; margin-left:auto; }
+.traceability { display:flex; align-items:center; justify-content:space-between; gap:25px; margin:20px 0 25px; }
+.traceability>span,.traceability>strong { font-size:33px; font-weight:550; }
+.traceability>b { font-size:31px; font-weight:400; color:var(--blue); }
+.traceability>strong { color:var(--green); }
+
+@media(max-width:760px) {
+  .strategy-tactic { margin:0; }
+  .lifecycle-strip { flex-wrap:wrap; gap:12px; }
+  .lifecycle-strip>span { flex:none; font-size:17px; }
+  .lifecycle-strip>b { font-size:18px; }
+  .zoom-bridge { margin:22px 0; }
+  .step-flow { flex-direction:column; gap:12px; }
+  .step { padding:18px 0 10px; }
+  .step-number { margin-bottom:13px; }
+  .step strong,.compact-flow .step strong { font-size:33px; }
+  .step p,.compact-flow .step p { font-size:21px; }
+  .step small { font-size:17px; margin-top:14px; }
+  .step-flow>.flow-arrow { transform:rotate(90deg); font-size:28px; }
+  .simple-return { font-size:17px; line-height:1.5; margin-top:18px; }
+  .iteration-main { margin:15px 0 25px; }
+  .iteration-outcomes { grid-template-columns:1fr; gap:25px; padding-top:20px; }
+  .iteration-outcomes strong { font-size:25px; }
+  .loop-back { align-items:flex-start; margin-bottom:0; }
+  .loop-back p { font-size:18px; }
+  .debug-comparison { gap:17px; margin:10px 0 25px; }
+  .debug-comparison strong { font-size:21px; }
+  .debug-comparison>span { font-size:30px; }
+  .debug-comparison>div>span { font-size:16px; }
+  .four-steps .step strong { font-size:30px; }
+  .debug-return { flex-wrap:wrap; gap:12px; margin-bottom:0; }
+  .debug-return a { font-size:21px; }
+  .debug-return>span:last-child { margin:0; width:100%; font-size:17px; }
+  .traceability { flex-wrap:wrap; justify-content:flex-start; gap:15px; margin:20px 0 30px; }
+  .traceability>span,.traceability>strong { font-size:23px; }
+  .traceability>b { font-size:23px; }
+}

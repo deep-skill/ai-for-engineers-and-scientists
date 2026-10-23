@@ -1,0 +1,94 @@
+@startuml
+' Digital Mine - vista de componentes: ingesta y observabilidad
+' Fuente del modelo: workspace.dsl (vista "ingesta")
+' Render: plantuml -tsvg -o out c4-ingesta.puml
+' Nota: los .puml se mantienen a mano para la leyenda local/cloud y el layout.
+' convencion: solo componentes; cloud es futuro/opcional y no esta implementado.
+
+!include <C4/C4_Component>
+
+skinparam defaultFontName "DejaVu Sans"
+skinparam legendFontSize 12
+skinparam legendFontColor #13131F
+skinparam legendBackgroundColor #FFFFFF
+skinparam legendBorderColor #5A5F68
+
+LAYOUT_TOP_DOWN()
+
+AddComponentTag("local", "#F7F8FA", "#13131F", "#5A5F68", "", "", "", "", "componente local (MVP)", "", "solid", "1.0")
+AddComponentTag("cloud", "#E6EEFF", "#0B2E6F", "#1A53FF", "", "", "", "", "cloud candidato (futuro)", "", "dashed", "1.5")
+AddComponentTag("external", "#EDEDED", "#333333", "#8A8A8A", "", "", "", "", "sistema externo (futuro)", "", "solid", "1.0")
+AddRelTag("future", "#1A53FF", "#1A53FF", "dashed", "", "", "relación futura / no implementada")
+
+UpdateBoundaryStyle("local", $bgColor="transparent", $fontColor="#13131F", $borderColor="#5A5F68", $borderStyle=SolidLine())
+UpdateBoundaryStyle("cloud", $bgColor="#F4F8FF", $fontColor="#0B2E6F", $borderColor="#1A53FF", $borderStyle=DashedLine())
+UpdateBoundaryStyle("external", $bgColor="transparent", $fontColor="#333333", $borderColor="#8A8A8A", $borderStyle=DashedLine())
+
+title Ingesta y observabilidad - vista de componentes\n<size:12>El MVP usa el simulador; FMS, GPS, SCADA y báscula son futuros</size>
+
+Person(tiOt, "TI/OT", "Monitorea salud, flujo y errores de datos")
+
+Boundary(sources, "Fuentes externas", "external", "external", "", "futuro / no integradas") {
+  Component(fms, "FMS / GPS", "futuro", "Asignaciones, posición, velocidad y carga", "", "external")
+  Component(scada, "SCADA / PLC de chancado", "OPC UA futuro", "Alimentación, throughput, tolva y estado", "", "external")
+  Component(bascula, "Báscula / sensor de carga", "futuro", "Tonelaje por ciclo", "", "external")
+  Component(drillBlast, "Perforación y voladura", "futuro", "Patrones, metros y eventos de tronadura", "", "external")
+}
+
+Boundary(mvp, "Digital Mine - MVP local", "local", "local") {
+  Component(broker, "Broker MQTT", "Eclipse Mosquitto", "Telemetría, eventos, plan y salud; QoS 1", "", "local")
+  Component(sim, "Simulador", "TypeScript, MQTT.js", "Fuente sintética del MVP", "", "local")
+  Component(ingest, "Ingesta", "Fastify, MQTT.js, Zod", "Valida, deduplica por eventId, ordena, detecta huecos y persiste", "", "local")
+  Component(twin, "Gemelo", "TypeScript, packages/domain", "Proyecciones, KPIs en vivo y motor de alertas", "", "local")
+  ComponentDb(db, "Base de datos", "PostgreSQL + TimescaleDB + PostGIS", "Log, telemetría, salud y métricas del pipeline", "", "local")
+  Component(api, "API REST", "Fastify, Zod", "Histórico, salud y mensajes recientes", "", "local")
+  Component(ws, "WebSocket", "Fastify @fastify/websocket", "Deltas de estado y salud", "", "local")
+  Component(web, "Web", "Next.js, React Flow", "Vista de flujo, inspector de mensajes y alertas", "", "local")
+}
+
+Boundary(cloudCandidates, "Recursos cloud candidatos", "cloud", "cloud", "", "futuro / opcional / no implementado") {
+  Component(managedBroker, "☁ Broker MQTT gestionado", "Servicio MQTT gestionado (TBD)", "Alternativa futura a Mosquitto", "", "cloud")
+  Component(objectStore, "☁ Almacenamiento de objetos", "Object storage (TBD)", "Archivo de histórico para replay", "", "cloud")
+  Component(observability, "☁ Observabilidad gestionada", "Servicio gestionado (TBD)", "Métricas, trazas y logs centralizados", "", "cloud")
+}
+
+Rel(tiOt, web, "Diagnostica flujo y salud", "HTTPS")
+Rel(web, api, "Consulta histórico y salud", "REST/JSON")
+Rel(web, ws, "Recibe deltas y alertas", "WebSocket")
+Rel(api, twin, "Consulta estado y salud")
+Rel(api, db, "Consulta histórico y mensajes", "SQL")
+Rel(fms, ingest, "Telemetría y asignaciones (adaptador futuro)", "MQTT (futuro)")
+Rel(scada, ingest, "Telemetría del chancador (futuro)", "OPC UA (futuro)")
+Rel(bascula, ingest, "Tonelaje por ciclo (futuro)", "Evento (futuro)")
+Rel(drillBlast, ingest, "Eventos de perforación y voladura (futuro)", "Evento (futuro)")
+Rel(sim, broker, "Publica telemetría y eventos; consume plan.published", "MQTT QoS 1")
+Rel(ingest, broker, "Se suscribe a telemetría, eventos y salud", "MQTT QoS 1")
+Rel(ingest, twin, "Entrega eventos validados y ordenados")
+Rel(ingest, db, "Persiste log, telemetría y métricas", "SQL")
+Rel(twin, db, "Reconstruye estado y proyecciones", "SQL")
+Rel(twin, ws, "Publica deltas de estado y alertas")
+Rel(broker, managedBroker, "Sustitución futura; no implementada", "Servicio gestionado (TBD)", "", "", "future")
+Rel(db, objectStore, "Archivo de histórico para replay (futuro)", "Object storage (TBD)", "", "", "future")
+Rel(ingest, observability, "Exporta métricas y trazas (futuro)", "Servicio gestionado (TBD)", "", "", "future")
+
+note bottom of sources
+  **El MVP no integra estas fuentes.** El simulador publica en su lugar
+  con simulated=true. Los adaptadores llegan después (ADR-004, D-14).
+end note
+
+note bottom of cloudCandidates
+  **Cloud = futuro.** Ningún recurso cloud está implementado ni desplegado.
+  El broker, el object storage y la observabilidad gestionada son opciones.
+end note
+
+legend right
+  **Convención de la vista**
+  <color:#5A5F68>■</color> <<local>> componente del MVP, borde continuo
+  <color:#1A53FF>■</color> <<cloud>> candidato futuro, borde discontinuo
+  <color:#8A8A8A>■</color> <<external>> sistema externo futuro, no integrado
+  **Cloud = futuro / opcional. No implementado.**
+endlegend
+
+footer Digital Mine - C4 componentes - 22 oct 2026 - fuente: workspace.dsl
+
+@enduml

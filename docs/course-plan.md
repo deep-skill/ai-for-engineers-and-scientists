@@ -24,8 +24,8 @@ Los títulos de esta tabla se transcriben del cronograma publicado. El estado de
 | 2 | Jueves 8 de octubre | Del chat al agente: contexto, RAG, tools y agentes | Presentación y guías preparadas. Dictado por confirmar. [Materiales](../cohorts/01/sessions/02/index.html). |
 | 3 | Sábado 10 de octubre | Cultura de cómputo: sistema operativo, archivos y terminal | Dictada, confirmado por JP el 11 de octubre. Usó la presentación y ejemplos existentes. [Materiales](../cohorts/01/sessions/03/index.html). |
 | 4 | Martes 13 de octubre | Git y tu primer agente en un proyecto real | Presentación y guía preparadas. Sesión adaptada a 90 minutos por decisión de JP. Dictado por confirmar. [Materiales](../cohorts/01/sessions/04/index.html). |
-| 5 | Martes 20 de octubre | Programación dirigida por IA: fundamentos con rigor | Borrador de presentación y guía preparado para validar. Dictado por confirmar. [Materiales](../cohorts/01/sessions/05/index.html). |
-| 6 | Jueves 22 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Pendiente de preparación. |
+| 5 | Martes 20 de octubre | Programación dirigida por IA: fundamentos con rigor | Dictada, confirmado por JP el 22 de octubre. Se avanzó principalmente en requisitos y especificaciones. [Materiales preparados](../cohorts/01/sessions/05/index.html). |
+| 6 | Jueves 22 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Borrador de cinco láminas y guía preparado para revisión. Dictado por confirmar. [Materiales](../cohorts/01/sessions/06/index.html). |
 | 7 | Sábado 24 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
 | 8 | Martes 27 de octubre | Proyecto integrador de ingeniería/minería | Pendiente de preparación. |
 
@@ -153,13 +153,25 @@ El [anexo de skills](../cohorts/01/sessions/05/skills.md) enlaza originales de S
 
 El 21 de octubre se documentó esta versión para conservarla en Git junto con la integración en el portal, el selector de clases y el lector de guías. La validación del contenido por el docente y la confirmación del dictado siguen pendientes. No se modifican los datos, las carpetas de práctica del alumno ni los ZIP de descarga.
 
+**Registro del dictado, actualizado el 22 de octubre:** JP confirmó que la sesión 5 avanzó principalmente en requisitos y especificaciones. Las ocho láminas describen el alcance preparado; esta confirmación no registra que todos esos temas se hayan impartido. La sesión 6 retoma el proyecto desde ese punto.
+
+## Preparación de la sesión 6
+
+**Tema del plan:** Flujo de trabajo agéntico: planear, depurar y verificar. El 22 de octubre, JP pidió una sesión principalmente práctica para continuar el proyecto desde requisitos y especificaciones. Se mantiene el ciclo de vida de la clase 5 como marco de ingeniería y se presenta una táctica para cada avance: **planear → ejecutar → verificar**, con depuración cuando una comprobación falla.
+
+La [presentación](../cohorts/01/sessions/06/index.html) contiene cinco láminas y propone 12 minutos de explicación. Relaciona el ciclo de vida con el ciclo de trabajo, sitúa antecedentes de mejora continua, desarrollo ágil y ReAct, explica una iteración, recorre la depuración con evidencia y cierra con trazabilidad entre requisito, cambio y comprobación. La [guía docente](../cohorts/01/sessions/06/instructor-guide.md) amplía los conceptos y las fuentes.
+
+El docente continúa la práctica sobre el proyecto existente, con Digital Mine como caso acordado, y decide cuánto avanzar según el estado real del trabajo. Los criterios de aceptación y las decisiones de diseño orientan cada incremento. No se construye una demo HTTP adicional ni se modifica la implementación del proyecto al preparar las láminas. La historia reúne antecedentes relacionados; no presenta este esquema didáctico como un estándar único o una genealogía directa entre Shewhart, Agile y ReAct.
+
+Este borrador queda preparado para iterar con el docente. La existencia de los materiales no confirma el dictado de la sesión 6. Las sesiones 7 y 8 conservan los temas y fechas del plan.
+
 ## Proyecto minero para las siguientes clases: Digital Mine
 
-El 21 de octubre de 2026, JP confirmó incorporar **[Digital Mine](../demos/digital-mine/README.md)** como proyecto de minería dentro de este repositorio y trabajarlo en las siguientes clases. Se mantiene en `demos/digital-mine/`, con su alcance, arquitectura propuesta y backlog, sin un repositorio Git anidado.
+El 21 de octubre de 2026, JP confirmó incorporar **[Digital Mine](../demos/digital-mine/README.md)** como proyecto de minería dentro de este repositorio y trabajarlo en las siguientes clases. Se mantiene en `demos/digital-mine/`, con su alcance, arquitectura propuesta, backlog, SRS, VSM, DDD-lite, ADR y C4, sin un repositorio Git anidado.
 
 El caso recorre planificación, perforación, voladura, carguío, acarreo, descarga, chancado primario y reconciliación de una mina a cielo abierto. Permite aplicar los temas pendientes del curso sobre un proyecto común; las actividades concretas se definirán al preparar cada clase, conservando la secuencia acordada de ocho sesiones.
 
-La incorporación del proyecto está confirmada; su implementación sigue pendiente. El stack y los supuestos son propuestas para revisar antes de desarrollar. Los datos de simulación previstos son sintéticos y deben distinguirse de mediciones reales. El alcance, la arquitectura y el backlog se consultan desde el portal de materiales. Las implementaciones de referencia del docente se mantendrán separadas del trabajo que abra el alumno con su agente.
+La incorporación del proyecto está confirmada; su implementación sigue pendiente. El stack y los supuestos son propuestas para revisar antes de desarrollar. Los datos de simulación previstos son sintéticos y deben distinguirse de mediciones reales. La documentación del proyecto se consulta desde el portal de materiales. Las implementaciones de referencia del docente se mantendrán separadas del trabajo que abra el alumno con su agente.
 
 ## Dónde se mantiene el trabajo
 

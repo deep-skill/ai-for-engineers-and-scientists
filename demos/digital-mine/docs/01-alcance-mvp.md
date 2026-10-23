@@ -1,5 +1,7 @@
 # Digital Mine — Alcance del MVP
 
+> Este documento es un PRD ligero / definición de alcance del MVP. La especificación de requisitos está en [04-srs.md](04-srs.md).
+
 > Proyecto en preparación. Este documento describe el MVP propuesto; la implementación está pendiente.
 
 ## 1. Objetivo

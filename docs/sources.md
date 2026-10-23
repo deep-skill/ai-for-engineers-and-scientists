@@ -108,3 +108,17 @@ Consultadas el 20 de octubre de 2026. Los diagramas son editables y conceptuales
 - [Agent Skills](https://agentskills.io/home) y [OpenCode](https://opencode.ai/docs/skills/): formato abierto y descubrimiento de instrucciones.
 
 Las referencias de skills y kits se seleccionan desde los repositorios de sus autores: `obra/superpowers`, `getsentry/skills`, `github/spec-kit`, `anthropics/skills` y `vercel-labs/agent-skills`. El anexo de la clase enlaza los archivos originales a commits inmutables; `cohorts/01/sessions/05/references.json` registra URLs, fecha de recuperación y hashes. Se enlazan como material de consulta, sin instalar ni ejecutar paquetes desde la presentación.
+
+## Clase 6: flujo de trabajo agéntico
+
+Consultadas el 22 de octubre de 2026. Los diagramas son conceptuales, editables y no ejecutan el proyecto. El ciclo planear, ejecutar y verificar es una síntesis didáctica; los antecedentes históricos tienen propósitos distintos y no se presentan como una genealogía causal directa.
+
+- [Circling Back, Ronald D. Moen y Clifford L. Norman, noviembre de 2010](https://deming.org/wp-content/uploads/2020/06/circling-back.pdf): ciclo de Shewhart de 1939 y evolución posterior de los ciclos de Deming.
+- [PDSA, Deming Institute](https://deming.org/explore/pdsa/): aprendizaje a partir de los resultados y distinción entre Study y Check.
+- [Historia del Manifiesto Ágil](https://agilemanifesto.org/history.html) y [principios originales](https://agilemanifesto.org/principles.html): febrero de 2001, entregas frecuentes, software funcionando, excelencia técnica y reflexión.
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629): Shunyu Yao y colaboradores, primera presentación en arXiv el 6 de octubre de 2022; versión para ICLR de 2023. Intercalar razonamiento y acciones para incorporar observaciones y actualizar planes.
+- [Buenas prácticas de Claude Code, Anthropic](https://code.claude.com/docs/en/best-practices): exploración, planificación, implementación y verificación, con prácticas documentadas de equipos internos.
+- [Agentes de OpenCode](https://opencode.ai/docs/agents/): Plan y Build; permisos y herramientas sujetos a configuración.
+- [Qué revisar en un cambio, Google Engineering Practices](https://google.github.io/eng-practices/review/reviewer/looking-for.html): diseño, comportamiento, pruebas y documentación.
+
+El registro de fuentes se conserva también en `cohorts/01/sessions/06/references.json`. Las láminas no muestran resultados de ejecución ni métricas operacionales. La práctica y cualquier llamada real a modelos se realizan fuera de la presentación.

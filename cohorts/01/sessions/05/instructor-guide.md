@@ -2,7 +2,7 @@
 
 ## Ciclo de vida del software
 
-Borrador preparado el 20 de octubre de 2026 y documentado para su versionado el 21 de octubre. Ocho láminas y 28 minutos de presentación dentro de una sesión prevista de 120 minutos. La validación del contenido por el docente y la confirmación del dictado siguen pendientes; versionar los materiales no confirma ninguna de ellas.
+Material preparado el 20 de octubre de 2026 y documentado para su versionado el 21 de octubre. Ocho láminas y 28 minutos de presentación dentro de una sesión prevista de 120 minutos. El 22 de octubre, JP confirmó que la clase se dictó y avanzó principalmente en requisitos y especificaciones. Esta guía conserva el alcance preparado; no constituye un registro exhaustivo de lo impartido.
 
 Las láminas desarrollan conceptos de ingeniería de software: requisitos, análisis y diseño, programación, pruebas, entrega, operación y mantenimiento. La práctica sobre un proyecto concreto se realiza fuera de las láminas y queda a cargo del docente. La clase es independiente del modelo, el agente y el lenguaje; OpenCode es el entorno de demostración si se decide usar.
 
@@ -69,6 +69,6 @@ La secuencia de ocho sesiones se mantiene. Esta clase sitúa la programación de
 
 ## Estado y verificación
 
-La presentación y esta guía describen la preparación de la sesión 5, programada para el 20 de octubre. El dictado sigue pendiente de confirmación del docente en el plan del curso.
+La presentación y esta guía describen la preparación de la sesión 5, programada para el 20 de octubre. JP confirmó el 22 de octubre que el trabajo se centró principalmente en requisitos y especificaciones. La sesión 6 continúa el proyecto desde ese punto, con una presentación breve sobre el ciclo de trabajo agéntico.
 
 Se verificaron la navegación por teclado, el índice, las notas, la revisión por lámina, los enlaces y los controles conceptuales en vistas de escritorio y de 390 px, sin desbordes horizontales. Las láminas no ejecutan cálculos, pruebas ni despliegues.

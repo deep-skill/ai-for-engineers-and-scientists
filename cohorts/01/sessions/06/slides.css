@@ -1,0 +1,47 @@
+@import url('../05/slides.css');
+
+.slide-lead { margin-bottom:22px; }
+.diagram-label { font-size:17px; margin-bottom:18px; }
+.slide-bottom p { font-size:22px; }
+.slide-bottom>span { font-size:16px; }
+.slide-bottom { margin-top:auto; }
+.history-line { display:grid; grid-template-columns:repeat(3,1fr); gap:45px; margin:25px 0 30px; }
+.history-line>div { border-top:2px solid var(--blue); padding-top:20px; }
+.history-line>div:last-child { border-color:var(--green); }
+.history-line b { display:block; font-size:53px; font-weight:550; letter-spacing:-2px; color:var(--blue); margin-bottom:15px; }
+.history-line>div:last-child b { color:var(--green); }
+.history-line h2 { font-size:32px; margin:0 0 17px; }
+.history-line p { font-size:23px; line-height:1.5; color:#d0d7e9; margin:0 0 17px; }
+.history-line small { display:block; font-size:17px; color:var(--muted); line-height:1.4; }
+.current-practice { display:flex; align-items:center; gap:30px; padding-top:21px; border-top:1px solid var(--border); margin-bottom:25px; }
+.current-practice>span { font-size:17px; color:var(--muted); flex:none; }
+.current-practice p { font-size:23px; margin:0; color:#c4d2ed; }
+.current-practice>div { margin-left:auto; display:flex; gap:20px; }
+.current-practice a { font-size:17px; }
+.closure-list { margin:0 0 28px; }
+.closure-list>div { display:grid; grid-template-columns:220px 1fr; gap:30px; padding:18px 0; border-top:1px solid var(--border); }
+.closure-list span { font-size:20px; color:var(--blue); }
+.closure-list p { margin:0; font-size:26px; color:#d5dcee; }
+.closing-prompt { margin:0 0 20px; }
+.closing-prompt>strong { font-size:27px; font-weight:550; color:var(--green); }
+.closing-prompt>div { display:flex; gap:30px; margin-top:22px; }
+.closing-prompt a { font-size:18px; }
+
+@media(max-width:760px) {
+  .history-line { grid-template-columns:1fr; gap:30px; margin:10px 0 30px; }
+  .history-line b { font-size:44px; margin-bottom:10px; }
+  .history-line h2 { font-size:27px; }
+  .history-line p { font-size:21px; }
+  .current-practice { display:block; margin:0; padding-top:20px; }
+  .current-practice p { font-size:20px; margin:15px 0 18px; }
+  .current-practice>div { margin:0; }
+  .slide-bottom p { font-size:19px; }
+  .slide-bottom>span { font-size:15px; }
+  .closure-list { margin-bottom:25px; }
+  .closure-list>div { grid-template-columns:1fr; gap:12px; padding:19px 0; }
+  .closure-list span { font-size:18px; }
+  .closure-list p { font-size:23px; }
+  .closing-prompt { margin:0; }
+  .closing-prompt>strong { font-size:23px; line-height:1.4; }
+  .closing-prompt>div { flex-direction:column; gap:16px; }
+}

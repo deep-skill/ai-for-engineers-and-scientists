@@ -19,6 +19,14 @@ El MVP usa datos sintéticos y está diseñado para conectar fuentes reales (FMS
 - [Alcance del MVP](docs/01-alcance-mvp.md)
 - [Arquitectura propuesta](docs/02-arquitectura.md)
 - [Backlog del MVP](docs/03-backlog.md)
+- [Especificación de requisitos (SRS)](docs/04-srs.md)
+- [Progreso y decisiones](docs/05-decisiones.md)
+- [Mapa de flujo de valor (VSM)](docs/06-vsm.md)
+- [Análisis de dominio DDD-lite](docs/07-ddd.md)
+- [Registro de decisiones de arquitectura (ADR)](docs/08-adr.md)
+- [Documentación C4 de componentes](docs/09-c4.md)
+
+> Los documentos 04 a 09 están en revisión. Las ADR-008 a ADR-014 son propuestas; ninguna decisión P0 está aceptada. El MVP sigue sin implementación.
 
 ## Stack propuesto
 

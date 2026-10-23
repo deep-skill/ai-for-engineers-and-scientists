@@ -7,11 +7,11 @@ La base provisional es energía solar. Se puede cambiar sin rehacer conceptos o 
 | NASA POWER — solar | Comparar producción y potencia para una demanda entre Lima, Arequipa y Piura | requests, pandas, Plotly | Curvas, controles y comparación | Datos archivados; referencia gráfica |
 | USGS — sismos | Explorar M4.5+ y hallar eventos próximos a un punto | pandas, Plotly, pyproj | Mapa, profundidad y filtros | Datos archivados; brief |
 | OpenStreetMap — rutas | Hallar ruta y distancias sobre red vial | OSMnx, NetworkX | Mapa y red de calles | Propuesta pendiente de ensayo |
-| Digital Mine — proyecto minero | Diseñar un gemelo digital del ciclo de una mina a cielo abierto | Stack propuesto en su arquitectura; sin implementación | Mapa operacional, tableros y replay previstos | Alcance, arquitectura y backlog; implementación pendiente |
+| Digital Mine — proyecto minero | Diseñar un gemelo digital del ciclo de una mina a cielo abierto | Stack propuesto en su arquitectura; sin implementación | Mapa operacional, tableros y replay previstos | Alcance, arquitectura, backlog, SRS, VSM, DDD-lite, ADR y C4; implementación pendiente |
 
 ## Proyecto Digital Mine
 
-Incorporado el 21 de octubre de 2026 y confirmado por JP como proyecto de minería para las siguientes clases, dentro de este repositorio. Su [documentación](../demos/digital-mine/README.md) abarca planificación, perforación, voladura, carguío, acarreo, descarga, chancado primario y reconciliación. Por ahora contiene alcance, arquitectura propuesta y backlog; no es una demo ejecutable ni incluye un conjunto de datos. El MVP propone usar datos sintéticos y dejar las integraciones reales para más adelante. Su incorporación no modifica la secuencia de ocho sesiones ni confirma su uso en una clase ya dictada.
+Incorporado el 21 de octubre de 2026 y confirmado por JP como proyecto de minería para las siguientes clases, dentro de este repositorio. Su [documentación](../demos/digital-mine/README.md) abarca planificación, perforación, voladura, carguío, acarreo, descarga, chancado primario y reconciliación. Contiene alcance, arquitectura propuesta, backlog, SRS, VSM, DDD-lite, ADR y C4; no es una demo ejecutable ni incluye un conjunto de datos. El MVP propone usar datos sintéticos y dejar las integraciones reales para más adelante. Su incorporación no modifica la secuencia de ocho sesiones ni confirma su uso en una clase ya dictada.
 
 ## Por qué solar
 

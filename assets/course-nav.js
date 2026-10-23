@@ -5,7 +5,8 @@
   {id:'02', date:'8 oct. 2026', title:'Del chat al agente', description:'Contexto, herramientas y práctica. RAG al cierre.'},
   {id:'03', date:'10 oct. 2026', title:'Cultura de cómputo', description:'Sistema operativo, archivos, terminal y arquitectura web.'},
   {id:'04', date:'13 oct. 2026', title:'Git y tu primer agente en un proyecto real', description:'Historia, commits, DAG, ramas, colaboración y bonus Scion.'},
-  {id:'05', date:'20 oct. 2026', title:'Programación dirigida por IA: fundamentos con rigor', description:'Ciclo de vida: requisitos, diseño, programación, pruebas, entrega y operación.'}
+  {id:'05', date:'20 oct. 2026', title:'Programación dirigida por IA: fundamentos con rigor', description:'Ciclo de vida: requisitos, diseño, programación, pruebas, entrega y operación.'},
+  {id:'06', date:'22 oct. 2026', title:'Flujo de trabajo agéntico: planear, depurar y verificar', description:'Planear, ejecutar y verificar cada avance; depurar con evidencia.'}
  ];
  const root = document.querySelector('[data-course-root]')?.dataset.courseRoot || './';
  const current = document.body.dataset.session;

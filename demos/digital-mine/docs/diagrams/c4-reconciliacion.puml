@@ -1,0 +1,76 @@
+@startuml
+' Digital Mine - vista de componentes: reconciliacion
+' Fuente del modelo: workspace.dsl (vista "reconciliacion")
+' Render: plantuml -tsvg -o out c4-reconciliacion.puml
+' Nota: los .puml se mantienen a mano para la leyenda local/cloud y el layout.
+' convencion: solo componentes; cloud es futuro/opcional y no esta implementado.
+
+!include <C4/C4_Component>
+
+skinparam defaultFontName "DejaVu Sans"
+skinparam legendFontSize 12
+skinparam legendFontColor #13131F
+skinparam legendBackgroundColor #FFFFFF
+skinparam legendBorderColor #5A5F68
+
+LAYOUT_TOP_DOWN()
+
+AddComponentTag("local", "#F7F8FA", "#13131F", "#5A5F68", "", "", "", "", "componente local (MVP)", "", "solid", "1.0")
+AddComponentTag("cloud", "#E6EEFF", "#0B2E6F", "#1A53FF", "", "", "", "", "cloud candidato (futuro)", "", "dashed", "1.5")
+AddComponentTag("external", "#EDEDED", "#333333", "#8A8A8A", "", "", "", "", "sistema externo (futuro)", "", "solid", "1.0")
+AddRelTag("future", "#1A53FF", "#1A53FF", "dashed", "", "", "relación futura / no implementada")
+
+UpdateBoundaryStyle("local", $bgColor="transparent", $fontColor="#13131F", $borderColor="#5A5F68", $borderStyle=SolidLine())
+UpdateBoundaryStyle("cloud", $bgColor="#F4F8FF", $fontColor="#0B2E6F", $borderColor="#1A53FF", $borderStyle=DashedLine())
+
+title Reconciliación plan vs real - vista de componentes\n<size:12>Plan base, hechos persistidos y snapshot oficial; cloud es futuro</size>
+
+Person(planificador, "Planificador de corto plazo", "Crea y publica el plan; revisa el cumplimiento")
+Person(supervisor, "Supervisor de turno", "Revisa KPIs, plan vs real y replay")
+
+Component(planSource, "Planificador externo / PlanSource", "API o archivo (futuro)", "Plan de mina externo; fuera del MVP", "", "external")
+
+Boundary(mvp, "Digital Mine - MVP local", "local", "local") {
+  Component(web, "Web", "Next.js, Recharts", "Formulario de plan, tablero plan vs real, replay y tendencias", "", "local")
+  Component(api, "API REST", "Fastify, Zod", "Plan, KPIs, histórico y salud", "", "local")
+  Component(ws, "WebSocket", "Fastify @fastify/websocket", "Snapshot y deltas de KPIs", "", "local")
+  Component(recon, "Reconciliación", "TypeScript, packages/domain", "Selecciona el plan base, agrega tonelaje, calcula cumplimiento y congela el snapshot", "", "local")
+  Component(twin, "Gemelo", "TypeScript, packages/domain", "Ciclos, KPIs en vivo y estado operativo", "", "local")
+  ComponentDb(db, "Base de datos", "PostgreSQL + TimescaleDB + PostGIS", "Plan versionado, hechos, proyecciones y snapshots", "", "local")
+}
+
+Boundary(cloudCandidates, "Recursos cloud candidatos", "cloud", "cloud", "", "futuro / opcional / no implementado") {
+  ComponentDb(managedDb, "☁ Base de datos gestionada", "Servicio gestionado (TBD)", "Alternativa futura a PostgreSQL local", "", "cloud")
+  Component(objectStore, "☁ Almacenamiento de objetos", "Object storage (TBD)", "Replay de largo plazo; no implementado", "", "cloud")
+}
+
+Rel(planificador, web, "Crea y publica el plan; revisa cumplimiento", "HTTPS")
+Rel(supervisor, web, "Revisa KPIs, plan vs real y replay", "HTTPS")
+Rel(web, api, "Consulta plan, KPIs e histórico", "REST/JSON")
+Rel(web, ws, "Recibe snapshot y deltas", "WebSocket")
+Rel(api, recon, "Solicita cierre y reporte")
+Rel(api, twin, "Lee estado y KPIs en vivo")
+Rel(api, db, "Lee y escribe plan y turnos", "SQL")
+Rel(recon, db, "Lee hechos y escribe snapshots oficiales", "SQL")
+Rel(twin, db, "Reconstruye estado y proyecciones", "SQL")
+Rel(twin, ws, "Publica deltas de estado y KPIs")
+Rel(planSource, api, "Plan de mina (futuro)", "API/JSON (futuro)")
+Rel(db, managedDb, "Sustitución futura; no implementada", "Servicio gestionado (TBD)", "", "", "future")
+Rel(db, objectStore, "Archivo de histórico para replay (futuro)", "Object storage (TBD)", "", "", "future")
+
+note bottom of cloudCandidates
+  **Cloud = futuro.** El replay del MVP se reconstruye desde PostgreSQL.
+  La base gestionada y el object storage son opciones no implementadas.
+end note
+
+legend right
+  **Convención de la vista**
+  <color:#5A5F68>■</color> <<local>> componente del MVP, borde continuo
+  <color:#1A53FF>■</color> <<cloud>> candidato futuro, borde discontinuo
+  <color:#8A8A8A>■</color> <<external>> sistema externo futuro, no integrado
+  **Cloud = futuro / opcional. No implementado.**
+endlegend
+
+footer Digital Mine - C4 componentes - 22 oct 2026 - fuente: workspace.dsl
+
+@enduml
