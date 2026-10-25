@@ -8,9 +8,9 @@ El MVP usa datos sintéticos y está diseñado para conectar fuentes reales (FMS
 
 ## Estado
 
-- Alcance del MVP definido.
-- Arquitectura y backlog documentados.
-- Implementación pendiente: no hay una aplicación ejecutable ni datos generados todavía.
+- Alcance, SRS, arquitectura, backlog, VSM, DDD-lite, ADR y C4 documentados.
+- Primera generación de datos sintéticos de carguío y acarreo en `simulator/data/shift-001/`.
+- Aplicación ejecutable pendiente: no hay monorepo, servicios ni interfaz.
 - Incorporado al curso el 21 de octubre de 2026 como caso de proyecto minero.
 - Uso confirmado por el docente para las siguientes clases, dentro de este repositorio general.
 
@@ -25,12 +25,19 @@ El MVP usa datos sintéticos y está diseñado para conectar fuentes reales (FMS
 - [Análisis de dominio DDD-lite](docs/07-ddd.md)
 - [Registro de decisiones de arquitectura (ADR)](docs/08-adr.md)
 - [Documentación C4 de componentes](docs/09-c4.md)
+- [Plan de datos sintéticos: carguío y acarreo](docs/10-plan-datos-sinteticos.md)
+- [Diccionario de datos sintéticos](docs/11-diccionario-datos.md)
 
-> Los documentos 04 a 09 están en revisión. Las ADR-008 a ADR-014 son propuestas; ninguna decisión P0 está aceptada. El MVP sigue sin implementación.
+> Los documentos 04 a 11 están en revisión. Las ADR-008 a ADR-014 son propuestas; ninguna decisión P0 está aceptada. La aplicación sigue sin implementación; el generador de datos y su primera corrida ya existen.
 
-## Stack propuesto
+## Simulador de datos
 
-TypeScript · Next.js · Fastify · PostgreSQL/TimescaleDB · MQTT · Docker.
+- [Generador y instrucciones](simulator/README.md)
+- [Configuración del turno 001](simulator/config/shift-001.json)
+- [Dataset generado](simulator/data/shift-001/)
+- [Diccionario de datos](docs/11-diccionario-datos.md)
+
+El generador usa Python 3.11+ y SimPy. El stack de la aplicación (TypeScript, Next.js, Fastify, PostgreSQL/TimescaleDB, MQTT y Docker) sigue siendo una propuesta separada.
 
 ## Principio del MVP
 
@@ -42,4 +49,4 @@ Digital Mine se desarrollará como proyecto de minería para las siguientes clas
 
 La documentación describe lo que se propone construir, no funcionalidades ya implementadas. El stack, los supuestos y el alcance se revisan antes de comenzar el desarrollo.
 
-Los comandos y carpetas de la arquitectura son el objetivo de implementación; todavía no existen los servicios, el monorepo ni la infraestructura. Los futuros datos de simulación deben identificarse como sintéticos y distinguirse de mediciones reales. Las implementaciones de referencia del docente se mantendrán separadas de la carpeta de trabajo del alumno.
+Los comandos y carpetas de la arquitectura son el objetivo de implementación; todavía no existen los servicios, el monorepo ni la infraestructura. El generador de datos y su primera corrida ya existen y están identificados como sintéticos. Las implementaciones de referencia del docente se mantendrán separadas de la carpeta de trabajo del alumno.

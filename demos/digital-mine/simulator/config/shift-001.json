@@ -1,0 +1,99 @@
+{
+  "site_id": "digital-mine",
+  "run_id": "run-001",
+  "shift": {
+    "id": "shift-001",
+    "simulated_epoch": "2026-10-24T06:00:00Z",
+    "real_epoch": "2026-10-24T06:00:00Z",
+    "duration_min": 480,
+    "grace_min": 120
+  },
+  "fleet": {
+    "trucks": [
+      { "id": "T-01", "capacity_t": 90, "shovel_id": "S-01" },
+      { "id": "T-02", "capacity_t": 90, "shovel_id": "S-01" },
+      { "id": "T-03", "capacity_t": 90, "shovel_id": "S-01" },
+      { "id": "T-04", "capacity_t": 90, "shovel_id": "S-02" },
+      { "id": "T-05", "capacity_t": 90, "shovel_id": "S-02" },
+      { "id": "T-06", "capacity_t": 90, "shovel_id": "S-02" }
+    ],
+    "shovels": [
+      {
+        "id": "S-01",
+        "front_id": "F-01",
+        "loading_time_min": { "low": 5.0, "mode": 6.5, "high": 8.0 }
+      },
+      {
+        "id": "S-02",
+        "front_id": "F-02",
+        "loading_time_min": { "low": 4.0, "mode": 5.5, "high": 7.0 }
+      }
+    ]
+  },
+  "fronts": [
+    {
+      "id": "F-01",
+      "name": "Frente norte",
+      "material": "ore",
+      "destination_id": "D-CRUSHER",
+      "route_id": "R-01"
+    },
+    {
+      "id": "F-02",
+      "name": "Frente sur",
+      "material": "waste",
+      "destination_id": "D-WASTE",
+      "route_id": "R-02"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "D-CRUSHER",
+      "name": "Chancador primario",
+      "service_time_min": { "low": 2.5, "mode": 3.5, "high": 5.0 }
+    },
+    {
+      "id": "D-WASTE",
+      "name": "Botadero",
+      "service_time_min": { "low": 1.5, "mode": 2.5, "high": 4.0 }
+    }
+  ],
+  "routes": [
+    {
+      "id": "R-01",
+      "front_id": "F-01",
+      "destination_id": "D-CRUSHER",
+      "travel_time_min": { "low": 12.0, "mode": 14.0, "high": 18.0 },
+      "return_time_min": { "low": 11.0, "mode": 13.0, "high": 16.0 }
+    },
+    {
+      "id": "R-02",
+      "front_id": "F-02",
+      "destination_id": "D-WASTE",
+      "travel_time_min": { "low": 8.0, "mode": 10.0, "high": 13.0 },
+      "return_time_min": { "low": 7.0, "mode": 9.0, "high": 12.0 }
+    }
+  ],
+  "disruptions": {
+    "truck_downtime": {
+      "truck_id": "T-03",
+      "fraction_of_shift": 0.05,
+      "blocks": 1,
+      "after_cycles": 2,
+      "reason": "technical"
+    },
+    "dispatch_outage": {
+      "start_min": 210,
+      "duration_min": 30,
+      "cause": "bad_weather",
+      "delivery": {
+        "drop": 0.5,
+        "late": 0.2,
+        "duplicate": 0.1,
+        "incomplete": 0.1,
+        "normal": 0.1
+      },
+      "late_delay_min": { "low": 5, "high": 25 }
+    }
+  }
+}

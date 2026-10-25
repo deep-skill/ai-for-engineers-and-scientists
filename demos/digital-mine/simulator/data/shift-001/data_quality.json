@@ -1,0 +1,84 @@
+{
+  "cycles": {
+    "complete": 79,
+    "groundTruth": 90,
+    "missing": 0,
+    "missingIds": [],
+    "partial": 11,
+    "received": 90
+  },
+  "events": {
+    "coveragePct": 96.82,
+    "expected": 818,
+    "expectedByType": {
+      "truck.arrived_at_destination": 90,
+      "truck.down": 1,
+      "truck.dumped": 90,
+      "truck.dumping_started": 90,
+      "truck.hauling_started": 90,
+      "truck.idle": 96,
+      "truck.loaded": 90,
+      "truck.loading_started": 90,
+      "truck.queued": 90,
+      "truck.returning": 90,
+      "truck.up": 1
+    },
+    "missing": 26,
+    "qualityCounts": {
+      "duplicate": 5,
+      "good": 770,
+      "incomplete": 6,
+      "late": 16
+    },
+    "receivedByType": {
+      "truck.arrived_at_destination": 87,
+      "truck.down": 1,
+      "truck.dumped": 87,
+      "truck.dumping_started": 89,
+      "truck.hauling_started": 85,
+      "truck.idle": 93,
+      "truck.loaded": 88,
+      "truck.loading_started": 87,
+      "truck.queued": 86,
+      "truck.returning": 88,
+      "truck.up": 1
+    },
+    "receivedRows": 797,
+    "receivedUnique": 792
+  },
+  "outage": {
+    "cause": "bad_weather",
+    "delivery": {
+      "drop": 0.5,
+      "duplicate": 0.1,
+      "incomplete": 0.1,
+      "late": 0.2,
+      "normal": 0.1
+    },
+    "durationMin": 30,
+    "endMin": 240,
+    "events": {
+      "coveragePct": 50.0,
+      "expected": 52,
+      "missing": 26,
+      "qualityCounts": {
+        "duplicate": 5,
+        "good": 4,
+        "incomplete": 6,
+        "late": 16
+      },
+      "receivedRows": 31,
+      "receivedUnique": 26
+    },
+    "outageId": "OUT-001",
+    "startMin": 210
+  },
+  "simulated": true,
+  "truckDowntime": {
+    "durationMin": 24.0,
+    "fractionOfShift": 0.05,
+    "maintenanceRecords": false,
+    "reason": "technical",
+    "truckId": "T-03"
+  }
+}

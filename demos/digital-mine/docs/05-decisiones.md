@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 |---|---|---|
-| 0.2 | 22 de octubre de 2026 | Registro de trabajo; documentación técnica completa para revisión |
+| 0.3 | 24 de octubre de 2026 | Registro de trabajo; documentación y primera generación de datos sintéticos |
 
 > Este documento registra lo avanzado y las decisiones tomadas. No es un documento de requisitos ni de arquitectura: esos viven en los documentos 01 a 04 y en los artefactos de análisis y documentación 06 a 09.
 
@@ -14,13 +14,16 @@
 | `02-arquitectura.md` | Arquitectura propuesta, eventos, datos, NFRs y stack | Propuesta revisada; no implementable todavía |
 | `03-backlog.md` | Fases, historias, KPIs, alertas y DoD | Propuesto |
 | `04-srs.md` | Especificación de requisitos, versión 0.2 | Borrador para revisión |
-| `05-decisiones.md` | Este registro | v0.2 |
+| `05-decisiones.md` | Este registro | v0.3 |
 | `06-vsm.md` | Análisis del flujo de valor | Borrador v0.1 |
 | `07-ddd.md` | Análisis de dominio DDD-lite | Borrador v0.1 |
 | `08-adr.md` | Registro de decisiones de arquitectura | Borrador v0.1; ADR-008 a ADR-014 propuestas |
 | `09-c4.md` | Documentación C4 y diagramas | Borrador v0.1 |
+| `10-plan-datos-sinteticos.md` | Plan de generación sintética | Implementado v0.1 |
+| `11-diccionario-datos.md` | Diccionario del dataset | Generado v0.1 |
+| `simulator/` | Generador Python/SimPy y dataset | v0.1; `data/shift-001` validado |
 
-No existe implementación ejecutable, monorepo ni datos generados. El stack sigue siendo una propuesta sujeta a confirmación. Los recursos cloud de C4 son futuros u opcionales, no implementados.
+No existe la aplicación ejecutable ni el monorepo. El generador de datos y el dataset `simulator/data/shift-001/` ya existen; el stack de la aplicación sigue siendo una propuesta sujeta a confirmación. Los recursos cloud de C4 son futuros u opcionales, no implementados.
 
 ## 2. Decisiones tomadas
 
@@ -38,6 +41,7 @@ No existe implementación ejecutable, monorepo ni datos generados. El stack sigu
 | DL-010 | 22 oct 2026 | La clasificación ore/waste queda **abierta**: el alcance la sitúa en la descarga; ADR-013 propone el carguío. | VSM, DDD, C4 y SRS la marcan como TBD o propuesta; no se presenta como confirmada. |
 | DL-011 | 22 oct 2026 | El envelope v2 (`runId`, `shiftId`, `seq`, `streamId`, `receivedAt`) es una propuesta de ADR-008/009/011, no una decisión aceptada. | `02-arquitectura.md` conserva el envelope original; el SRS lo marca como propuesto. |
 | DL-012 | 22 oct 2026 | La validación final se registra en la sección 7. | Enlaces, tablas, PlantUML y coherencia revisados. |
+| DL-013 | 24 oct 2026 | Se implementa la primera generación de datos sintéticos de carguío y acarreo. Incluye T-03 con 5 % de indisponibilidad técnica (24 min) y una caída del servidor de despacho de 30 min por mal tiempo. | `simulator/data/shift-001/`; 90 ciclos, 818 eventos de verdad sintética y 797 filas recibidas; `validation.json` en `pass`. |
 
 ## 3. Revisión de arquitectura: hallazgos que condicionan la documentación
 
@@ -98,6 +102,7 @@ Las ADR-008 a ADR-014 están en estado **Propuesto**. Ninguna se declara aceptad
 | Structurizr | `workspace.dsl` validado y exportado por el agente con Structurizr CLI 2025.11.09; el CLI no queda instalado en el repositorio. |
 | `git diff --check` | Sin errores de espacios ni tabulaciones. |
 | Coherencia de alcance | El MVP sigue siendo local; cloud es futuro y no genera requisitos. |
+| Dataset sintético | `simulator/data/shift-001/validation.json` en `pass` (13 checks); 90 ciclos, 26 eventos faltantes y 11 ciclos parciales. |
 | Decisiones | ADR-008 a ADR-014 siguen en estado Propuesto; el SRS no las declara aceptadas. |
 
 ### 7.1 Inconsistencias detectadas y tratamiento
@@ -111,12 +116,12 @@ Las ADR-008 a ADR-014 están en estado **Propuesto**. Ninguna se declara aceptad
 
 ## 8. Próximos pasos
 
-1. Revisar el conjunto 04 a 09 con el docente.
+1. Revisar el conjunto 04 a 11 y la primera corrida sintética con el docente.
 2. Confirmar o rechazar ADR-008 a ADR-014, empezando por reloj, orden de eventos, fuente de verdad y ciclo de turno.
 3. Cerrar la clasificación ore/waste (DL-010) y actualizar 01, 06, 07, 08 y 04 de forma coherente.
 4. Definir contratos, fórmulas de KPI, umbrales y parámetros del simulador (ADR-014 y anexo P1).
 5. Actualizar `02-arquitectura.md` cuando las ADR se acepten; hoy conserva la propuesta original con nota de vigencia.
-6. No iniciar la implementación hasta que las ADR bloqueantes estén aceptadas.
+6. Usar `simulator/data/shift-001/` para el análisis de la sesión 7; no iniciar la implementación de la aplicación hasta que las ADR bloqueantes estén aceptadas.
 
 ## 9. Registro de cambios
 
@@ -124,3 +129,4 @@ Las ADR-008 a ADR-014 están en estado **Propuesto**. Ninguna se declara aceptad
 |---|---|---|
 | 0.1 | 22 oct 2026 | Registro inicial de progreso, método, convención de diagramas y plan de agentes. |
 | 0.2 | 22 oct 2026 | Se completan 06 a 09, SRS v0.2, validación de coherencia y tratamiento de inconsistencias. |
+| 0.3 | 24 oct 2026 | Plan y diccionario de datos; primera generación sintética con indisponibilidad de camión y caída del servidor. |

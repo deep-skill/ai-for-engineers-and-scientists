@@ -1,0 +1,184 @@
+{
+  "config": {
+    "destinations": [
+      {
+        "id": "D-CRUSHER",
+        "name": "Chancador primario",
+        "service_time_min": {
+          "high": 5.0,
+          "low": 2.5,
+          "mode": 3.5
+        }
+      },
+      {
+        "id": "D-WASTE",
+        "name": "Botadero",
+        "service_time_min": {
+          "high": 4.0,
+          "low": 1.5,
+          "mode": 2.5
+        }
+      }
+    ],
+    "disruptions": {
+      "dispatch_outage": {
+        "cause": "bad_weather",
+        "delivery": {
+          "drop": 0.5,
+          "duplicate": 0.1,
+          "incomplete": 0.1,
+          "late": 0.2,
+          "normal": 0.1
+        },
+        "duration_min": 30,
+        "late_delay_min": {
+          "high": 25,
+          "low": 5
+        },
+        "start_min": 210
+      },
+      "truck_downtime": {
+        "after_cycles": 2,
+        "blocks": 1,
+        "fraction_of_shift": 0.05,
+        "reason": "technical",
+        "truck_id": "T-03"
+      }
+    },
+    "fleet": {
+      "shovels": [
+        {
+          "front_id": "F-01",
+          "id": "S-01",
+          "loading_time_min": {
+            "high": 8.0,
+            "low": 5.0,
+            "mode": 6.5
+          }
+        },
+        {
+          "front_id": "F-02",
+          "id": "S-02",
+          "loading_time_min": {
+            "high": 7.0,
+            "low": 4.0,
+            "mode": 5.5
+          }
+        }
+      ],
+      "trucks": [
+        {
+          "capacity_t": 90,
+          "id": "T-01",
+          "shovel_id": "S-01"
+        },
+        {
+          "capacity_t": 90,
+          "id": "T-02",
+          "shovel_id": "S-01"
+        },
+        {
+          "capacity_t": 90,
+          "id": "T-03",
+          "shovel_id": "S-01"
+        },
+        {
+          "capacity_t": 90,
+          "id": "T-04",
+          "shovel_id": "S-02"
+        },
+        {
+          "capacity_t": 90,
+          "id": "T-05",
+          "shovel_id": "S-02"
+        },
+        {
+          "capacity_t": 90,
+          "id": "T-06",
+          "shovel_id": "S-02"
+        }
+      ]
+    },
+    "fronts": [
+      {
+        "destination_id": "D-CRUSHER",
+        "id": "F-01",
+        "material": "ore",
+        "name": "Frente norte",
+        "route_id": "R-01"
+      },
+      {
+        "destination_id": "D-WASTE",
+        "id": "F-02",
+        "material": "waste",
+        "name": "Frente sur",
+        "route_id": "R-02"
+      }
+    ],
+    "routes": [
+      {
+        "destination_id": "D-CRUSHER",
+        "front_id": "F-01",
+        "id": "R-01",
+        "return_time_min": {
+          "high": 16.0,
+          "low": 11.0,
+          "mode": 13.0
+        },
+        "travel_time_min": {
+          "high": 18.0,
+          "low": 12.0,
+          "mode": 14.0
+        }
+      },
+      {
+        "destination_id": "D-WASTE",
+        "front_id": "F-02",
+        "id": "R-02",
+        "return_time_min": {
+          "high": 12.0,
+          "low": 7.0,
+          "mode": 9.0
+        },
+        "travel_time_min": {
+          "high": 13.0,
+          "low": 8.0,
+          "mode": 10.0
+        }
+      }
+    ],
+    "run_id": "run-001",
+    "shift": {
+      "duration_min": 480,
+      "grace_min": 120,
+      "id": "shift-001",
+      "real_epoch": "2026-10-24T06:00:00Z",
+      "simulated_epoch": "2026-10-24T06:00:00Z"
+    },
+    "site_id": "digital-mine"
+  },
+  "configSha256": "c4695c74d4a59a9880c2c82072cd854a4a09a8ca336b99f8a4e3bd400d0abfc4",
+  "counts": {
+    "groundCycles": 90,
+    "groundEvents": 818,
+    "receivedCycles": 90,
+    "receivedEventRows": 797,
+    "receivedUniqueEvents": 792
+  },
+  "files": {
+    "dataQuality": "data_quality.json",
+    "groundTruthCycles": "ground_truth/cycles.csv",
+    "groundTruthEvents": "ground_truth/events.jsonl",
+    "receivedCycles": "cycles.csv",
+    "receivedEvents": "events.jsonl",
+    "validation": "validation.json"
+  },
+  "generatedAt": "2026-10-25T02:26:44+00:00",
+  "notes": "Synthetic data for Digital Mine. Not a measurement of a real mine. ground_truth/ is the complete simulation; events.jsonl and cycles.csv are the degraded data received during the dispatch-server outage.",
+  "runId": "run-001",
+  "schemaVersion": "0.1",
+  "seed": 42,
+  "shiftId": "shift-001",
+  "simulated": true,
+  "source": "simulator"
+}

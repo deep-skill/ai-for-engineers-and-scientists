@@ -1,0 +1,134 @@
+{
+  "checks": [
+    {
+      "detail": 818,
+      "name": "event_schema",
+      "passed": true
+    },
+    {
+      "detail": "seq monotonic per truck",
+      "name": "event_sequence",
+      "passed": true
+    },
+    {
+      "detail": "occurredAt non-decreasing per truck",
+      "name": "event_time_order",
+      "passed": true
+    },
+    {
+      "detail": [],
+      "name": "truck_state_machine",
+      "passed": true
+    },
+    {
+      "detail": {
+        "dumpedT": 7882.4,
+        "loadedT": 7882.4
+      },
+      "name": "mass_balance",
+      "passed": true
+    },
+    {
+      "detail": "tons <= capacity",
+      "name": "truck_capacity",
+      "passed": true
+    },
+    {
+      "detail": "truck/shovel/front/destination",
+      "name": "references",
+      "passed": true
+    },
+    {
+      "detail": [],
+      "name": "non_negative_durations",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cycles": 90
+      },
+      "name": "ground_cycles_complete",
+      "passed": true
+    },
+    {
+      "detail": {
+        "durationMin": 24.0,
+        "events": 1,
+        "expectedMin": 24.0,
+        "truck": "T-03"
+      },
+      "name": "truck_downtime_5pct",
+      "passed": true
+    },
+    {
+      "detail": {
+        "cause": "bad_weather",
+        "duplicates": 5,
+        "durationMin": 30,
+        "incomplete": 6,
+        "late": 16,
+        "missingEvents": 26
+      },
+      "name": "dispatch_outage_30min",
+      "passed": true
+    },
+    {
+      "detail": [],
+      "name": "no_maintenance_records",
+      "passed": true
+    },
+    {
+      "detail": {
+        "coveragePct": 96.82,
+        "expected": 818,
+        "expectedByType": {
+          "truck.arrived_at_destination": 90,
+          "truck.down": 1,
+          "truck.dumped": 90,
+          "truck.dumping_started": 90,
+          "truck.hauling_started": 90,
+          "truck.idle": 96,
+          "truck.loaded": 90,
+          "truck.loading_started": 90,
+          "truck.queued": 90,
+          "truck.returning": 90,
+          "truck.up": 1
+        },
+        "missing": 26,
+        "qualityCounts": {
+          "duplicate": 5,
+          "good": 770,
+          "incomplete": 6,
+          "late": 16
+        },
+        "receivedByType": {
+          "truck.arrived_at_destination": 87,
+          "truck.down": 1,
+          "truck.dumped": 87,
+          "truck.dumping_started": 89,
+          "truck.hauling_started": 85,
+          "truck.idle": 93,
+          "truck.loaded": 88,
+          "truck.loading_started": 87,
+          "truck.queued": 86,
+          "truck.returning": 88,
+          "truck.up": 1
+        },
+        "receivedRows": 797,
+        "receivedUnique": 792
+      },
+      "name": "received_data_degraded",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "simulated": true,
+  "summary": {
+    "dumpedTons": 7882.4,
+    "groundCycles": 90,
+    "groundEvents": 818,
+    "loadedTons": 7882.4,
+    "receivedCycles": 90,
+    "receivedRows": 797
+  }
+}

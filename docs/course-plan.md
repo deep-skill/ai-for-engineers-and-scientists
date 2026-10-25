@@ -26,7 +26,7 @@ Los títulos de esta tabla se transcriben del cronograma publicado. El estado de
 | 4 | Martes 13 de octubre | Git y tu primer agente en un proyecto real | Presentación y guía preparadas. Sesión adaptada a 90 minutos por decisión de JP. Dictado por confirmar. [Materiales](../cohorts/01/sessions/04/index.html). |
 | 5 | Martes 20 de octubre | Programación dirigida por IA: fundamentos con rigor | Dictada, confirmado por JP el 22 de octubre. Se avanzó principalmente en requisitos y especificaciones. [Materiales preparados](../cohorts/01/sessions/05/index.html). |
 | 6 | Jueves 22 de octubre | Flujo de trabajo agéntico: planear, depurar y verificar | Borrador de cinco láminas y guía preparado para revisión. Dictado por confirmar. [Materiales](../cohorts/01/sessions/06/index.html). |
-| 7 | Sábado 24 de octubre | Análisis de datos con IA: del dato al insight en minería | Pendiente de preparación. |
+| 7 | Sábado 24 de octubre | Análisis de datos con IA: del dato al insight en minería | Seis láminas, guía, generador y primera corrida sintética preparados para revisión. Dictado por confirmar. [Materiales](../cohorts/01/sessions/07/index.html). |
 | 8 | Martes 27 de octubre | Proyecto integrador de ingeniería/minería | Pendiente de preparación. |
 
 El posicionamiento del curso abarca ingeniería y ciencias; los casos de minería son una aplicación de ese alcance. Para las sesiones 7 y 8 también se usan las formulaciones «Análisis de datos con IA: del dato al insight» y «Proyecto integrador de ingeniería/ciencias», conservando el orden del cronograma.
@@ -165,13 +165,25 @@ El docente continúa la práctica sobre el proyecto existente, con Digital Mine 
 
 Este borrador queda preparado para iterar con el docente. La existencia de los materiales no confirma el dictado de la sesión 6. Las sesiones 7 y 8 conservan los temas y fechas del plan.
 
+## Preparación de la sesión 7
+
+**Tema del plan:** Análisis de datos con IA: del dato al insight en minería. Borrador del 24 de octubre de 2026, ajustado con JP para centrar toda la sesión en Digital Mine. La [presentación](../cohorts/01/sessions/07/index.html) contiene seis láminas y 16 minutos propuestos: pregunta de ingeniería; ingeniería, análisis y ciencia de datos; generación sintética y tipos; exploración del acarreo; herramientas y trabajo con IA; interpretación y evidencia. La [guía docente](../cohorts/01/sessions/07/instructor-guide.md) amplía los conceptos y conserva las fuentes.
+
+La sesión prioriza continuar el desarrollo del gemelo, construir datos sintéticos de acarreo y analizarlos. Esa práctica ocurre fuera de las slides y el docente decide cómo intercalar la teoría. No se prepara una demo adicional de sismos. Las láminas incluyen una ilustración declarada de ocho ciclos sintéticos, con reglas y unidades, para comparar esperas, servicio y traslado por ruta. No es salida del simulador, una medición ni evidencia de un cuello de botella real; las diferencias están incorporadas en los valores elegidos.
+
+La preparación de la presentación no implementa el gemelo, acepta los ADR ni construye la práctica completa. Los datos y materiales de clases anteriores permanecen intactos. Se mantienen el rigor de planear, ejecutar y verificar, la distinción entre datos sintéticos y reales y el proyecto integrador de la sesión 8. La existencia de estos materiales no confirma el dictado.
+
+Para la práctica se prepararon el [generador de referencia](../demos/digital-mine/simulator/README.md), el [plan de datos](../demos/digital-mine/docs/10-plan-datos-sinteticos.md), el [diccionario](../demos/digital-mine/docs/11-diccionario-datos.md) y una primera corrida en `demos/digital-mine/simulator/data/shift-001/`: 90 ciclos de carguío y acarreo, con un camión al 5 % de indisponibilidad técnica y una caída de 30 min del servidor de despacho. El dataset separa la verdad sintética de los datos recibidos y documenta la pérdida en `data_quality.json`. Sus tiempos de ciclos están en segundos, mientras que el ejemplo independiente de las slides usa minutos. Es material sintético, no una medición real, y no confirma el dictado de la sesión 7.
+
+El 25 de octubre se documentó la versión preparada y su integración en el portal. Se comprobaron en navegador las seis láminas, la navegación, las notas y las pantallas pequeñas; también se contrastaron los cálculos del gráfico y la reproducción de los datos sintéticos. La validación del contenido por el docente y el registro del dictado siguen pendientes.
+
 ## Proyecto minero para las siguientes clases: Digital Mine
 
 El 21 de octubre de 2026, JP confirmó incorporar **[Digital Mine](../demos/digital-mine/README.md)** como proyecto de minería dentro de este repositorio y trabajarlo en las siguientes clases. Se mantiene en `demos/digital-mine/`, con su alcance, arquitectura propuesta, backlog, SRS, VSM, DDD-lite, ADR y C4, sin un repositorio Git anidado.
 
 El caso recorre planificación, perforación, voladura, carguío, acarreo, descarga, chancado primario y reconciliación de una mina a cielo abierto. Permite aplicar los temas pendientes del curso sobre un proyecto común; las actividades concretas se definirán al preparar cada clase, conservando la secuencia acordada de ocho sesiones.
 
-La incorporación del proyecto está confirmada; su implementación sigue pendiente. El stack y los supuestos son propuestas para revisar antes de desarrollar. Los datos de simulación previstos son sintéticos y deben distinguirse de mediciones reales. La documentación del proyecto se consulta desde el portal de materiales. Las implementaciones de referencia del docente se mantendrán separadas del trabajo que abra el alumno con su agente.
+La incorporación del proyecto está confirmada; la aplicación sigue pendiente. Existe un generador local de carguío y acarreo con una primera corrida sintética para la sesión 7. El stack de la aplicación y los supuestos son propuestas para revisar antes de desarrollar; los datos simulados deben distinguirse de mediciones reales. La documentación del proyecto se consulta desde el portal de materiales. Las implementaciones de referencia del docente se mantienen separadas del trabajo que abra el alumno con su agente.
 
 ## Dónde se mantiene el trabajo
 

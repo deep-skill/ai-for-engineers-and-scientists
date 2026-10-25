@@ -1,0 +1,50 @@
+@import url('../05/slides.css');
+.slide-bottom { margin-top:auto; }
+.slide-bottom p { font-size:22px; }
+.slide-bottom>span { font-size:16px; }
+.slide-lead { margin-bottom:22px; }
+.exploration-layout { display:grid; grid-template-columns:1.4fr 1fr; gap:55px; align-items:center; flex:1; margin:10px 0 18px; }
+.haulage-chart { margin:0; min-width:0; }
+.haulage-chart figcaption { font-size:26px; font-weight:550; margin-bottom:25px; }
+.chart-unit { color:var(--muted); font-size:18px; margin-bottom:26px; }
+.haulage-row { display:grid; grid-template-columns:80px 1fr; gap:15px; align-items:center; margin:25px 0; }
+.route-label { color:#d0daef; font-size:23px; }
+.route-label small { display:block; color:var(--muted); font-size:16px; margin-top:7px; }
+.cycle-track { position:relative; display:flex; height:48px; margin-right:45px; }
+.cycle-segment { display:flex; align-items:center; justify-content:center; color:#0c0c14; font-size:21px; font-weight:650; }
+.wait { background:var(--green); }
+.service { background:var(--blue); color:white; }
+.travel { background:#8f9fca; }
+.cycle-total { position:absolute; left:var(--total-width); top:10px; margin-left:9px; color:#eef2ff; font-size:24px; font-weight:550; }
+.cycle-axis { display:flex; justify-content:space-between; margin:0 45px 0 95px; border-top:1px solid var(--border); padding-top:9px; color:var(--muted); font-size:16px; }
+.cycle-legend { display:flex; gap:25px; margin-top:27px; font-size:18px; color:#c4cde4; }
+.cycle-legend>span { display:flex; align-items:center; gap:9px; }
+.cycle-legend i { display:inline-block; width:12px; height:12px; }
+.chart-note { font-size:16px; color:var(--muted); line-height:1.5; margin:20px 0 0; }
+.chart-note a { font-size:16px; }
+.chart-loading { font-size:21px; color:var(--muted); min-height:230px; padding-top:75px; }
+.chart-error { font-size:21px; color:#ffbb83; padding:35px 0; }
+.exploration-questions>div { padding:21px 0; border-top:1px solid var(--border); }
+.exploration-questions span { display:block; color:var(--blue); font-size:18px; margin-bottom:12px; }
+.exploration-questions strong { display:block; font-size:28px; font-weight:550; line-height:1.25; }
+@media(max-width:760px) {
+ .slide-bottom { margin-top:28px; }
+ .slide-bottom p { font-size:19px; }
+ .slide-bottom>span { font-size:15px; }
+ .exploration-layout { grid-template-columns:1fr; gap:25px; margin:10px 0 0; }
+ .haulage-chart figcaption { font-size:23px; }
+ .chart-unit { font-size:17px; }
+ .haulage-row { grid-template-columns:56px 1fr; gap:10px; }
+ .route-label { font-size:19px; }
+ .route-label small { font-size:14px; }
+ .cycle-track { margin-right:30px; height:40px; }
+ .cycle-segment { font-size:16px; }
+ .cycle-total { font-size:19px; top:8px; margin-left:5px; }
+ .cycle-axis { margin-left:66px; margin-right:30px; font-size:14px; }
+ .cycle-legend { gap:16px; font-size:15px; }
+ .cycle-legend>span { gap:6px; }
+ .cycle-legend i { width:10px; height:10px; }
+ .chart-note,.chart-note a { font-size:14px; }
+ .exploration-questions>div { padding:17px 0; }
+ .exploration-questions strong { font-size:25px; }
+}

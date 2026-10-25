@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "title": "Digital Mine: illustrative haulage cycles",
+    "data_kind": "synthetic",
+    "created_on": "2026-10-24",
+    "author": "DeepSkill course materials",
+    "source": "Authored teaching fixture with explicitly chosen values, not sensor measurements or simulator output.",
+    "purpose": "Explain data types, aggregation and interpretation in session 07; not a reference implementation of the mining simulator.",
+    "grain": "One completed cycle, including initial loading queue, loading, loaded travel, unloading and empty return.",
+    "units": {
+      "carga_t": "metric tonnes",
+      "espera_min": "minutes",
+      "carguio_min": "minutes",
+      "acarreo_min": "minutes",
+      "descarga_min": "minutes",
+      "retorno_min": "minutes",
+      "inicio_utc": "ISO 8601 in UTC"
+    },
+    "assumptions": [
+      "Eight complete cycles across four invented trucks and two invented routes; four cycles per route.",
+      "All payloads are set to 80 tonnes for this example; this does not specify fleet capacity.",
+      "Durations are selected to create visible differences in waiting and travel. No fitted distribution, random draw, stochastic seed or calibration is used.",
+      "R-01 waiting times are 2, 3, 4, 3 minutes. Loaded travel is 8, 9, 10, 9 minutes. Empty return is 8 minutes.",
+      "R-02 waiting times are 6, 8, 10, 8 minutes. Loaded and empty travel are each 10, 11, 12, 11 minutes.",
+      "Loading takes 4 minutes and unloading 2 minutes in every cycle. No other waiting or downtime is modeled.",
+      "Service aggregates loading and unloading. Travel aggregates loaded haulage and empty return. The chart shows unweighted arithmetic means per cycle.",
+      "The values are neither representative of a real mine nor evidence that Digital Mine is implemented or calibrated."
+    ]
+  },
+  "cycles": [
+    {
+      "ciclo_id": "C-001",
+      "camion_id": "T-01",
+      "ruta": "R-01",
+      "inicio_utc": "2026-10-24T13:00:00Z",
+      "carga_t": 80,
+      "espera_min": 2,
+      "carguio_min": 4,
+      "acarreo_min": 8,
+      "descarga_min": 2,
+      "retorno_min": 8,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-002",
+      "camion_id": "T-02",
+      "ruta": "R-01",
+      "inicio_utc": "2026-10-24T13:06:00Z",
+      "carga_t": 80,
+      "espera_min": 3,
+      "carguio_min": 4,
+      "acarreo_min": 9,
+      "descarga_min": 2,
+      "retorno_min": 8,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-003",
+      "camion_id": "T-01",
+      "ruta": "R-01",
+      "inicio_utc": "2026-10-24T13:26:00Z",
+      "carga_t": 80,
+      "espera_min": 4,
+      "carguio_min": 4,
+      "acarreo_min": 10,
+      "descarga_min": 2,
+      "retorno_min": 8,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-004",
+      "camion_id": "T-02",
+      "ruta": "R-01",
+      "inicio_utc": "2026-10-24T13:34:00Z",
+      "carga_t": 80,
+      "espera_min": 3,
+      "carguio_min": 4,
+      "acarreo_min": 9,
+      "descarga_min": 2,
+      "retorno_min": 8,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-005",
+      "camion_id": "T-03",
+      "ruta": "R-02",
+      "inicio_utc": "2026-10-24T13:00:00Z",
+      "carga_t": 80,
+      "espera_min": 6,
+      "carguio_min": 4,
+      "acarreo_min": 10,
+      "descarga_min": 2,
+      "retorno_min": 10,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-006",
+      "camion_id": "T-04",
+      "ruta": "R-02",
+      "inicio_utc": "2026-10-24T13:06:00Z",
+      "carga_t": 80,
+      "espera_min": 8,
+      "carguio_min": 4,
+      "acarreo_min": 11,
+      "descarga_min": 2,
+      "retorno_min": 11,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-007",
+      "camion_id": "T-03",
+      "ruta": "R-02",
+      "inicio_utc": "2026-10-24T13:34:00Z",
+      "carga_t": 80,
+      "espera_min": 10,
+      "carguio_min": 4,
+      "acarreo_min": 12,
+      "descarga_min": 2,
+      "retorno_min": 12,
+      "simulated": true
+    },
+    {
+      "ciclo_id": "C-008",
+      "camion_id": "T-04",
+      "ruta": "R-02",
+      "inicio_utc": "2026-10-24T13:44:00Z",
+      "carga_t": 80,
+      "espera_min": 8,
+      "carguio_min": 4,
+      "acarreo_min": 11,
+      "descarga_min": 2,
+      "retorno_min": 11,
+      "simulated": true
+    }
+  ]
+}

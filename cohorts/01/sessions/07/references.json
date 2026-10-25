@@ -1,0 +1,143 @@
+{
+  "reviewed_on": "2026-10-24",
+  "scope": "Six short audience-facing slides for session 07, centered on Digital Mine. A declared synthetic eight-cycle teaching fixture supports the haulage chart. Construction of the generator and practical analysis stay outside the presentation. No model calls, real mine measurements or simulator execution.",
+  "sources": [
+    {
+      "title": "What is EDA?",
+      "publisher": "NIST/SEMATECH",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm",
+      "supports": "Exploration as an approach to understanding structure, variation and assumptions, with graphical techniques."
+    },
+    {
+      "title": "Detection of Outliers",
+      "publisher": "NIST/SEMATECH",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+      "supports": "Investigating unusual observations rather than automatically treating them as errors."
+    },
+    {
+      "title": "Scatter Plot",
+      "publisher": "NIST/SEMATECH",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm",
+      "supports": "Association between variables does not establish a causal effect."
+    },
+    {
+      "title": "Working with missing data",
+      "publisher": "pandas",
+      "url": "https://pandas.pydata.org/docs/user_guide/missing_data.html",
+      "supports": "Explicit handling of missing values. Complementary reference; no pandas dependency is required by the slides."
+    },
+    {
+      "title": "Good enough practices in scientific computing",
+      "authors": "Greg Wilson, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt and Tracy K. Teal",
+      "published": "2017-06-22",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510",
+      "supports": "Preserving original data, recording processing steps, organizing scripts and making dependencies explicit."
+    },
+    {
+      "title": "What is data engineering?",
+      "publisher": "IBM",
+      "url": "https://www.ibm.com/think/topics/data-engineering",
+      "supports": "Building and operating data pipelines and systems that provide reliable, accessible data."
+    },
+    {
+      "title": "What is data science?",
+      "publisher": "IBM",
+      "url": "https://www.ibm.com/think/topics/data-science",
+      "supports": "Statistics, programming and domain expertise; modeling, exploration and collaboration across overlapping data roles."
+    },
+    {
+      "title": "What is synthetic data?",
+      "publisher": "IBM",
+      "url": "https://www.ibm.com/think/topics/synthetic-data",
+      "supports": "Artificial data generation; the course fixture uses explicit rules and does not claim to preserve a measured distribution."
+    },
+    {
+      "title": "How do I read and write tabular data?",
+      "publisher": "pandas",
+      "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html",
+      "supports": "DataFrames and reading/writing common data formats; referenced as an analysis tool, not a slide dependency."
+    },
+    {
+      "title": "SQL Introduction",
+      "publisher": "DuckDB",
+      "url": "https://duckdb.org/docs/2.0/sql/introduction.html",
+      "supports": "SQL query processing; an example of a local query engine rather than a prescribed project stack."
+    },
+    {
+      "title": "Python graphing and data visualization",
+      "publisher": "Plotly",
+      "url": "https://plotly.com/python/",
+      "supports": "Library for interactive charts; referenced as a tool, not used to render the slide chart."
+    },
+    {
+      "title": "Intro",
+      "publisher": "OpenCode",
+      "url": "https://opencode.ai/docs/",
+      "supports": "Coding agent, project context and iterative work; capabilities depend on tools and permissions."
+    }
+  ],
+  "synthetic_example": {
+    "title": "Digital Mine: illustrative haulage cycles",
+    "data_kind": "synthetic",
+    "path": "data/haulage-example.json",
+    "sha256": "8a4f48e559f9480717b3d7d2201442ec01a2a8f45c91dd94f2faaf44797ed27c",
+    "created_on": "2026-10-24",
+    "origin": "Authored teaching fixture with explicitly selected rules and values, not a measurement or digital twin simulator output.",
+    "rows": 8,
+    "grain": "One completed haulage cycle including initial queue and empty return.",
+    "units": "Durations in minutes, payload in metric tonnes, timestamps UTC.",
+    "method": "Fixed values declared in fixture metadata; no fitted distribution or stochastic seed.",
+    "aggregations": {
+      "wait": "espera_min",
+      "service": "carguio_min + descarga_min",
+      "travel": "acarreo_min + retorno_min",
+      "total": "wait + service + travel",
+      "grouping": "Arithmetic mean per cycle and route; four cycles per route."
+    },
+    "expected_route_means": {
+      "R-01": {
+        "wait": 3,
+        "service": 6,
+        "travel": 17,
+        "total": 26,
+        "min": 24,
+        "max": 28
+      },
+      "R-02": {
+        "wait": 8,
+        "service": 6,
+        "travel": 22,
+        "total": 36,
+        "min": 32,
+        "max": 40
+      }
+    },
+    "limitations": "Rules deliberately create a difference between routes. No inference of real congestion, mine capacity, productivity or calibrated behavior."
+  },
+  "reused_logos": [
+    {
+      "file": "logos/opencode.png",
+      "url": "https://opencode.ai/favicon-96x96-v3.png",
+      "sha256": "aa34092540de60c889610edfa3c25316e215f12d88af29cfba530d09aee7265c",
+      "bytes": 536
+    },
+    {
+      "file": "logos/plotly.svg",
+      "url": "https://plotly.com/all_static/images/logo-white.svg",
+      "sha256": "a6a704756ca5eaa37d24b8b0473d4eced2c73bcfb4af03a942721d93c701477f",
+      "bytes": 3700
+    },
+    {
+      "file": "logos/python.png",
+      "url": "https://www.python.org/static/img/python-logo.png",
+      "sha256": "9c121e619bfe02eaba582d7080eea46fd53ec0b50717e6794a948fada4ae8f3c",
+      "bytes": 15770
+    },
+    {
+      "file": "logos/pandas.svg",
+      "url": "https://pandas.pydata.org/static/img/pandas_white.svg",
+      "sha256": "caf3a951b589f68362d15bcab70f576d02beac4c2583781acf3cd4fcddb128ca",
+      "bytes": 2627
+    }
+  ]
+}

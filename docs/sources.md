@@ -21,6 +21,7 @@ Revisión documental: 2026-10-06. Rankings, tarifas y disponibilidad pueden camb
 | Solar | [NASA POWER](https://power.larc.nasa.gov/docs/tutorials/service-data-request/api/) | Parámetro y unidades |
 | Sismos | [USGS](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) | Formato y unidades |
 | Librerías | [pandas](https://pandas.pydata.org/docs/) · [Plotly](https://plotly.com/python/) | Datos y visualización |
+| Simulación | [SimPy](https://simpy.readthedocs.io/) | Eventos discretos, colas y recursos |
 | Rutas | [OSMnx](https://osmnx.readthedocs.io/) | Opción aún sin ensayo |
 
 Cada data/sources.json incluye URLs, timestamp, unidades y hashes. La calculadora de coste usa tarifas ficticias; no contiene un precio concreto de GPT o Claude.
@@ -122,3 +123,15 @@ Consultadas el 22 de octubre de 2026. Los diagramas son conceptuales, editables 
 - [Qué revisar en un cambio, Google Engineering Practices](https://google.github.io/eng-practices/review/reviewer/looking-for.html): diseño, comportamiento, pruebas y documentación.
 
 El registro de fuentes se conserva también en `cohorts/01/sessions/06/references.json`. Las láminas no muestran resultados de ejecución ni métricas operacionales. La práctica y cualquier llamada real a modelos se realizan fuera de la presentación.
+
+## Clase 7: análisis de datos con IA
+
+Consultadas el 24 de octubre de 2026. La presentación se centra en Digital Mine. Los ocho ciclos de acarreo son una ilustración sintética con supuestos explícitos; el gráfico calcula sus medias y rangos. La construcción del generador y la práctica quedan fuera de las slides.
+
+- [Ingeniería](https://www.ibm.com/think/topics/data-engineering), [ciencia de datos](https://www.ibm.com/think/topics/data-science) y [generación sintética](https://www.ibm.com/think/topics/synthetic-data), IBM: disciplinas, solapamientos y creación artificial de datos.
+- [Exploración](https://www.itl.nist.gov/div898/handbook/eda/section1/eda11.htm), [atípicos](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm) y [asociación](https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm), NIST/SEMATECH: estructura, variación y límites de interpretación.
+- [Formatos tabulares](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html) y [faltantes](https://pandas.pydata.org/docs/user_guide/missing_data.html), pandas.
+- [SQL](https://duckdb.org/docs/2.0/sql/introduction.html), DuckDB; [gráficos](https://plotly.com/python/), Plotly; [agente](https://opencode.ai/docs/), OpenCode. Herramientas de referencia, sin imponer stack ni dependencias a las láminas.
+- [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510), Wilson y colaboradores, 2017: originales, proceso documentado y reproducción.
+
+`cohorts/01/sessions/07/data/haulage-example.json` conserva origen, unidades, valores elegidos y limitaciones. Su hash y las reglas de agregación están en `cohorts/01/sessions/07/references.json`. El ejemplo no modela toda la operación ni valida el gemelo. Los datos de las clases anteriores no se modifican.

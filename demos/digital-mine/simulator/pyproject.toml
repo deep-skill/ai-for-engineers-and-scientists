@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "digital-mine-sim"
+version = "0.1.0"
+description = "Synthetic loading and hauling data generator for Digital Mine"
+requires-python = ">=3.11"
+dependencies = ["simpy==4.1.1"]
+
+[project.scripts]
+mine-sim = "mine_sim.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
